@@ -39,7 +39,24 @@
     </nav>
 </header>
 <main>
-
+    <h1 class="titre">Accueil</h1>
+    <div>
+        <h2 class="sous-titre">Nouveauté</h2>
+        <div>
+            <img src="*" alt="Jane, le renard et moi">
+            <h3>Jane, le renard et moi</h3>
+            <p>Isabelle Arsenault</p>
+            <p>Fanny Britt</p>
+            <h4>26.95$</h4>
+        </div>
+        <div>
+            <img src="*" alt="Sanni et Jonas - Une nuit d'hiver">
+            <h3>Sanni et Jonas - Une nuit d'hiver</h3>
+            <p>Mari Ahokoivu</p>
+            <p>Kalle Hakkola</p>
+            <h4>18.95$</h4>
+        </div>
+    </div>
 </main>
 <footer class="footer" role="contentinfo">
     <p class="footer__titre">LA PASTÈQUE</p>
