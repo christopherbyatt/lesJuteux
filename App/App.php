@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace App;
 use App\Controleurs\ControleurSite;
 use App\Controleurs\ControleurAuteur;
+use App\Controleurs\ControleurLivre;
 use \PDO;
 use eftec\bladeone\BladeOne;
 
@@ -22,7 +23,7 @@ class App {
             $serveur = 'localhost';
             $utilisateur = 'root';
             $motDePasse = 'root';
-            $nomBd = 'bd_club_v1';
+            $nomBd = '23_rpni3_lesjuteux';
             $chaineDSN = "mysql:dbname=$nomBd;host=$serveur";    // Data source name
 
             // Tentative de connexion
@@ -73,11 +74,20 @@ class App {
                 case 'apropos':
                     $objControleur->apropos();
                     break;
+                case 'boutique':
+                    $objControleur->boutique();
+                    break;
+                case 'production':
+                    $objControleur->production();
+                    break;
+                case 'contact':
+                    $objControleur->contact();
+                    break;
                 default:
                     echo 'Erreur 404 - Page introuvable.';
             }
-        } else if ($nomControleur === 'activite'){
-            $objControleur = new ControleurActivite();
+        } else if ($nomControleur === 'nouveaute'){
+            $objControleur = new ControleurNouveaute();
             switch ($nomAction) {
                 case 'index':
                     $objControleur->index();
@@ -87,38 +97,27 @@ class App {
                     break;
             }
         }
-        else if ($nomControleur === 'participant'){
-            $objControleur = new ControleurParticipant();
-            switch ($nomAction) {
-                case 'index':
-                    $objControleur->index();
-                    break;
-                case 'fiche':
-                    $objControleur->fiche();
-                    break;
-            }
+        else if ($nomControleur === 'livre'){
+                $objControleur = new ControleurLivre();
+                switch ($nomAction) {
+                    case 'index':
+                        $objControleur->index();
+                        break;
+                    case 'fiche':
+                        $objControleur->fiche();
+                        break;
+                }
         }
-        else if ($nomControleur === 'ville'){
-            $objControleur = new ControleurVille();
-            switch ($nomAction) {
-                case 'index':
-                    $objControleur->index();
-                    break;
-                case 'fiche':
-                    $objControleur->fiche();
-                    break;
-            }
-        }
-        else if ($nomControleur === 'region'){
-            $objControleur = new ControleurRegion();
-            switch ($nomAction) {
-                case 'index':
-                    $objControleur->index();
-                    break;
-                case 'fiche':
-                    $objControleur->fiche();
-                    break;
-            }
+        else if ($nomControleur === 'auteur'){
+                $objControleur = new ControleurAuteur();
+                switch ($nomAction) {
+                    case 'index':
+                        $objControleur->index();
+                        break;
+                    case 'fiche':
+                        $objControleur->fiche();
+                        break;
+                }
         }else{
             echo 'Erreur 404 - Page introuvable.';
         }

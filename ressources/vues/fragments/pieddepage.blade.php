@@ -2,25 +2,28 @@
 <ul class="footer__nav">
     <nav class="ctn_footer">
         <li class="footer__item">
-            <a href="*" class="footer__lien">Nouveautés</a>
+            <a href="index.php?controleur=site&action=accueil" class="footer__lien">Accueil</a>
         </li>
         <li class="footer__item">
-            <a href="*" class="footer__lien">Livres</a>
+            <a href="index.php?controleur=nouveaute&action=index" class="footer__lien">Nouveautés</a>
         </li>
         <li class="footer__item">
-            <a href="*" class="footer__lien">Artistes</a>
+            <a href="index.php?controleur=livre&action=index" class="footer__lien">Livres</a>
         </li>
         <li class="footer__item">
-            <a href="*" class="footer__lien">Galerie/Boutique</a>
+            <a href="index.php?controleur=auteur&action=index" class="footer__lien">Auteurs</a>
         </li>
         <li class="footer__item">
-            <a href="*" class="footer__lien">À propos</a>
+            <a href="index.php?controleur=site&action=boutique" class="footer__lien">Galerie/Boutique</a>
         </li>
         <li class="footer__item">
-            <a href="*" class="footer__lien">Production La Pastèque</a>
+            <a href="index.php?controleur=site&action=apropos" class="footer__lien">À propos</a>
         </li>
         <li class="footer__item">
-            <a href="*" class="footer__lien">Contact</a>
+            <a href="index.php?controleur=site&action=production" class="footer__lien">Production La Pastèque</a>
+        </li>
+        <li class="footer__item">
+            <a href="index.php?controleur=site&action=contact" class="footer__lien">Contact</a>
         </li>
     </nav>
     <nav class="footer__info">

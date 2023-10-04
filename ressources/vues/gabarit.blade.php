@@ -9,12 +9,10 @@
 </head>
 <body>
 <header >
-    <h1>Mon site</h1>
     @include('fragments.entete')
 </header>
 
 <main>
-    <h2>Contenu</h2>
     @yield('contenu')
 </main>
 
