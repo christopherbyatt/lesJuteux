@@ -56,4 +56,72 @@
 
 /****** MODULES ******/
 /*Header*/
+.nav{
+  background-color: #FDD5CE;
+  height: 130px;
+  &__ctn {
+    height: 20rem;
+  }
+  &__largeur{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    max-width: 1400px;
+    margin: auto;
+  }
+  &__largeur-menu{
+    max-width: 1400px;
+    margin: auto;
+  }
+  &__liste{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 2rem;
+  }
 
+  &__menu{
+    background-color: #CBE3B9;
+    height: 60px;
+  }
+  &__recherche{
+    text-align: center;
+    width: 33%;
+  }
+  &__barre {
+    width: 405px;
+    height: 40px;
+  }
+  &__titre {
+    font-family: "watermelon";
+    font-size: 7.8rem;
+    text-decoration: none;
+    text-align: center;
+    width: 33%;
+  }
+  &__icon{
+    width: 33%;
+  }
+}
+/*Nouveauté et à venir*/
+.livres {
+  display: flex;
+  margin: auto;
+  padding: 10px;
+  width: 1400px;
+&__fiche {
+  margin: 50px;
+}
+  &__prix{
+    text-align: end;
+    font-weight: bold;
+  }
+  &__lien{
+    float: right;
+  }
+}
+a {
+  color: black;
+}

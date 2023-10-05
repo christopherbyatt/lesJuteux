@@ -18,8 +18,6 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Epilogue&display=swap");
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
@@ -481,7 +479,6 @@ html {
 }
 
 body {
-  font-family: Epilogue, sans-serif;
   font-size: 16px; /* 16px pour toutes les largeurs d'écran */
   font-size: 1.6rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
@@ -492,15 +489,16 @@ h2,
 .titreNiveau2,
 h3,
 .titreNiveau3 {
-  font-family: Fjalla One, sans-serif;
   font-weight: 500;
 }
 
 h1,
 .titreNiveau1 {
-  font-size: 28px;
-  font-size: 2.8rem;
+  font-size: 100px;
+  font-size: 10rem;
+  text-align: center;
   margin: 0;
+  font-family: "fruity stories";
 }
 h1--desktop,
 .titreNiveau1--desktop {
@@ -511,7 +509,6 @@ h1--desktop,
 }
 h1--desktop:after,
 .titreNiveau1--desktop:after {
-  background-color: #358ae0;
   content: "";
   display: inline-block;
   width: 150px;
@@ -523,8 +520,9 @@ h1--desktop:after,
 
 h2,
 .titreNiveau2 {
-  font-size: 20px;
-  font-size: 3.5rem;
+  font-family: "Caviar Dreams";
+  font-size: 30px;
+  font-size: 3rem;
   text-transform: uppercase;
   text-align: center;
 }
@@ -536,8 +534,10 @@ h2--desktop,
 
 h3,
 .titreNiveau3 {
-  font-size: 18px;
+  font-size: 25px;
   font-size: 2.5rem;
+  font-family: "Arial";
+  font-weight: bold;
 }
 h3--desktop,
 .titreNiveau3--desktop {
@@ -546,10 +546,10 @@ h3--desktop,
 }
 
 .texte {
-  font-family: Epilogue, sans-serif;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.375;
+  font-family: "Arial";
 }
 .texte--desktop {
   line-height: 1.5;
@@ -669,5 +669,75 @@ h3--desktop,
 
 /****** MODULES ******/
 /*Header*/
+.nav {
+  background-color: #FDD5CE;
+  height: 130px;
+}
+.nav__ctn {
+  height: 20rem;
+}
+.nav__largeur {
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+}
+.nav__largeur-menu {
+  max-width: 1400px;
+  margin: auto;
+}
+.nav__liste {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding-top: 2rem;
+}
+.nav__menu {
+  background-color: #CBE3B9;
+  height: 60px;
+}
+.nav__recherche {
+  text-align: center;
+  width: 33%;
+}
+.nav__barre {
+  width: 405px;
+  height: 40px;
+}
+.nav__titre {
+  font-family: "watermelon";
+  font-size: 7.8rem;
+  text-decoration: none;
+  text-align: center;
+  width: 33%;
+}
+.nav__icon {
+  width: 33%;
+}
+
+/*Nouveauté et à venir*/
+.livres {
+  display: flex;
+  margin: auto;
+  padding: 10px;
+  width: 1400px;
+}
+.livres__fiche {
+  margin: 50px;
+}
+.livres__prix {
+  text-align: end;
+  font-weight: bold;
+}
+.livres__lien {
+  float: right;
+}
+
+a {
+  color: black;
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -12,7 +12,6 @@ html {
 }
 
 body {
-  font-family: $fonteSecondaire;
   font-size: 16px; /* 16px pour toutes les largeurs d'écran */
   font-size: 1.6rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
@@ -26,21 +25,22 @@ h2,
 .titreNiveau2,
 h3,
 .titreNiveau3 {
-  font-family: $fontePrimaire;
   font-weight: 500;
 }
 
 h1,
 .titreNiveau1 {
-  @include fontSize(28px);
+  font-size: 100px;
+  font-size: 10rem;
+  text-align: center;
   margin: 0;
+  font-family: "fruity stories";
   &--desktop {
     font-size: 48px;
     font-size: 4.8rem;
     padding-bottom: 15px;
     position: relative;
     &:after {
-      background-color: $bleuMoyen;
       content: "";
       display: inline-block;
       width: 150px;
@@ -54,8 +54,9 @@ h1,
 
 h2,
 .titreNiveau2{
-  font-size: 20px;
-  font-size: 3.5rem;
+  font-family: "Caviar Dreams";
+  font-size: 30px;
+  font-size: 3rem;
   text-transform: uppercase;
   text-align: center;
   &--desktop {
@@ -66,8 +67,10 @@ h2,
 
 h3,
 .titreNiveau3 {
-  font-size: 18px;
+  font-size: 25px;
   font-size: 2.5rem;
+  font-family: "Arial";
+  font-weight: bold;
   &--desktop {
     font-size: 22px;
     font-size: 2.2rem;
@@ -75,10 +78,10 @@ h3,
 }
 
 .texte {
-  font-family: $fonteSecondaire;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 18px;
+  font-size: 1.8rem;
   line-height: 1.375;
+  font-family: "Arial";
   &--desktop {
     line-height: 1.5;
   }
