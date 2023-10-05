@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <div class="nav__vert">
+        <div class="nav__menu">
             <div class="nav__largeur-menu">
             <ul class="nav__liste">
                 <li class="nav__item">
