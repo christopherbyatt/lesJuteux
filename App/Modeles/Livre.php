@@ -9,6 +9,9 @@ use \PDO;
 class Livre {
     private int $id = 0;
     private string $isbn_papier = '';
+    private string $isbn_pdf = '';
+    private string $isbn_epub = '';
+    private $url_audio = '';
     private string $titre = '';
     private string $le_livre = '';
     private string $arguments_commerciaux = '';
@@ -22,8 +25,8 @@ class Livre {
     private string $date_parution_quebec = '';
     private string $date_parution_france = '';
     private string $categorie_id = '';
-//    private int $type_impression_id = 0;
-//    private int $type_couverture_id = 0;
+    private $type_impression_id = 0;
+    private $type_couverture_id = 0;
 
 
     // Méthodes statiques
@@ -107,10 +110,10 @@ class Livre {
     public function getCategorieId():string{
         return $this->categorie_id;
     }
-//    public function getTypeImpressionId():int{
-//        return $this->type_impression_id;
-//    }
-//    public function getTypeCouvertureId():int{
-//        return $this->type_couverture_id;
-//    }
+    public function getTypeImpressionId():int{
+        return $this->type_impression_id;
+    }
+    public function getTypeCouvertureId():int{
+        return $this->type_couverture_id;
+    }
 }

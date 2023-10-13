@@ -18,7 +18,7 @@
     <li>Date de parution au Québec: {{$livre->getDateQuebec()}}</li>
     <li>Date de parution en France: {{$livre->getDateFrance()}}</li>
     <li>Id Categorie: {{$livre->getCategorieId()}}</li>
-{{--    <li>Id type d'impression: {{$livre->getTypeImpressionId()}}</li>--}}
-{{--    <li>Id type couverture: {{$livre->getTypeCouvertureId()}}</li>--}}
+    <li>Id type d'impression: {{$livre->getTypeImpressionId()}}</li>
+    <li>Id type couverture: {{$livre->getTypeCouvertureId()}}</li>
 </ul>
 @endsection
