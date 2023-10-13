@@ -6,8 +6,8 @@
     <li>Id: {{$livre->getId()}}</li>
     <li>ISBN papier: {{$livre->getISBNPapier()}}</li>
     <li>Titre: {{$livre->getTitre()}}</li>
-    <li>Le livre: {{$livre->getLeLivre()}}</li>
-    <li>Arguments: {{$livre->getArguments()}}</li>
+    <li>Le livre: {!! $livre->getLeLivre() !!}</li>
+    <li>Arguments: {!! $livre->getArguments() !!}</li>
     <li>Statut: {{$livre->getStatut()}}</li>
     <li>Pagination: {{$livre->getPagination()}}</li>
     <li>Âge minimal: {{$livre->getAgeMin()}}</li>
