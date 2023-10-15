@@ -482,6 +482,7 @@ body {
   font-size: 16px; /* 16px pour toutes les largeurs d'écran */
   font-size: 1.6rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
+  color: white;
 }
 h1,
 .titreNiveau1,
@@ -499,6 +500,7 @@ h1,
   text-align: center;
   margin: 0;
   font-family: "fruity stories";
+  color: #CBE3B9;
 }
 h1--desktop,
 .titreNiveau1--desktop {
@@ -525,6 +527,8 @@ h2,
   font-size: 3rem;
   text-transform: uppercase;
   text-align: center;
+  color: #CBE3B9;
+  padding-top: 2.6rem;
 }
 h2--desktop,
 .titreNiveau2--desktop {
@@ -668,7 +672,38 @@ h3--desktop,
 }
 
 /****** MODULES ******/
+body {
+  background-color: #484141;
+}
+
+.background {
+  background-color: #3C3737;
+}
+
 /*Header*/
+#icon_position {
+  background-position: -90px 0;
+}
+
+#icon_favoris {
+  background-position: -225px 0;
+}
+
+#icon_compte {
+  background-position: -315px 0;
+}
+
+.nav__barreRecherche {
+  margin: 0;
+}
+
+.icon {
+  background-image: url("../images/deco/sprite.png");
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+}
+
 .nav {
   background-color: #FDD5CE;
   height: 130px;
@@ -680,11 +715,12 @@ h3--desktop,
   justify-content: space-evenly;
   align-items: center;
   display: flex;
-  max-width: 1400px;
+  max-width: 1000px;
   margin: auto;
+  padding-top: 3rem;
 }
 .nav__largeur-menu {
-  max-width: 1400px;
+  max-width: 1000px;
   margin: auto;
 }
 .nav__liste {
@@ -704,18 +740,22 @@ h3--desktop,
   width: 33%;
 }
 .nav__barre {
-  width: 405px;
-  height: 40px;
+  width: 305px;
+  height: 35px;
 }
 .nav__titre {
   font-family: "watermelon";
-  font-size: 7.8rem;
+  font-size: 5.8rem;
   text-decoration: none;
   text-align: center;
   width: 33%;
+  color: #484141;
 }
 .nav__icon {
   width: 33%;
+}
+.nav__lien {
+  color: #484141;
 }
 
 /*Nouveauté et à venir*/
@@ -723,21 +763,138 @@ h3--desktop,
   display: flex;
   margin: auto;
   padding: 10px;
-  width: 1400px;
+  width: 1000px;
+  justify-content: center;
 }
 .livres__fiche {
-  margin: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.livres__auteurs {
+  font-size: 1.2rem;
+  margin-bottom: -0.5rem;
 }
 .livres__prix {
-  text-align: end;
   font-weight: bold;
+  font-size: 2rem;
+  margin-top: -0.5rem;
+}
+.livres__titre {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .livres__lien {
-  float: right;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5.6rem;
 }
 
+/*Actualités et Évenements*/
+.actualite__info {
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+}
+.actualite__largeur {
+  max-width: 1000px;
+  margin: auto;
+}
+.actualite__lien {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3.6rem;
+  padding-top: 7.6rem;
+  font-weight: bold;
+}
+.actualite__lien-article {
+  float: right;
+  padding-top: 1.6rem;
+}
+
+.evenement__info {
+  padding-bottom: 4rem;
+}
+.evenement__largeur {
+  max-width: 1000px;
+  margin: auto;
+}
+.evenement__lien {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 7.6rem;
+  padding-top: 7.6rem;
+  font-weight: bold;
+}
+
+/*lien*/
 a {
-  color: black;
+  color: #FDD5CE;
+}
+
+/*footer*/
+.footer {
+  background-color: #FDD5CE;
+  height: 130px;
+}
+.footer__largeur {
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 2.5rem;
+}
+.footer__largeur-menu {
+  max-width: 1000px;
+  margin: auto;
+}
+.footer__liste {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding-top: 2rem;
+}
+.footer__menu {
+  background-color: #CBE3B9;
+  height: 60px;
+}
+.footer__recherche {
+  text-align: center;
+  width: 33%;
+}
+.footer__barre {
+  width: 305px;
+  height: 35px;
+}
+.footer__titre {
+  font-family: "watermelon";
+  font-size: 5.8rem;
+  text-decoration: none;
+  text-align: center;
+  width: 33%;
+  color: #484141;
+}
+.footer__icon {
+  width: 33%;
+}
+.footer__lien {
+  color: #484141;
+}
+.footer__lien-mail {
+  color: #FDD5CE;
+}
+.footer__info {
+  justify-content: space-evenly;
+  align-items: flex-start;
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+  padding-bottom: 5rem;
+}
+.footer__info-1, .footer__info-2, .footer__info-3 {
+  max-width: 240px;
 }
 
 /*# sourceMappingURL=styles.css.map */
