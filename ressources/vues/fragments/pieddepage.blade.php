@@ -1,6 +1,20 @@
-<p class="footer__titre">LA PASTÈQUE</p>
-<ul class="footer__nav">
-    <nav class="ctn_footer">
+<nav class="footer__ctn"></nav>
+<div class="footer">
+    <div class="footer__largeur">
+<a href="index.php" class="footer__titre">LA PASTEQUE</a>
+        <div class="footer__recherche">
+            <form class="nav__barreRecherche" action="">
+                <input type="text" name="recherche" class="footer__barre">
+            </form>
+        </div>
+        <div class="footer__icon">
+            <p>allo</p>
+        </div>
+    </div>
+</div>
+<div class="footer__menu">
+    <div class="footer__largeur-menu">
+    <ul class="footer__liste">
         <li class="footer__item">
             <a href="index.php?controleur=site&action=accueil" class="footer__lien">Accueil</a>
         </li>
@@ -25,10 +39,20 @@
         <li class="footer__item">
             <a href="index.php?controleur=site&action=contact" class="footer__lien">Contact</a>
         </li>
+    </ul>
     </nav>
-    <nav class="footer__info">
+    </div>
+</div>
+    <div class="footer__info">
+        <div class="footer__info-1">
         <p class="footer__texte">La Pastèque – Éditeur<br><br>Notre bureau et notre boutique se situent au 102 avenue Laurier Ouest Montréal, H2T 2N7<br><br>Métro: Station Laurier</p>
-        <p class="footer__texte">Heures d’ouverture de la galerie-boutique<br>Lundi : fermé<br>Mardi : fermé<br>Mercredi: 10h à 17h<br>Jeudi : 10h à 17h<br>Vendredi  : 10h à 17h<br>Samedi  : 10h à 17h<br>Dimanche  : fermé</p>
+        </div>
+        <div class="footer__info-2">
+            <p class="footer__texte">Heures d’ouverture de la galerie-boutique<br>Lundi : fermé<br>Mardi : fermé<br>Mercredi: 10h à 17h<br>Jeudi : 10h à 17h<br>Vendredi  : 10h à 17h<br>Samedi  : 10h à 17h<br>Dimanche  : fermé</p>
+        </div>
+        <div class="footer__info-3">
         <p class="footer__texte">Nous joindre<br><a class="footer__lien-mail" href="">info@lapasteque.com</a><br><br>Fondateurs et comité de rédaction:<br>Martin Brault<br><a class="footer__lien-mail"href="">brault@lapasteque.com</a><br>(514)502-0836<br><br>Frédéric Gauthier<br><a class="footer__lien-mail">fred@lapasteque.com</a><br>(514)627-1585</p>
-    </nav>
+        </div>
+    </div>
+
 </ul>
