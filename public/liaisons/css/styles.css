@@ -622,20 +622,8 @@ h3--desktop,
 * @author Prenom Nom courriel
 * @todo Compléter selon l'énoncé de l'exercice
 */
-.hyperlien {
-  color: #2678B5;
-  text-decoration: none;
-}
-.hyperlien--visited {
-  color: #226aa0;
-}
-.hyperlien--hover {
-  color: #144061;
-  text-decoration: underline;
-}
-.hyperlien--active {
-  color: #bbd531;
-  text-decoration: underline;
+a {
+  color: #FDD5CE;
 }
 
 /** Boutons **/
@@ -643,43 +631,7 @@ h3--desktop,
 * @author Prenom Nom courriel
 * @todo Compléter selon l'énoncé de l'exercice
 */
-.bouton {
-  background-color: #bbd531;
-  border-radius: 18px;
-  color: black;
-  padding: 0.5em 1em;
-  text-decoration: none;
-}
-.bouton:after {
-  content: "»";
-  margin-left: 0.4em;
-}
-.bouton--hover {
-  background-color: rgba(187, 213, 49, 0.75);
-}
-.bouton--active {
-  background-color: rgba(187, 213, 49, 0.5);
-}
-.bouton--inverse {
-  background-color: white;
-  border: 2px solid #bbd531;
-}
-.bouton--inverse--hover {
-  border-color: rgba(187, 213, 49, 0.75);
-}
-.bouton--inverse--active {
-  border-color: rgba(187, 213, 49, 0.5);
-}
-
-/****** MODULES ******/
-body {
-  background-color: #484141;
-}
-
-.background {
-  background-color: #3C3737;
-}
-
+/****** Layouts et Modules ******/
 /*Header*/
 #icon_position {
   background-position: -90px 0;
@@ -719,10 +671,6 @@ body {
   margin: auto;
   padding-top: 3rem;
 }
-.nav__largeur-menu {
-  max-width: 1000px;
-  margin: auto;
-}
 .nav__liste {
   display: flex;
   flex-direction: row;
@@ -730,10 +678,6 @@ body {
   list-style-type: none;
   margin: 0;
   padding-top: 2rem;
-}
-.nav__menu {
-  background-color: #CBE3B9;
-  height: 60px;
 }
 .nav__recherche {
   text-align: center;
@@ -758,7 +702,64 @@ body {
   color: #484141;
 }
 
-/*Nouveauté et à venir*/
+/*footer*/
+.footer {
+  background-color: #FDD5CE;
+  height: 130px;
+}
+.footer__largeur {
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 2.5rem;
+}
+.footer__liste {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+  padding-top: 2rem;
+}
+.footer__recherche {
+  text-align: center;
+  width: 33%;
+}
+.footer__barre {
+  width: 305px;
+  height: 35px;
+}
+.footer__titre {
+  font-family: "watermelon";
+  font-size: 5.8rem;
+  text-decoration: none;
+  text-align: center;
+  width: 33%;
+  color: #484141;
+}
+.footer__icon {
+  width: 33%;
+}
+.footer__lien {
+  color: #484141;
+}
+.footer__lien-mail {
+  color: #FDD5CE;
+}
+.footer__info {
+  justify-content: space-evenly;
+  align-items: flex-start;
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+  padding-bottom: 5rem;
+}
+.footer__info-1, .footer__info-2, .footer__info-3 {
+  max-width: 240px;
+}
+
 .livres {
   display: flex;
   margin: auto;
@@ -826,75 +827,30 @@ body {
   font-weight: bold;
 }
 
-/*lien*/
-a {
-  color: #FDD5CE;
+body {
+  background-color: #484141;
 }
 
-/*footer*/
-.footer {
-  background-color: #FDD5CE;
-  height: 130px;
+.background {
+  background-color: #3C3737;
 }
-.footer__largeur {
-  justify-content: space-evenly;
-  align-items: center;
-  display: flex;
+
+.nav__largeur-menu {
   max-width: 1000px;
   margin: auto;
-  padding-top: 2.5rem;
 }
+.nav__menu {
+  background-color: #CBE3B9;
+  height: 60px;
+}
+
 .footer__largeur-menu {
   max-width: 1000px;
   margin: auto;
 }
-.footer__liste {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0;
-  padding-top: 2rem;
-}
 .footer__menu {
   background-color: #CBE3B9;
   height: 60px;
-}
-.footer__recherche {
-  text-align: center;
-  width: 33%;
-}
-.footer__barre {
-  width: 305px;
-  height: 35px;
-}
-.footer__titre {
-  font-family: "watermelon";
-  font-size: 5.8rem;
-  text-decoration: none;
-  text-align: center;
-  width: 33%;
-  color: #484141;
-}
-.footer__icon {
-  width: 33%;
-}
-.footer__lien {
-  color: #484141;
-}
-.footer__lien-mail {
-  color: #FDD5CE;
-}
-.footer__info {
-  justify-content: space-evenly;
-  align-items: flex-start;
-  display: flex;
-  max-width: 1400px;
-  margin: auto;
-  padding-bottom: 5rem;
-}
-.footer__info-1, .footer__info-2, .footer__info-3 {
-  max-width: 240px;
 }
 
 /*# sourceMappingURL=styles.css.map */

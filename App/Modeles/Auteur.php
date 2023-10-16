@@ -18,11 +18,10 @@ class Auteur {
 
     }
     public static function trouverTout():array{
-        $pdo = App::getPDO();
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM auteurs';
         // Préparer la requête (optimisation)
-        $requetePreparee = $pdo->prepare($chaineSQL);
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Auteur");
         // Exécuter la requête
@@ -33,11 +32,11 @@ class Auteur {
         return $auteurs;
     }
     public static function trouverParId(int $unIdAuteur):Auteur{
-        $pdo = App::getPDO();
+
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM auteurs WHERE id=:idAuteur';
         // Préparer la requête (optimisation)
-        $requetePreparee = $pdo->prepare($chaineSQL);
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // BindParam
         $requetePreparee->bindParam('idAuteur', $unIdAuteur);
         // Définir le mode de récupération

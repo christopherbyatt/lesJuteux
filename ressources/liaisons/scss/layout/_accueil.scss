@@ -1,0 +1,69 @@
+
+.livres {
+  display: flex;
+  margin: auto;
+  padding: 10px;
+  width: 1000px;
+  justify-content: center;
+  &__fiche {
+    margin-left :20px;
+    margin-right: 20px;
+  }
+  &__auteurs{
+    font-size: 1.2rem;
+    margin-bottom: -0.5rem;
+  }
+  &__prix{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: -0.5rem;
+  }
+  &__titre{
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  &__lien{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5.6rem;
+  }
+}
+/*Actualités et Évenements*/
+.actualite{
+  &__info {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+  &__largeur{
+    max-width: 1000px;
+    margin: auto;
+  }
+  &__lien{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3.6rem;
+    padding-top: 7.6rem;
+    font-weight: bold;
+  }
+  &__lien-article {
+    float: right;
+    padding-top: 1.6rem;
+  }
+}
+.evenement{
+  &__info{
+    padding-bottom: 4rem;
+  }
+  &__largeur {
+    max-width: 1000px;
+    margin: auto;
+  }
+  &__lien{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 7.6rem;
+    padding-top: 7.6rem;
+    font-weight: bold;
+  }
+}

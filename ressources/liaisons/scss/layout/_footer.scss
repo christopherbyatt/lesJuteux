@@ -1,0 +1,59 @@
+/*footer*/
+.footer{
+  background-color: $rose;
+  height: 130px;
+  &__largeur{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 2.5rem;
+  }
+  &__liste{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 2rem;
+  }
+  &__recherche{
+    text-align: center;
+    width: 33%;
+  }
+  &__barre {
+    width: 305px;
+    height: 35px;
+  }
+  &__titre {
+    font-family: "watermelon";
+    font-size: 5.8rem;
+    text-decoration: none;
+    text-align: center;
+    width: 33%;
+    color: $lienNav;
+  }
+  &__icon{
+    width: 33%;
+  }
+  &__lien{
+    color: $lienNav;
+  }
+  &__lien-mail {
+    color: $rose;
+  }
+  &__info{
+    justify-content: space-evenly;
+    align-items: flex-start;
+    display: flex;
+    max-width: 1400px;
+    margin: auto;
+    padding-bottom: 5rem;
+  }
+  &__info-1,
+  &__info-2,
+  &__info-3{
+    max-width: 240px;
+  }
+}

@@ -1,0 +1,20 @@
+.nav {
+  &__largeur-menu {
+    max-width: 1000px;
+    margin: auto;
+  }
+  &__menu{
+    background-color: $vertMelon;
+    height: 60px;
+  }
+}
+.footer {
+  &__largeur-menu {
+    max-width: 1000px;
+    margin: auto;
+  }
+  &__menu{
+    background-color: $vertMelon;
+    height: 60px;
+  }
+}

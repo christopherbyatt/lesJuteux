@@ -15,16 +15,17 @@
 // Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
 
 /* Couleurs de base */
-$bleuMoyen: #358ae0;
-$bleuPale: #68a8e8;
-$vertLime: #bbd531;
-$bleuMinuit: #012d61;
-$bleuMarin: #2678B5;
 
-$bleuMoyenTransparent : transparentize($bleuMoyen, 0.50);
+$vertMelon : #CBE3B9;
+$rose : #FDD5CE;
+$background1 : #484141;
+$background2 : #3C3737;
+$lienNav : #484141;
+
+
 
 /* Autres couleurs */
-$hyperlien: $bleuMarin;
+$hyperlien: $rose;
 
 /** Points de rupture **/
 $desktop : 601px;

@@ -34,11 +34,11 @@ class Livre {
 
     }
     public static function trouverTout():array {
-        $pdo = App::getPDO();
+
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM livres';
         // Préparer la requête (optimisation)
-        $requetePreparee = $pdo->prepare($chaineSQL);
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
         // Exécuter la requête
@@ -49,11 +49,10 @@ class Livre {
         return $livres;
     }
     public static function trouverParId(int $unIdLivre):Livre {
-        $pdo = App::getPDO();
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM livres WHERE id=:idLivre';
         // Préparer la requête (optimisation)
-        $requetePreparee = $pdo->prepare($chaineSQL);
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // BindParam
         $requetePreparee->bindParam('idLivre', $unIdLivre);
         // Définir le mode de récupération
