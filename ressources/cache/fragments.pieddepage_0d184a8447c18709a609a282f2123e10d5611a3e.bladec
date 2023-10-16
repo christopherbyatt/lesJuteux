@@ -7,8 +7,10 @@
  <input type="text" name="recherche" class="footer__barre">
  </form>
  </div>
- <div class="footer__icon">
- <p>allo</p>
+ <div class="nav__icon">
+ <a href=""><span id="icon_position" class="icon"></span></a>
+ <a href=""><span id="icon_favoris" class="icon"></span></a>
+ <a href=""><span id="icon_compte" class="icon"></span></a>
  </div>
  </div>
 </div>
