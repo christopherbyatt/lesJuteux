@@ -7,6 +7,19 @@
 
 /**** Typographie responsive ****/
 
+@font-face {
+  font-family: "fruity stories";
+  src:url("../fonts/Fruity Stories.ttf") format('truetype');
+}
+@font-face {
+  font-family: "Caviar Dreams";
+  src:url(../fonts/CaviarDreams.ttf) format('truetype');
+}
+@font-face {
+  font-family: "watermelon";
+  src:url(../fonts/Watermelon01.ttf) format('truetype');
+}
+
 html {
   font-size: 62.5%;
 }
