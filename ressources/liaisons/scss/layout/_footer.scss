@@ -1,0 +1,68 @@
+/*footer*/
+.footer{
+  background-color: #FDD5CE;
+  height: 130px;
+  &__largeur{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 2.5rem;
+  }
+  &__largeur-menu{
+    max-width: 1000px;
+    margin: auto;
+  }
+  &__liste{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding-top: 2rem;
+  }
+
+  &__menu{
+    background-color: #CBE3B9;
+    height: 60px;
+  }
+  &__recherche{
+    text-align: center;
+    width: 33%;
+  }
+  &__barre {
+    width: 305px;
+    height: 35px;
+  }
+  &__titre {
+    font-family: "watermelon";
+    font-size: 5.8rem;
+    text-decoration: none;
+    text-align: center;
+    width: 33%;
+    color: #484141;
+  }
+  &__icon{
+    width: 33%;
+  }
+  &__lien{
+    color: #484141;
+  }
+  &__lien-mail {
+    color: #FDD5CE;
+  }
+  &__info{
+    justify-content: space-evenly;
+    align-items: flex-start;
+    display: flex;
+    max-width: 1400px;
+    margin: auto;
+    padding-bottom: 5rem;
+  }
+  &__info-1,
+  &__info-2,
+  &__info-3{
+    max-width: 240px;
+  }
+}
