@@ -3,7 +3,6 @@
 @section('contenu')
     <h1>Accueil</h1>
     <div class="background">
-        <div class="ligne__h2-background">
     <h2>Nouveauté</h2>
     <div class="livres">
         <div class="livres__fiche">

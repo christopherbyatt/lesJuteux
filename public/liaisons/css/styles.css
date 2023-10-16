@@ -421,7 +421,6 @@ th {
 /** Polices de caractères **/
 /** Palette de couleurs **/
 /* Couleurs de base */
-/* Autres couleurs */
 /** Points de rupture **/
 /** Mixins **/
 /**
@@ -703,6 +702,18 @@ a {
 }
 
 /*footer*/
+#icon_position {
+  background-position: -90px 0;
+}
+
+#icon_favoris {
+  background-position: -225px 0;
+}
+
+#icon_compte {
+  background-position: -315px 0;
+}
+
 .footer {
   background-color: #FDD5CE;
   height: 130px;
