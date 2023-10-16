@@ -1,6 +1,6 @@
 /*footer*/
 .footer{
-  background-color: #FDD5CE;
+  background-color: $rose;
   height: 130px;
   &__largeur{
     justify-content: space-evenly;
@@ -10,10 +10,6 @@
     margin: auto;
     padding-top: 2.5rem;
   }
-  &__largeur-menu{
-    max-width: 1000px;
-    margin: auto;
-  }
   &__liste{
     display: flex;
     flex-direction: row;
@@ -21,11 +17,6 @@
     list-style-type: none;
     margin: 0;
     padding-top: 2rem;
-  }
-
-  &__menu{
-    background-color: #CBE3B9;
-    height: 60px;
   }
   &__recherche{
     text-align: center;
@@ -41,16 +32,16 @@
     text-decoration: none;
     text-align: center;
     width: 33%;
-    color: #484141;
+    color: $lienNav;
   }
   &__icon{
     width: 33%;
   }
   &__lien{
-    color: #484141;
+    color: $lienNav;
   }
   &__lien-mail {
-    color: #FDD5CE;
+    color: $rose;
   }
   &__info{
     justify-content: space-evenly;

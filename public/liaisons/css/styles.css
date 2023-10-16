@@ -631,34 +631,6 @@ a {
 * @author Prenom Nom courriel
 * @todo Compléter selon l'énoncé de l'exercice
 */
-.bouton {
-  background-color: #bbd531;
-  border-radius: 18px;
-  color: black;
-  padding: 0.5em 1em;
-  text-decoration: none;
-}
-.bouton:after {
-  content: "»";
-  margin-left: 0.4em;
-}
-.bouton--hover {
-  background-color: rgba(187, 213, 49, 0.75);
-}
-.bouton--active {
-  background-color: rgba(187, 213, 49, 0.5);
-}
-.bouton--inverse {
-  background-color: white;
-  border: 2px solid #bbd531;
-}
-.bouton--inverse--hover {
-  border-color: rgba(187, 213, 49, 0.75);
-}
-.bouton--inverse--active {
-  border-color: rgba(187, 213, 49, 0.5);
-}
-
 /****** Layouts et Modules ******/
 /*Header*/
 #icon_position {
@@ -699,10 +671,6 @@ a {
   margin: auto;
   padding-top: 3rem;
 }
-.nav__largeur-menu {
-  max-width: 1000px;
-  margin: auto;
-}
 .nav__liste {
   display: flex;
   flex-direction: row;
@@ -710,10 +678,6 @@ a {
   list-style-type: none;
   margin: 0;
   padding-top: 2rem;
-}
-.nav__menu {
-  background-color: #CBE3B9;
-  height: 60px;
 }
 .nav__recherche {
   text-align: center;
@@ -751,10 +715,6 @@ a {
   margin: auto;
   padding-top: 2.5rem;
 }
-.footer__largeur-menu {
-  max-width: 1000px;
-  margin: auto;
-}
 .footer__liste {
   display: flex;
   flex-direction: row;
@@ -762,10 +722,6 @@ a {
   list-style-type: none;
   margin: 0;
   padding-top: 2rem;
-}
-.footer__menu {
-  background-color: #CBE3B9;
-  height: 60px;
 }
 .footer__recherche {
   text-align: center;
@@ -877,6 +833,24 @@ body {
 
 .background {
   background-color: #3C3737;
+}
+
+.nav__largeur-menu {
+  max-width: 1000px;
+  margin: auto;
+}
+.nav__menu {
+  background-color: #CBE3B9;
+  height: 60px;
+}
+
+.footer__largeur-menu {
+  max-width: 1000px;
+  margin: auto;
+}
+.footer__menu {
+  background-color: #CBE3B9;
+  height: 60px;
 }
 
 /*# sourceMappingURL=styles.css.map */
