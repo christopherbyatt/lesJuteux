@@ -178,6 +178,10 @@ h3--desktop,
   font-size: 2.2rem;
 }
 
+h4 {
+  margin: 0.5px;
+}
+
 .texte {
   font-size: 18px;
   font-size: 1.8rem;
@@ -401,6 +405,8 @@ a {
   max-width: 240px;
 }
 
+/*Accueil*/
+/*cette partie est aussi incluse dans la page index livres*/
 .livres {
   display: flex;
   margin: auto;
@@ -432,6 +438,7 @@ a {
   padding-bottom: 5.6rem;
 }
 
+/* fin de la partie aussi incluse dans index livre*/
 /*Actualités et Évenements*/
 .actualite__info {
   padding-bottom: 4rem;
@@ -470,6 +477,7 @@ a {
 
 body {
   background-color: #484141;
+  margin: 0;
 }
 
 .background {

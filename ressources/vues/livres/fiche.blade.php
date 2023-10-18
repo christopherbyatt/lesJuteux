@@ -1,8 +1,9 @@
 @extends('gabarit')
 
 @section('contenu')
-<h3>Page fiche du participant</h3>
+<h3>Page fiche du livre</h3>
 <ul>
+    <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
     <li>Id: {{$livre->getId()}}</li>
     <li>ISBN papier: {{$livre->getISBNPapier()}}</li>
     <li>Titre: {{$livre->getTitre()}}</li>

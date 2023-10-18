@@ -46,6 +46,7 @@ class Livre {
     public static function trouverTout():array {
 
         // Définir la chaine SQL
+        $chaineSQL = 'SELECT * FROM livres LIMIT 1,3';
         $chaineSQL = 'SELECT * FROM livres 
         INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
         INNER JOIN auteurs ON livres_auteurs.auteur_id = auteurs.id

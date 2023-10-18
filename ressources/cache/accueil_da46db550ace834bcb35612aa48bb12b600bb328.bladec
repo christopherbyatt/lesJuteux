@@ -6,19 +6,19 @@
  <h2>Nouveauté</h2>
  <div class="livres">
  <div class="livres__fiche">
- <img src="liaisons/images/978897770105_w300.jpg" alt="Jane, le renard et moi">
+ <img src="liaisons/images/livres/978897770105_w300.jpg" alt="Jane, le renard et moi">
  <p class="livres__auteurs">Isabelle Arsenault & Fanny Britt</p>
  <p class="livres__titre">Jane, le renard et moi</p>
  <p class="livres__prix">26.95$</p>
  </div>
  <div class="livres__fiche">
- <img src="liaisons/images/978897770105_w300.jpg" alt="Jane, le renard et moi">
+ <img src="liaisons/images/livres/978897770105_w300.jpg" alt="Jane, le renard et moi">
  <p class="livres__auteurs">Mari Ahokoivu & Kalle Hakkola</p>
  <p class="livres__titre">Sanni et Jonas - Une nuit d'hiver</p>
  <p class="livres__prix">18.95$</p>
  </div>
  <div class="livres__fiche">
- <img src="liaisons/images/978897770105_w300.jpg" alt="Jane, le renard et moi">
+ <img src="liaisons/images/livres/978897770105_w300.jpg" alt="Jane, le renard et moi">
  <p class="livres__auteurs">Isabelle Arsenault</p>
  <p class="livres__titre">L'oiseau de Colette</p>
  <p class="livres__prix">18.95$</p>
