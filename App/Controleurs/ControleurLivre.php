@@ -6,8 +6,9 @@ use App\Modeles\Livre;
 class ControleurLivre {
     public function index():void {
         $livres = Livre::trouverTout();
-
-        $tDonnees = array("message" => "Je suis la page Index auteurs...", "livres" => $livres);
+        $livresAVenirs = Livre::trouverParVenir();
+        $livresNouveautes = Livre::trouverParNouveautes();
+        $tDonnees = array("message" => "Je suis la page Index auteurs...", "livres" => $livres ,"livresAVenirs" => $livresAVenirs, "livresNouveautes"=>$livresNouveautes);
         echo App::getBlade()->run("livres.index", $tDonnees);
     }
 
