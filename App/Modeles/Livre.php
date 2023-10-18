@@ -80,6 +80,12 @@ class Livre {
     public function getId():int{
         return $this->livre_id;
     }
+    public function getNom():string{
+        return $this->nom;
+    }
+    public function getPrenom():string{
+        return $this->prenom;
+    }
     public function getISBNPapier():string{
         return $this->isbn_papier;
     }
