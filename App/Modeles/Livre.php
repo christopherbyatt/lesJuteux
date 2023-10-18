@@ -8,6 +8,7 @@ use \PDO;
 // Classe modèle
 class Livre {
     private int $id = 0;
+    // BD livres
     private string $isbn_papier = '';
     private string $isbn_pdf = '';
     private string $isbn_epub = '';
@@ -28,6 +29,15 @@ class Livre {
     private $type_impression_id = 0;
     private $type_couverture_id = 0;
 
+    // BD livres_auteurs
+    private int $auteur_id = 0;
+    private int $livre_id = 0;
+
+    // BD auteurs
+    private string $notice = '';
+    private string $site_web = '';
+    private string $prenom = '';
+    private string $nom = '';
 
     // Méthodes statiques
     public function __construct() {
@@ -37,6 +47,10 @@ class Livre {
 
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM livres LIMIT 1,3';
+        $chaineSQL = 'SELECT * FROM livres 
+        INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
+        INNER JOIN auteurs ON livres_auteurs.auteur_id = auteurs.id
+        ORDER BY auteurs.nom';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
@@ -65,7 +79,13 @@ class Livre {
         return $livre;
     }
     public function getId():int{
-        return $this->id;
+        return $this->livre_id;
+    }
+    public function getNom():string{
+        return $this->nom;
+    }
+    public function getPrenom():string{
+        return $this->prenom;
     }
     public function getISBNPapier():string{
         return $this->isbn_papier;
