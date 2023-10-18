@@ -1,10 +1,21 @@
 @extends('gabarit')
 
 @section('contenu')
-        <h3>Page index des participants</h3>
-        <ul>
+        <h1>Liste des livres</h1>
+        <div class="background">
+        <h2>Nouveauté</h2>
+        <div class="livres">
             @foreach($livres as $livre)
-                <li><a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">{{$livre->getId()}}. {{$livre->getTitre()}}</a></li>
+                <div class="livres__fiche">
+                <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
+                    <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">
+                </a>
+                    <p class="livres__auteurs"></p>
+                    <p class="livres__titre">{{$livre->getTitre()}}</p>
+                    <p class="livres__prix">{{$livre->getPrixCan()}}$</p>
+                </div>
             @endforeach
-        </ul>
+        </div>
+        </div>
+
 @endsection

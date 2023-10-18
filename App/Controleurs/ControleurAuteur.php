@@ -2,6 +2,7 @@
 namespace App\Controleurs;
 use App\Modeles\Auteur;
 use App\App;
+use App\Modeles\Livre;
 
 class ControleurAuteur {
     public function index():void {

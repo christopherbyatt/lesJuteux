@@ -1,4 +1,5 @@
-
+/*Accueil*/
+/*cette partie est aussi incluse dans la page index livres*/
 .livres {
   display: flex;
   margin: auto;
@@ -29,6 +30,7 @@
     padding-bottom: 5.6rem;
   }
 }
+/* fin de la partie aussi incluse dans index livre*/
 /*Actualités et Évenements*/
 .actualite{
   &__info {

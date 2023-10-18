@@ -11,7 +11,7 @@ class Auteur {
     private string $nom = '';
     private string $prenom = '';
     private string $notice = '';
-    private string $siteWeb = '';
+    private string $site_web = '';
 
     // Méthodes statiques
     public function __construct() {
@@ -19,7 +19,7 @@ class Auteur {
     }
     public static function trouverTout():array{
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM auteurs';
+        $chaineSQL = 'SELECT * FROM auteurs ORDER BY auteurs.nom ASC';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
@@ -61,6 +61,6 @@ class Auteur {
         return $this->notice;
     }
     public function getSiteWeb():string{
-        return $this->siteWeb;
+        return $this->site_web;
     }
 }

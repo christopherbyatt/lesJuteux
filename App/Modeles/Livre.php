@@ -36,7 +36,7 @@ class Livre {
     public static function trouverTout():array {
 
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM livres';
+        $chaineSQL = 'SELECT * FROM livres LIMIT 1,3';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
