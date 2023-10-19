@@ -46,11 +46,10 @@ class Livre {
     public static function trouverTout():array {
 
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM livres LIMIT 1,3';
         $chaineSQL = 'SELECT * FROM livres 
         INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
         INNER JOIN auteurs ON livres_auteurs.auteur_id = auteurs.id
-        ORDER BY auteurs.nom';
+        ORDER BY auteurs.nom LIMIT 4,3';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
@@ -61,6 +60,36 @@ class Livre {
         $livres = $requetePreparee->fetchAll();
 
         return $livres;
+    }
+    public static function trouverParNouveautes():array {
+        $chaineSQL = 'SELECT * FROM livres
+        INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
+        INNER JOIN auteurs ON livres_auteurs.auteur_id = auteurs.id
+        WHERE date_parution_quebec BETWEEN "2022-01-01" AND "2022-12-31"
+        ORDER BY auteurs.nom LIMIT 0,3';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        // Définir le mode de récupération
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
+        // Exécuter la requête
+        $requetePreparee->execute();
+        // Récupérer le résultat
+        $livresNouveautes = $requetePreparee->fetchAll();
+        return $livresNouveautes;
+    }
+    public static function trouverParVenir():array {
+        $chaineSQL = 'SELECT * FROM livres
+        INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
+        INNER JOIN auteurs ON livres_auteurs.auteur_id = auteurs.id
+        WHERE date_parution_quebec BETWEEN "2023-10-18" AND "2024-12-31"
+        ORDER BY auteurs.nom LIMIT 2,3';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        // Définir le mode de récupération
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
+        // Exécuter la requête
+        $requetePreparee->execute();
+        // Récupérer le résultat
+        $livresAVenir = $requetePreparee->fetchAll();
+        return $livresAVenir;
     }
     public static function trouverParId(int $unIdLivre):Livre {
         // Définir la chaine SQL
@@ -81,11 +110,14 @@ class Livre {
     public function getId():int{
         return $this->livre_id;
     }
-    public function getNom():string{
+    public function getNomAuteur():string{
         return $this->nom;
     }
-    public function getPrenom():string{
+    public function getPrenomAuteur():string{
         return $this->prenom;
+    }
+    public function getPrenomNomAuteur():string{
+        return $this->prenom." ".$this->nom;
     }
     public function getISBNPapier():string{
         return $this->isbn_papier;
