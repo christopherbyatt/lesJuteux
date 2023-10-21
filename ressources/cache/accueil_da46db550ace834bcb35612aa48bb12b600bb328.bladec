@@ -33,21 +33,21 @@
  <div class="livres">
  <div class="livres__fiche">
  <img src="*" alt="Louis parmi les spectres">
- <h3>Louis parmi les spectres</h3>
+ <p>Louis parmi les spectres</p>
  <p>Isabelle Arsenault</p>
  <p>Fanny Britt</p>
  <p class="livres__prix">34.95$</p>
  </div>
  <div class="livres__fiche">
  <img src="*" alt="Louis parmi les spectres">
- <h3>Louis parmi les spectres</h3>
+ <p>Louis parmi les spectres</p>
  <p>Isabelle Arsenault</p>
  <p>Fanny Britt</p>
  <p class="livres__prix">34.95$</p>
  </div>
  <div class="livres__fiche">
  <img src="*" alt="Louis parmi les spectres">
- <h3>Louis parmi les spectres</h3>
+ <p>Louis parmi les spectres</p>
  <p>Isabelle Arsenault</p>
  <p>Fanny Britt</p>
  <p class="livres__prix">34.95$</p>

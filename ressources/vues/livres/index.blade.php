@@ -9,7 +9,9 @@
                 <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
                     <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">
                 </a>
-                    <p class="livres__auteurs">{{$livre->getPrenomNomAuteur()}}</p>
+                    @foreach($livre->getAuteur() as $auteur)
+                    <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
+                    @endforeach
                     <p class="livres__titre">{{$livre->getTitre()}}</p>
                     <p class="livres__prix">{{$livre->getPrixCan()}}$</p>
                 </div>
@@ -20,9 +22,11 @@
             @foreach($livresNouveautes as $livreNouveaute)
                 <div class="livres__fiche">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreNouveaute->getId()}}">
-                        <img src="liaisons/images/livres/{{$livreNouveaute->getISBNPapier()}}_w300.jpg">
+                        <img class="livres__fiche-nouveaute" src="liaisons/images/livres/{{$livreNouveaute->getISBNPapier()}}_w300.jpg">
                     </a>
-                    <p class="livres__auteurs">{{$livreNouveaute->getPrenomNomAuteur()}}</p>
+                    @foreach($livre->getAuteur() as $auteur)
+                        <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
+                    @endforeach
                     <p class="livres__titre">{{$livreNouveaute->getTitre()}}</p>
                     <p class="livres__prix">{{$livreNouveaute->getPrixCan()}}$</p>
                 </div>
@@ -35,7 +39,9 @@
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreAVenir->getId()}}">
                         <img src="liaisons/images/livres/{{$livreAVenir->getISBNPapier()}}_w300.jpg">
                     </a>
-                    <p class="livres__auteurs">{{$livreAVenir->getPrenomNomAuteur()}}</p>
+                    @foreach($livre->getAuteur() as $auteur)
+                        <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
+                    @endforeach
                     <p class="livres__titre">{{$livreAVenir->getTitre()}}</p>
                     <p class="livres__prix">{{$livreAVenir->getPrixCan()}}$</p>
                 </div>
