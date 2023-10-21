@@ -28,6 +28,8 @@ class Livre {
     private string $categorie_id = '';
     private $type_impression_id = 0;
     private $type_couverture_id = 0;
+    private string $prenom =" ";
+    private string $nom = " ";
 
     // Méthodes statiques
     public function __construct() {
