@@ -1,7 +1,6 @@
 <?php
 namespace App\Controleurs;
 use App\App;
-use App\Modeles\Auteur;
 use App\Modeles\Livre;
 
 class ControleurLivre {
