@@ -29,16 +29,6 @@ class Livre {
     private $type_impression_id = 0;
     private $type_couverture_id = 0;
 
-    // BD livres_auteurs
-    private int $auteur_id = 0;
-    private int $livre_id = 0;
-
-    // BD auteurs
-    private string $notice = '';
-    private string $site_web = '';
-    private string $prenom = '';
-    private string $nom = '';
-
     // Méthodes statiques
     public function __construct() {
 
@@ -46,10 +36,7 @@ class Livre {
     public static function trouverTout():array {
 
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM livres 
-        INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
-        INNER JOIN auteurs ON livres_auteurs.auteur_id = auteurs.id
-        ORDER BY auteurs.nom LIMIT 4,3';
+        $chaineSQL = 'SELECT * FROM livres';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
@@ -63,10 +50,7 @@ class Livre {
     }
     public static function trouverParNouveautes():array {
         $chaineSQL = 'SELECT * FROM livres
-        INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
-        INNER JOIN auteurs ON livres_auteurs.auteur_id = auteurs.id
-        WHERE date_parution_quebec BETWEEN "2022-01-01" AND "2022-12-31"
-        ORDER BY auteurs.nom LIMIT 0,3';
+        WHERE date_parution_quebec BETWEEN "2022-01-01" AND "2022-12-31"';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
@@ -78,10 +62,7 @@ class Livre {
     }
     public static function trouverParVenir():array {
         $chaineSQL = 'SELECT * FROM livres
-        INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
-        INNER JOIN auteurs ON livres_auteurs.auteur_id = auteurs.id
-        WHERE date_parution_quebec BETWEEN "2023-10-18" AND "2024-12-31"
-        ORDER BY auteurs.nom LIMIT 2,3';
+        WHERE date_parution_quebec BETWEEN "2023-10-18" AND "2024-12-31"';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
@@ -93,7 +74,8 @@ class Livre {
     }
     public static function trouverParId(int $unIdLivre):Livre {
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM livres WHERE id=:idLivre';
+        $chaineSQL = 'SELECT * FROM livres 
+        WHERE livres.id=:idLivre';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // BindParam
@@ -108,7 +90,7 @@ class Livre {
         return $livre;
     }
     public function getId():int{
-        return $this->livre_id;
+        return $this->id;
     }
     public function getNomAuteur():string{
         return $this->nom;
@@ -167,4 +149,8 @@ class Livre {
     public function getTypeCouvertureId():int{
         return $this->type_couverture_id;
     }
+    public function getAuteur():array{
+        return Auteur::trouverParLivre($this->id);
+    }
+
 }

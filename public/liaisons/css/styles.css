@@ -409,18 +409,21 @@ a {
 /*cette partie est aussi incluse dans la page index livres*/
 .livres {
   display: flex;
+  flex-wrap: wrap;
   margin: auto;
   padding: 10px;
-  width: 1000px;
+  width: 1200px;
   justify-content: center;
 }
 .livres__fiche {
   margin-left: 20px;
   margin-right: 20px;
+  flex-basis: 30%;
 }
 .livres__auteurs {
   font-size: 1.4rem;
-  margin-bottom: -0.5rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 .livres__prix {
   font-weight: bold;
@@ -429,7 +432,7 @@ a {
 }
 .livres__titre {
   font-size: 2rem;
-  margin-top: 0.5rem;
+  margin-top: 0;
   margin-bottom: 0.5rem;
 }
 .livres__lien {
@@ -500,6 +503,25 @@ body {
 .footer__menu {
   background-color: #CBE3B9;
   height: 60px;
+}
+
+.auteurs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 10px;
+  width: 1000px;
+  justify-content: center;
+}
+.auteurs__fiche {
+  margin-left: 20px;
+  margin-right: 20px;
+  flex-basis: 30%;
+}
+.auteurs__nom {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: -0.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
