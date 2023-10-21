@@ -12,6 +12,7 @@
                     @foreach($livre->getAuteur() as $auteur)
                     <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
                     @endforeach
+                    <p class="livres__auteurs">{{$livre->getPrenomNomAuteur()}}</p>
                     <p class="livres__titre">{{$livre->getTitre()}}</p>
                     <p class="livres__prix">{{$livre->getPrixCan()}}$</p>
                 </div>
