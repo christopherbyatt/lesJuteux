@@ -1,6 +1,7 @@
 @extends('gabarit')
 
 @section('contenu')
+    <p class="filAriane">La Pastèque > Livres</p>
         <h1>Liste des livres</h1>
         <h2>Tous nos livres</h2>
         <div class="livres">

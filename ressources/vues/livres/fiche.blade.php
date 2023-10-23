@@ -1,6 +1,7 @@
 @extends('gabarit')
 
 @section('contenu')
+    <p class="filAriane">La Pastèque > Livres > {{$livre->getTitre()}}</p>
 <h1>Fiche du livre</h1>
 <ul>
     <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
