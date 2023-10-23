@@ -535,4 +535,15 @@ p.filAriane {
   margin-left: 75px;
 }
 
+ul.elements_fiche {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+div.elements_droite {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
 /*# sourceMappingURL=styles.css.map */

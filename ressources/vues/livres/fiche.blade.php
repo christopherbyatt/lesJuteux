@@ -2,9 +2,12 @@
 
 @section('contenu')
     <p class="filAriane">La Pastèque > Livres > {{$livre->getTitre()}}</p>
-<h1>Fiche du livre</h1>
-<ul>
-    <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
+<h1>{{$livre->getTitre()}}</h1>
+<ul class="elements_fiche">
+    <div class="image_gauche">
+        <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
+    </div>
+    <div class="elements_droite">
     <li>Id: {{$livre->getId()}}</li>
     @foreach($livre->getAuteur() as $auteur)
         <p>Auteurs : <a href="index.php?controleur=auteur&action=fiche&idAuteur={{$auteur->getAuteurId()}}">{{$auteur->getPrenomNom()}}</a></p>
@@ -25,5 +28,6 @@
     <li>Id Categorie: {{$livre->getCategorieId()}}</li>
     <li>Id type d'impression: {{$livre->getTypeImpressionId()}}</li>
     <li>Id type couverture: {{$livre->getTypeCouvertureId()}}</li>
+    </div>
 </ul>
 @endsection
