@@ -524,4 +524,11 @@ body {
   margin-top: -0.5rem;
 }
 
+div.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
 /*# sourceMappingURL=styles.css.map */

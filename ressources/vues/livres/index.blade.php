@@ -53,6 +53,7 @@
         @endif
 
 <!-- Si on est pas sur la première page et s'il y a plus d'une page -->
+        <div class="pagination">
 @if ($numeroPage > 0)
     <a href= "{{ $urlPagination . "&page=" . 0  }}">Premier</a>
 @else
@@ -88,4 +89,5 @@
 @else
     <span style="color:#999">Dernier</span><!-- Bouton dernier inactif -->
     @endif
+        </div>
     @endsection
