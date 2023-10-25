@@ -27,7 +27,9 @@ class ControleurLivre {
     public function fiche():void{
         $id = (int) $_GET['idLivre'];
         $livre = Livre::trouverParId($id);
-        $tDonnees = array("message" => "Je suis la page Fiche auteurs...", "livre" => $livre);
+        $categorie = $livre->getCategorieAssociee();
+        $couverture = $livre->getTypeCouvertureAssociee();
+        $tDonnees = array("message" => "Je suis la page Fiche auteurs...", "livre" => $livre, "categorie" => $categorie, "type_couverture" => $couverture);
         echo App::getBlade()->run("livres.fiche", $tDonnees);
     }
 }
