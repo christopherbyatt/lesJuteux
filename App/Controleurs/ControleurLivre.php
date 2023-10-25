@@ -1,6 +1,7 @@
 <?php
 namespace App\Controleurs;
 use App\App;
+use App\Modeles\Auteur;
 use App\Modeles\Livre;
 
 class ControleurLivre {
@@ -27,6 +28,10 @@ class ControleurLivre {
     public function fiche():void{
         $id = (int) $_GET['idLivre'];
         $livre = Livre::trouverParId($id);
+<<<<<<< HEAD
+=======
+//        $auteur = Auteur::trouverParId();
+>>>>>>> Clodiane
         $tDonnees = array("message" => "Je suis la page Fiche auteurs...", "livre" => $livre);
         echo App::getBlade()->run("livres.fiche", $tDonnees);
     }

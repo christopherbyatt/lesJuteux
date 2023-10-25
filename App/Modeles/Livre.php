@@ -7,20 +7,15 @@ use \PDO;
 
 // Classe modèle
 class Livre {
-    private int $id = 0;
     // BD livres
+    private int $id = 0;
     private string $isbn_papier = '';
-    private string $isbn_pdf = '';
-    private string $isbn_epub = '';
-    private $url_audio = '';
     private string $titre = '';
     private string $le_livre = '';
     private string $arguments_commerciaux = '';
     private string $statut = '';
     private string $pagination = '';
-    private string $age_min = '';
     private string $format = '';
-    private string $tirage = '';
     private string $prix_can = '';
     private string $prix_euro = '';
     private string $date_parution_quebec = '';
@@ -28,8 +23,14 @@ class Livre {
     private string $categorie_id = '';
     private $type_impression_id = 0;
     private $type_couverture_id = 0;
+<<<<<<< HEAD
     private string $prenom =" ";
     private string $nom = " ";
+=======
+
+    // BD livres_auteurs
+    private int $auteur_id = 0;
+>>>>>>> Clodiane
 
     // Méthodes statiques
     public function __construct() {
@@ -46,7 +47,12 @@ class Livre {
     public static function trouverTout():array {
 
         // Définir la chaine SQL
+<<<<<<< HEAD
         $chaineSQL = 'SELECT * FROM livres';
+=======
+        $chaineSQL = 'SELECT livres.id, livres.isbn_papier, livres.titre, livres.le_livre, livres.arguments_commerciaux, livres.statut, livres.pagination, livres.format, livres.prix_can, livres.prix_euro, livres.date_parution_quebec, livres.date_parution_france, livres.categorie_id, livres.type_impression_id, livres.type_couverture_id, livres_auteurs.auteur_id FROM livres 
+        INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id';
+>>>>>>> Clodiane
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
@@ -59,8 +65,15 @@ class Livre {
         return $livres;
     }
     public static function trouverParNouveautes():array {
+<<<<<<< HEAD
         $chaineSQL = 'SELECT * FROM livres
         WHERE date_parution_quebec BETWEEN "2022-01-01" AND "2022-12-31"';
+=======
+        $chaineSQL = 'SELECT livres.id, livres.isbn_papier, livres.titre, livres.le_livre, livres.arguments_commerciaux, livres.statut, livres.pagination, livres.format, livres.prix_can, livres.prix_euro, livres.date_parution_quebec, livres.date_parution_france, livres.categorie_id, livres.type_impression_id, livres.type_couverture_id, livres_auteurs.auteur_id FROM livres 
+        INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
+        WHERE date_parution_quebec BETWEEN "2022-01-01" AND "2022-12-31"
+        LIMIT 0,3';
+>>>>>>> Clodiane
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
@@ -71,8 +84,15 @@ class Livre {
         return $livresNouveautes;
     }
     public static function trouverParVenir():array {
+<<<<<<< HEAD
         $chaineSQL = 'SELECT * FROM livres
         WHERE date_parution_quebec BETWEEN "2023-10-18" AND "2024-12-31"';
+=======
+        $chaineSQL = 'SELECT livres.id, livres.isbn_papier, livres.titre, livres.le_livre, livres.arguments_commerciaux, livres.statut, livres.pagination, livres.format, livres.prix_can, livres.prix_euro, livres.date_parution_quebec, livres.date_parution_france, livres.categorie_id, livres.type_impression_id, livres.type_couverture_id, livres_auteurs.auteur_id FROM livres 
+        INNER JOIN livres_auteurs ON livres.id = livres_auteurs.livre_id
+        WHERE date_parution_quebec BETWEEN "2023-10-18" AND "2024-12-31"
+        LIMIT 2,3';
+>>>>>>> Clodiane
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
@@ -122,14 +142,8 @@ class Livre {
     public function getId():int{
         return $this->id;
     }
-    public function getNomAuteur():string{
-        return $this->nom;
-    }
-    public function getPrenomAuteur():string{
-        return $this->prenom;
-    }
-    public function getPrenomNomAuteur():string{
-        return $this->prenom." ".$this->nom;
+    public function getAuteurId(){
+        return $this->auteur_id;
     }
     public function getISBNPapier():string{
         return $this->isbn_papier;
@@ -149,14 +163,8 @@ class Livre {
     public function getPagination():string{
         return $this->pagination;
     }
-    public function getAgeMin():string{
-        return $this->age_min;
-    }
     public function getFormat():string{
         return $this->format;
-    }
-    public function getTirage():string{
-        return $this->tirage;
     }
     public function getPrixCan():string{
         return $this->prix_can;

@@ -112,6 +112,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
   color: white;
+  font-family: Arial, sans-serif;
 }
 h1,
 .titreNiveau1,
@@ -157,12 +158,44 @@ h2,
   text-transform: uppercase;
   text-align: center;
   color: #CBE3B9;
-  padding-top: 2.6rem;
+  display: inline-block;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 100;
+}
+h2.pale,
+.titreNiveau2.pale {
+  background-color: #484141;
+}
+h2.fonce,
+.titreNiveau2.fonce {
+  background-color: #3C3737;
 }
 h2--desktop,
 .titreNiveau2--desktop {
   font-size: 28px;
   font-size: 2.8rem;
+}
+
+.ligne-h2 {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.ligne-h2:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background-color: #CBE3B9;
 }
 
 h3,
@@ -278,28 +311,40 @@ a {
   background-position: -315px 0;
 }
 
+#icon_panier {
+  background-position: -540px 0;
+}
+
 .nav__barreRecherche {
   margin: 0;
 }
 
 .icon {
   background-image: url("../images/deco/sprite.png");
+  background-repeat: no-repeat;
+  background-color: #FDD5CE;
   width: 45px;
   height: 45px;
   display: inline-block;
 }
+.icon:hover, .icon:active {
+  outline: #484141 solid 2px;
+  border-radius: 1vh;
+}
 
 .nav {
   background-color: #FDD5CE;
+  background-size: 12%;
   height: 130px;
 }
 .nav__ctn {
   height: 20rem;
 }
 .nav__largeur {
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   display: flex;
+  width: 90%;
   max-width: 1000px;
   margin: auto;
   padding-top: 3rem;
@@ -310,26 +355,37 @@ a {
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 .nav__recherche {
   text-align: center;
-  width: 33%;
+  width: 41%;
 }
 .nav__barre {
-  width: 305px;
+  width: 90%;
   height: 35px;
 }
 .nav__titre {
   font-family: "watermelon";
-  font-size: 5.8rem;
-  text-decoration: none;
   text-align: center;
   width: 33%;
-  color: #484141;
+  display: inline-block;
+  height: 8rem;
+  color: transparent;
+  background-color: #FDD5CE;
+  background-image: url("../images/deco/titre.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+}
+.nav__titre:hover, .nav__titre:active {
+  outline: #484141 solid 2px;
+  border-radius: 3vh;
 }
 .nav__icon {
-  width: 33%;
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
 }
 .nav__lien {
   color: #484141;
@@ -356,9 +412,18 @@ a {
   justify-content: space-evenly;
   align-items: center;
   display: flex;
+  width: 90%;
   max-width: 1000px;
   margin: auto;
   padding-top: 2.5rem;
+}
+.footer__item {
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer__item:hover, .footer__item:active {
+  text-decoration: underline;
 }
 .footer__liste {
   display: flex;
@@ -366,11 +431,11 @@ a {
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 .footer__recherche {
   text-align: center;
-  width: 33%;
+  width: 41%;
 }
 .footer__barre {
   width: 305px;
@@ -378,14 +443,27 @@ a {
 }
 .footer__titre {
   font-family: "watermelon";
-  font-size: 5.8rem;
-  text-decoration: none;
   text-align: center;
   width: 33%;
-  color: #484141;
+  display: inline-block;
+  height: 8rem;
+  color: transparent;
+  background-color: #FDD5CE;
+  background-image: url("../images/deco/titre.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+}
+.footer__titre:hover, .footer__titre:active {
+  outline: #484141 solid 2px;
+  border-radius: 3vh;
 }
 .footer__icon {
-  width: 33%;
+  width: 25%;
+}
+.footer__icon:hover, .footer__icon:active {
+  outline: #484141 solid 2px;
+  border-radius: 3vh;
 }
 .footer__lien {
   color: #484141;
@@ -412,13 +490,26 @@ a {
   flex-wrap: wrap;
   margin: auto;
   padding: 10px;
+<<<<<<< HEAD
   width: 1200px;
+=======
+  width: 90%;
+  max-width: 1000px;
+>>>>>>> Clodiane
   justify-content: center;
 }
 .livres__fiche {
   margin-left: 20px;
   margin-right: 20px;
+<<<<<<< HEAD
   flex-basis: 30%;
+=======
+  width: 30%;
+  flex-basis: 30%;
+}
+.livres__fiche__img {
+  width: 100%;
+>>>>>>> Clodiane
 }
 .livres__auteurs {
   font-size: 1.4rem;
@@ -448,6 +539,7 @@ a {
   padding-top: 4rem;
 }
 .actualite__largeur {
+  width: 90%;
   max-width: 1000px;
   margin: auto;
 }
@@ -467,6 +559,7 @@ a {
   padding-bottom: 4rem;
 }
 .evenement__largeur {
+  width: 90%;
   max-width: 1000px;
   margin: auto;
 }
@@ -488,8 +581,17 @@ body {
 }
 
 .nav__largeur-menu {
+  width: 90%;
   max-width: 1000px;
   margin: auto;
+}
+.nav__lien {
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav__lien:hover, .nav__lien:active {
+  text-decoration: underline;
 }
 .nav__menu {
   background-color: #CBE3B9;
@@ -497,6 +599,7 @@ body {
 }
 
 .footer__largeur-menu {
+  width: 90%;
   max-width: 1000px;
   margin: auto;
 }
