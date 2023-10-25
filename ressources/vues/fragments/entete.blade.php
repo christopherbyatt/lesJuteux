@@ -11,7 +11,6 @@
                 <a href=""><span id="icon_position" class="icon"></span></a>
                 <a href=""><span id="icon_favoris" class="icon"></span></a>
                 <a href=""><span id="icon_compte" class="icon"></span></a>
-                <a href=""><span id="icon_panier" class="icon"></span></a>
             </div>
         </div>
     </div>
