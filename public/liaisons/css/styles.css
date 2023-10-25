@@ -284,22 +284,31 @@ a {
 
 .icon {
   background-image: url("../images/deco/sprite.png");
+  background-repeat: no-repeat;
+  background-color: #FDD5CE;
   width: 45px;
   height: 45px;
   display: inline-block;
 }
+.icon:hover, .icon:active {
+  outline: #484141 solid 2px;
+  border-radius: 3vh;
+}
 
 .nav {
   background-color: #FDD5CE;
+  background-repeat: repeat;
+  background-size: 12%;
   height: 130px;
 }
 .nav__ctn {
   height: 20rem;
 }
 .nav__largeur {
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   display: flex;
+  width: 90%;
   max-width: 1000px;
   margin: auto;
   padding-top: 3rem;
@@ -310,26 +319,37 @@ a {
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 .nav__recherche {
   text-align: center;
-  width: 33%;
+  width: 41%;
 }
 .nav__barre {
-  width: 305px;
+  width: 90%;
   height: 35px;
 }
 .nav__titre {
   font-family: "watermelon";
-  font-size: 5.8rem;
-  text-decoration: none;
   text-align: center;
   width: 33%;
-  color: #484141;
+  display: inline-block;
+  height: 8rem;
+  color: transparent;
+  background-color: #FDD5CE;
+  background-image: url("../images/deco/titre.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+}
+.nav__titre:hover, .nav__titre:active {
+  outline: #484141 solid 2px;
+  border-radius: 3vh;
 }
 .nav__icon {
-  width: 33%;
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
 }
 .nav__lien {
   color: #484141;
@@ -356,9 +376,18 @@ a {
   justify-content: space-evenly;
   align-items: center;
   display: flex;
+  width: 90%;
   max-width: 1000px;
   margin: auto;
   padding-top: 2.5rem;
+}
+.footer__item {
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer__item:hover, .footer__item:active {
+  text-decoration: underline;
 }
 .footer__liste {
   display: flex;
@@ -366,11 +395,11 @@ a {
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding-top: 2rem;
+  padding: 2rem 0;
 }
 .footer__recherche {
   text-align: center;
-  width: 33%;
+  width: 41%;
 }
 .footer__barre {
   width: 305px;
@@ -378,14 +407,27 @@ a {
 }
 .footer__titre {
   font-family: "watermelon";
-  font-size: 5.8rem;
-  text-decoration: none;
   text-align: center;
   width: 33%;
-  color: #484141;
+  display: inline-block;
+  height: 8rem;
+  color: transparent;
+  background-color: #FDD5CE;
+  background-image: url("../images/deco/titre.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+}
+.footer__titre:hover, .footer__titre:active {
+  outline: #484141 solid 2px;
+  border-radius: 3vh;
 }
 .footer__icon {
-  width: 33%;
+  width: 25%;
+}
+.footer__icon:hover, .footer__icon:active {
+  outline: #484141 solid 2px;
+  border-radius: 3vh;
 }
 .footer__lien {
   color: #484141;
@@ -485,8 +527,17 @@ body {
 }
 
 .nav__largeur-menu {
+  width: 90%;
   max-width: 1000px;
   margin: auto;
+}
+.nav__lien {
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav__lien:hover, .nav__lien:active {
+  text-decoration: underline;
 }
 .nav__menu {
   background-color: #CBE3B9;
@@ -494,6 +545,7 @@ body {
 }
 
 .footer__largeur-menu {
+  width: 90%;
   max-width: 1000px;
   margin: auto;
 }

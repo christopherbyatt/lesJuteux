@@ -7,6 +7,7 @@
     <li>Id: {{$livre->getId()}}</li>
     <li>ISBN papier: {{$livre->getISBNPapier()}}</li>
     <li>Titre: {{$livre->getTitre()}}</li>
+    <li>Nom: {{$livre->getNomAuteur()}}</li>
     <li>Le livre: {!! $livre->getLeLivre() !!}</li>
     <li>Arguments: {!! $livre->getArguments() !!}</li>
     <li>Statut: {{$livre->getStatut()}}</li>
