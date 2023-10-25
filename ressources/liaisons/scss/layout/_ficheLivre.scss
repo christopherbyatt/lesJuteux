@@ -17,12 +17,12 @@ div.format__livre {
   display: flex;
 
   div.format__papier {
-    padding-right: 20px;
+    padding: 20px;
     font-size: 25px;
   }
 
   div.format__pdf {
-    padding-left: 20px;
+    padding: 20px;
     font-size: 25px;
   }
 }
@@ -31,14 +31,8 @@ div.quantite {
   display: flex;
 
   p {
+    padding: 20px;
     font-size: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  p.chiffre {
-    padding-left: 20px;
-    padding-right: 20px;
   }
 }
 

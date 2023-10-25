@@ -3,9 +3,7 @@
 @section('contenu')
     <p class="filAriane">La Pastèque > Livres</p>
         <h1>Liste des livres</h1>
-        <div class="ligne-h2">
-            <h2 class="pale">Tous nos livres</h2>
-        </div>
+        <h2>Tous nos livres</h2>
         <div class="livres">
             @foreach($livres as $livre)
                 <div class="livres__fiche">
@@ -27,9 +25,7 @@
             @endforeach
         </div>
         @if($numeroPage < 1)
-            <div class="ligne-h2">
-                <h2 class="pale">Nouveautés</h2>
-            </div>
+        <h2>Nouveautés</h2>
         <div class="livres">
             @foreach($livresNouveautes as $livreNouveaute)
                 <div class="livres__fiche">
@@ -44,9 +40,7 @@
                 </div>
             @endforeach
         </div>
-            <div class="ligne-h2">
-                <h2 class="pale">À venir</h2>
-            </div>
+        <h2>À venir</h2>
             <div class="livres">
             @foreach($livresAVenirs as $livreAVenir)
                 <div class="livres__fiche">
