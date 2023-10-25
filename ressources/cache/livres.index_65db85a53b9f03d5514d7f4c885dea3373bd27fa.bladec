@@ -3,7 +3,9 @@
 <?php $this->startSection('contenu'); ?>
  <p class="filAriane">La Pastèque > Livres</p>
  <h1>Liste des livres</h1>
- <h2>Tous nos livres</h2>
+ <div class="ligne-h2">
+ <h2 class="pale">Tous nos livres</h2>
+ </div>
  <div class="livres">
  <?php $__currentLoopData = $livres; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $livre): $loop = $this->incrementLoopIndices();  ?>
@@ -27,7 +29,9 @@
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </div>
  <?php if($numeroPage < 1): ?>
- <h2>Nouveautés</h2>
+ <div class="ligne-h2">
+ <h2 class="pale">Nouveautés</h2>
+ </div>
  <div class="livres">
  <?php $__currentLoopData = $livresNouveautes; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $livreNouveaute): $loop = $this->incrementLoopIndices();  ?>
@@ -44,7 +48,9 @@
  </div>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </div>
- <h2>À venir</h2>
+ <div class="ligne-h2">
+ <h2 class="pale">À venir</h2>
+ </div>
  <div class="livres">
  <?php $__currentLoopData = $livresAVenirs; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $livreAVenir): $loop = $this->incrementLoopIndices();  ?>

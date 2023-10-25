@@ -656,11 +656,11 @@ div.format__livre {
   display: flex;
 }
 div.format__livre div.format__papier {
-  padding: 20px;
+  padding-right: 20px;
   font-size: 25px;
 }
 div.format__livre div.format__pdf {
-  padding: 20px;
+  padding-left: 20px;
   font-size: 25px;
 }
 
@@ -668,8 +668,13 @@ div.quantite {
   display: flex;
 }
 div.quantite p {
-  padding: 20px;
   font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+div.quantite p.chiffre {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 button.btnAjouter {
