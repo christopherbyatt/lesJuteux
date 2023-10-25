@@ -1,7 +1,7 @@
 <nav class="footer__ctn"></nav>
 <div class="footer">
     <div class="footer__largeur">
-        <a href="index.php" class="footer__titre">La Pastèque</a>
+<a href="index.php" class="footer__titre">LA PASTEQUE</a>
         <div class="footer__recherche">
             <form class="nav__barreRecherche" action="">
                 <input type="text" name="recherche" class="footer__barre">

@@ -15,19 +15,9 @@
     justify-content: space-evenly;
     align-items: center;
     display: flex;
-    width: 90%;
     max-width: 1000px;
     margin: auto;
     padding-top: 2.5rem;
-  }
-  &__item{
-    font-family: "Caviar Dreams";
-    font-weight: bold;
-    text-decoration: none;
-    &:hover,
-    &:active{
-      text-decoration: underline;
-    }
   }
   &__liste{
     display: flex;
@@ -35,11 +25,11 @@
     justify-content: space-between;
     list-style-type: none;
     margin: 0;
-    padding: 2rem 0;
+    padding-top: 2rem;
   }
   &__recherche{
     text-align: center;
-    width: 41%;
+    width: 33%;
   }
   &__barre {
     width: 305px;
@@ -47,29 +37,14 @@
   }
   &__titre {
     font-family: "watermelon";
+    font-size: 5.8rem;
+    text-decoration: none;
     text-align: center;
     width: 33%;
-    display: inline-block;
-    height: 8rem;
-    color: transparent;
-    background-color: $rose;
-    background-image: url("../images/deco/titre.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90%;
-    &:hover,
-    &:active {
-      outline: $background1 solid 2px;
-      border-radius: 3vh;
-    }
+    color: $lienNav;
   }
   &__icon{
-    width: 25%;
-    &:hover,
-    &:active {
-      outline: $background1 solid 2px;
-      border-radius: 3vh;
-    }
+    width: 33%;
   }
   &__lien{
     color: $lienNav;

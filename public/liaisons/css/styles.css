@@ -284,31 +284,22 @@ a {
 
 .icon {
   background-image: url("../images/deco/sprite.png");
-  background-repeat: no-repeat;
-  background-color: #FDD5CE;
   width: 45px;
   height: 45px;
   display: inline-block;
 }
-.icon:hover, .icon:active {
-  outline: #484141 solid 2px;
-  border-radius: 3vh;
-}
 
 .nav {
   background-color: #FDD5CE;
-  background-repeat: repeat;
-  background-size: 12%;
   height: 130px;
 }
 .nav__ctn {
   height: 20rem;
 }
 .nav__largeur {
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   display: flex;
-  width: 90%;
   max-width: 1000px;
   margin: auto;
   padding-top: 3rem;
@@ -319,37 +310,26 @@ a {
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding: 2rem 0;
+  padding-top: 2rem;
 }
 .nav__recherche {
   text-align: center;
-  width: 41%;
+  width: 33%;
 }
 .nav__barre {
-  width: 90%;
+  width: 305px;
   height: 35px;
 }
 .nav__titre {
   font-family: "watermelon";
+  font-size: 5.8rem;
+  text-decoration: none;
   text-align: center;
   width: 33%;
-  display: inline-block;
-  height: 8rem;
-  color: transparent;
-  background-color: #FDD5CE;
-  background-image: url("../images/deco/titre.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 90%;
-}
-.nav__titre:hover, .nav__titre:active {
-  outline: #484141 solid 2px;
-  border-radius: 3vh;
+  color: #484141;
 }
 .nav__icon {
-  width: 25%;
-  display: flex;
-  justify-content: space-between;
+  width: 33%;
 }
 .nav__lien {
   color: #484141;
@@ -376,18 +356,9 @@ a {
   justify-content: space-evenly;
   align-items: center;
   display: flex;
-  width: 90%;
   max-width: 1000px;
   margin: auto;
   padding-top: 2.5rem;
-}
-.footer__item {
-  font-family: "Caviar Dreams";
-  font-weight: bold;
-  text-decoration: none;
-}
-.footer__item:hover, .footer__item:active {
-  text-decoration: underline;
 }
 .footer__liste {
   display: flex;
@@ -395,11 +366,11 @@ a {
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding: 2rem 0;
+  padding-top: 2rem;
 }
 .footer__recherche {
   text-align: center;
-  width: 41%;
+  width: 33%;
 }
 .footer__barre {
   width: 305px;
@@ -407,27 +378,14 @@ a {
 }
 .footer__titre {
   font-family: "watermelon";
+  font-size: 5.8rem;
+  text-decoration: none;
   text-align: center;
   width: 33%;
-  display: inline-block;
-  height: 8rem;
-  color: transparent;
-  background-color: #FDD5CE;
-  background-image: url("../images/deco/titre.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 90%;
-}
-.footer__titre:hover, .footer__titre:active {
-  outline: #484141 solid 2px;
-  border-radius: 3vh;
+  color: #484141;
 }
 .footer__icon {
-  width: 25%;
-}
-.footer__icon:hover, .footer__icon:active {
-  outline: #484141 solid 2px;
-  border-radius: 3vh;
+  width: 33%;
 }
 .footer__lien {
   color: #484141;
@@ -454,12 +412,13 @@ a {
   flex-wrap: wrap;
   margin: auto;
   padding: 10px;
-  width: 1000px;
+  width: 1200px;
   justify-content: center;
 }
 .livres__fiche {
   margin-left: 20px;
   margin-right: 20px;
+  flex-basis: 30%;
 }
 .livres__auteurs {
   font-size: 1.4rem;
@@ -529,17 +488,8 @@ body {
 }
 
 .nav__largeur-menu {
-  width: 90%;
   max-width: 1000px;
   margin: auto;
-}
-.nav__lien {
-  font-family: "Caviar Dreams";
-  font-weight: bold;
-  text-decoration: none;
-}
-.nav__lien:hover, .nav__lien:active {
-  text-decoration: underline;
 }
 .nav__menu {
   background-color: #CBE3B9;
@@ -547,7 +497,6 @@ body {
 }
 
 .footer__largeur-menu {
-  width: 90%;
   max-width: 1000px;
   margin: auto;
 }
@@ -604,11 +553,11 @@ div.format__livre {
   display: flex;
 }
 div.format__livre div.format__papier {
-  padding: 20px;
+  padding-right: 20px;
   font-size: 25px;
 }
 div.format__livre div.format__pdf {
-  padding: 20px;
+  padding-left: 20px;
   font-size: 25px;
 }
 
@@ -616,8 +565,13 @@ div.quantite {
   display: flex;
 }
 div.quantite p {
-  padding: 20px;
   font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+div.quantite p.chiffre {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 button.btnAjouter {

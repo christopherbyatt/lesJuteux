@@ -9,15 +9,20 @@ use \PDO;
 
 // Classe modèle
 class Livre {
-    // BD livres
     private int $id = 0;
+    // BD livres
     private string $isbn_papier = '';
+    private string $isbn_pdf = '';
+    private string $isbn_epub = '';
+    private $url_audio = '';
     private string $titre = '';
     private string $le_livre = '';
     private string $arguments_commerciaux = '';
     private string $statut = '';
     private string $pagination = '';
+    private string $age_min = '';
     private string $format = '';
+    private string $tirage = '';
     private string $prix_can = '';
     private string $prix_euro = '';
     private string $date_parution_quebec = '';
@@ -119,8 +124,14 @@ class Livre {
     public function getId():int{
         return $this->id;
     }
-    public function getAuteurId(){
-        return $this->auteur_id;
+    public function getNomAuteur():string{
+        return $this->nom;
+    }
+    public function getPrenomAuteur():string{
+        return $this->prenom;
+    }
+    public function getPrenomNomAuteur():string{
+        return $this->prenom." ".$this->nom;
     }
     public function getISBNPapier():string{
         return $this->isbn_papier;
@@ -140,8 +151,14 @@ class Livre {
     public function getPagination():string{
         return $this->pagination;
     }
+    public function getAgeMin():string{
+        return $this->age_min;
+    }
     public function getFormat():string{
         return $this->format;
+    }
+    public function getTirage():string{
+        return $this->tirage;
     }
     public function getPrixCan():string{
         return $this->prix_can;
