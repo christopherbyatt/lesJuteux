@@ -1,6 +1,7 @@
 <?php
 namespace App\Controleurs;
 use App\App;
+use App\Modeles\Auteur;
 use App\Modeles\Livre;
 
 class ControleurLivre {
@@ -27,9 +28,17 @@ class ControleurLivre {
     public function fiche():void{
         $id = (int) $_GET['idLivre'];
         $livre = Livre::trouverParId($id);
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//        $auteur = Auteur::trouverParId();
+>>>>>>> Clodiane
+        $tDonnees = array("message" => "Je suis la page Fiche auteurs...", "livre" => $livre);
+=======
         $categorie = $livre->getCategorieAssociee();
         $couverture = $livre->getTypeCouvertureAssociee();
         $tDonnees = array("message" => "Je suis la page Fiche auteurs...", "livre" => $livre, "categorie" => $categorie, "type_couverture" => $couverture);
+>>>>>>> d2cdc3fbbe08e44f51d5598c0d313024b3db2fc3
         echo App::getBlade()->run("livres.fiche", $tDonnees);
     }
 }
