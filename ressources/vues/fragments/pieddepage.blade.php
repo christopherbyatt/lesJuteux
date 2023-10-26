@@ -1,7 +1,7 @@
 <nav class="footer__ctn"></nav>
 <div class="footer">
     <div class="footer__largeur">
-        <a href="index.php" class="footer__titre">La Pastèque</a>
+        <a href="index.php?controleur=site&action=accueil" class="footer__titre">La Pastèque</a>
         <div class="footer__recherche">
             <form class="nav__barreRecherche" action="">
                 <input type="text" name="recherche" class="footer__barre">
@@ -54,7 +54,7 @@
             <p class="footer__texte"><h4>Heures d’ouverture de la galerie-boutique</h4>Lundi : fermé<br>Mardi : fermé<br>Mercredi: 10h à 17h<br>Jeudi : 10h à 17h<br>Vendredi  : 10h à 17h<br>Samedi  : 10h à 17h<br>Dimanche  : fermé</p>
         </div>
         <div class="footer__info-3">
-            <p class="footer__texte"><h4>Nous joindre</h4><a class="footer__lien-mail" href="">info@lapasteque.com</a><br><br><h4>Fondateurs et comité de rédaction:</h4>Martin Brault<br><a class="footer__lien-mail"href="">brault@lapasteque.com</a><br>(514)502-0836<br><br>Frédéric Gauthier<br><a class="footer__lien-mail">fred@lapasteque.com</a><br>(514)627-1585</p>
+            <p class="footer__texte"><h4>Nous joindre</h4><a class="footer__lien-mail" href="">info@lapasteque.com</a><br><br><h4>Fondateurs et comité de rédaction:</h4>Martin Brault<br><a class="footer__lien-mail"href="">brault@lapasteque.com</a><br>(514)502-0836<br><br>Frédéric Gauthier<br><a class="footer__lien-mail" href="">fred@lapasteque.com</a><br>(514)627-1585</p>
         </div>
     </div>
 
