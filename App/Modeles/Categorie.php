@@ -77,7 +77,7 @@ class Categorie
 
         $categorieId = $requetePreparee->fetchAll();
         return $categorieId;
-    }
+
 
         $categorie = $requetePreparee->fetch();
 
@@ -91,4 +91,5 @@ class Categorie
     public function getNom():string{
         return $this->nom;
     }
+
 }
