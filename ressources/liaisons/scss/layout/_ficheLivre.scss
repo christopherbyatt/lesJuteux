@@ -1,0 +1,53 @@
+ul.elements_fiche {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+div.elements_droite {
+  padding-right: 40px;
+  padding-left: 40px;
+
+  li.prixCAN__livre {
+    font-size: 50px;
+  }
+}
+
+div.format__livre {
+  display: flex;
+
+  div.format__papier {
+    padding-right: 20px;
+    font-size: 25px;
+  }
+
+  div.format__pdf {
+    padding-left: 20px;
+    font-size: 25px;
+  }
+}
+
+div.quantite {
+  display: flex;
+
+  p {
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  p.chiffre {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+button.btnAjouter {
+  font-size: 25px;
+  background-color: #FDD5CE;
+  color: #3C3737;
+  width: 285px;
+  height: 70px;
+  border-radius: 10px;
+  border: 1px #FDD5CE;
+}

@@ -2,10 +2,15 @@
 
 @section('contenu')
     {{--  À modifier pour faire la page index des auteurs  --}}
-    <h3>Page index des auteurs</h3>
-    <ul>
+    <h1>Liste des auteurs</h1>
+    <div class="auteurs">
         @foreach($auteurs as $auteur)
-            <li><a href="index.php?controleur=auteur&action=fiche&idAuteur={{$auteur->getId()}}">{{$auteur->getPrenom()}} {{$auteur->getNom()}}</a></li>
+            <div class="auteurs__fiche">
+            <a href="index.php?controleur=auteur&action=fiche&idAuteur={{$auteur->getId()}}">
+                <img src="liaisons/images/auteurs/{{$auteur->getId()}}_w325.jpg">
+            </a>
+                <p class="auteurs__nom">{{$auteur->getPrenomNom()}}</p>
+            </div>
         @endforeach
-    </ul>
+    </div>
 @endsection
