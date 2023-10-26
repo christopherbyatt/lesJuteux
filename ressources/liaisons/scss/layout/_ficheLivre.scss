@@ -29,11 +29,32 @@ div.format__livre {
 
 div.quantite {
   display: flex;
+  height: 50px !important;
+
+  input#chiffre {
+    width: 75px;
+    font-size: 30px;
+    text-align: center;
+    padding-left: 15px;
+  }
 
   p {
-    font-size: 50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 25px;
+    margin: 10px;
+  }
+
+  p.moins {
+    background-image: url("../images/moins.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+  }
+
+  p.plus {
+    background-image: url("../images/plus.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
   }
 
   p.chiffre {
@@ -50,4 +71,5 @@ button.btnAjouter {
   height: 70px;
   border-radius: 10px;
   border: 1px #FDD5CE;
+  margin-top: 30px;
 }

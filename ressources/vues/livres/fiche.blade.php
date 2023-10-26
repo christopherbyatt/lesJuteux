@@ -40,9 +40,11 @@
             </div>
 
             <div class="quantite">
-                <p class="moins">-</p>
-                <p class="chiffre">1</p>
-                <p class="plus">+</p>
+                <p class="moins"></p>
+{{--                <p class="chiffre">1</p>--}}
+                <label for="chiffre"></label>
+                <input type="number" id="chiffre" name="chiffre" value="1">
+                <p class="plus"></p>
             </div>
 
             <button class="btnAjouter">Ajouter au panier</button>
