@@ -320,19 +320,19 @@ a {
 
 /*Header*/
 #icon_position {
-  background-position: -90px 0;
+  background-position: -135px 0;
 }
 
 #icon_favoris {
-  background-position: -225px 0;
+  background-position: -270px 0;
 }
 
 #icon_compte {
-  background-position: -315px 0;
+  background-position: -360px 0;
 }
 
 #icon_panier {
-  background-position: -540px 0;
+  background-position: -585px 0;
 }
 
 .icon {
@@ -362,12 +362,16 @@ a {
   background-color: transparent;
 }
 .nav__barreRecherche__btn__icon {
+  background-position: -34px 0;
   background-image: url("../images/deco/sprite.png");
   background-repeat: no-repeat;
   width: 35px;
   height: 35px;
   background-size: cover;
   display: inline-block;
+}
+.nav__barreRecherche__btn__icon:hover, .nav__barreRecherche__btn__icon:active {
+  background-position: 0 0;
 }
 
 .nav {

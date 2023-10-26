@@ -1,15 +1,15 @@
 /*Header*/
 #icon_position{
-  background-position: -90px 0;
+  background-position: -135px 0;
 }
 #icon_favoris{
-  background-position: -225px 0;
+  background-position: -270px 0;
 }
 #icon_compte{
-  background-position: -315px 0;
+  background-position: -360px 0;
 }
 #icon_panier{
-  background-position: -540px 0;
+  background-position: -585px 0;
 }
 .icon{
   background-image : url("../images/deco/sprite.png");
@@ -35,13 +35,18 @@
     padding: 0;
     border: none;
     background-color: transparent;
-    &__icon{
+    &__icon {
+      background-position: -34px 0;
       background-image : url("../images/deco/sprite.png");
       background-repeat: no-repeat;
       width: 35px;
       height: 35px;
       background-size: cover;
       display: inline-block;
+      &:hover,
+      &:active {
+        background-position: 0 0;
+      }
     }
   }
 }
