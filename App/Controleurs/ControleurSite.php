@@ -3,10 +3,18 @@
 namespace App\Controleurs;
 
 use App\App;
+use App\Modeles\Actualite;
+use App\Modeles\Evenement;
+use App\Modeles\Livre;
 
 class ControleurSite {
     public function accueil(): void {
-        $tDonnees = array("message"=>"Je suis la page Accueil...");
+        $livresAVenirs = Livre::trouverParVenir();
+        $livresNouveautes = Livre::trouverParNouveautes();
+        $actualites = Actualite::trouverTout();
+        $evenenents = Evenement::trouverTout();
+
+        $tDonnees = array("message" => "Je suis la page Index auteurs...","livresAVenirs" => $livresAVenirs, "livresNouveautes"=>$livresNouveautes, "actualites"=>$actualites, "evenenents"=>$evenenents);
         echo App::getBlade()->run("accueil",$tDonnees);
     }
     public function apropos(): void {
