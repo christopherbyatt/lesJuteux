@@ -3,22 +3,25 @@
 <?php $this->startSection('contenu'); ?>
  <h1>Accueil</h1>
  <div class="background">
- <h2>Nouveauté</h2>
+ <div class="ligne-h2">
+ <h2 class="fonce">Nouveauté</h2>
+ </div>
  <div class="livres">
  <div class="livres__fiche">
- <img src="liaisons/images/livres/978897770105_w300.jpg" alt="Jane, le renard et moi">
+ <img class="livres__fiche__img" src="liaisons/images/livres/978897770105_w300.jpg" alt="Jane, le renard et moi">
  <p class="livres__auteurs">Isabelle Arsenault & Fanny Britt</p>
  <p class="livres__titre">Jane, le renard et moi</p>
  <p class="livres__prix">26.95$</p>
  </div>
  <div class="livres__fiche">
- <img src="liaisons/images/livres/978897770105_w300.jpg" alt="Jane, le renard et moi">
+ <img class="livres__fiche__img" src="liaisons/images/livres/978897770105_w300.jpg" alt="Jane, le renard et moi">
  <p class="livres__auteurs">Mari Ahokoivu & Kalle Hakkola</p>
  <p class="livres__titre">Sanni et Jonas - Une nuit d'hiver</p>
  <p class="livres__prix">18.95$</p>
  </div>
  <div class="livres__fiche">
- <img src="liaisons/images/livres/978897770105_w300.jpg" alt="Jane, le renard et moi">
+
+ <img class="livres__fiche__img" src="liaisons/images/livres/978897770105_w300.jpg" alt="Jane, le renard et moi">
  <p class="livres__auteurs">Isabelle Arsenault</p>
  <p class="livres__titre">L'oiseau de Colette</p>
  <p class="livres__prix">18.95$</p>
@@ -28,25 +31,25 @@
  </div>
  <div>
  <div class="ligne-h2">
- <h2>À venir</h2>
+ <h2 class="pale">À venir</h2>
  </div>
  <div class="livres">
  <div class="livres__fiche">
- <img src="*" alt="Louis parmi les spectres">
+ <img class="livres__fiche__img" src="liaisons/images/livres/978897770105_w300.jpg" alt="Louis parmi les spectres">
  <p>Louis parmi les spectres</p>
  <p>Isabelle Arsenault</p>
  <p>Fanny Britt</p>
  <p class="livres__prix">34.95$</p>
  </div>
  <div class="livres__fiche">
- <img src="*" alt="Louis parmi les spectres">
+ <img class="livres__fiche__img" src="liaisons/images/livres/978897770105_w300.jpg" alt="Louis parmi les spectres">
  <p>Louis parmi les spectres</p>
  <p>Isabelle Arsenault</p>
  <p>Fanny Britt</p>
  <p class="livres__prix">34.95$</p>
  </div>
  <div class="livres__fiche">
- <img src="*" alt="Louis parmi les spectres">
+ <img class="livres__fiche__img" src="liaisons/images/livres/978897770105_w300.jpg" alt="Louis parmi les spectres">
  <p>Louis parmi les spectres</p>
  <p>Isabelle Arsenault</p>
  <p>Fanny Britt</p>
@@ -57,8 +60,8 @@
  </div>
  <div>
  <div class="background">
- <div class="ligne__h2-background">
- <h2>Actualités</h2>
+ <div class="ligne-h2">
+ <h2 class="fonce">Actualités</h2>
  </div>
  <div class="actualite">
  <div class="actualite__largeur">
@@ -93,7 +96,9 @@
  </div>
  </div>
  </div>
- <h2>Événements</h2>
+ <div class="ligne-h2">
+ <h2 class="pale">Événements</h2>
+ </div>
  <div class="evenement">
  <div class="evenement__largeur">
  <div class="evenement__info">
