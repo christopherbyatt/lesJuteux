@@ -74,11 +74,6 @@ class Categorie
         // Exécuter la requête
         $requetePreparee->execute();
         // Récupérer le résultat
-
-        $categorieId = $requetePreparee->fetchAll();
-        return $categorieId;
-
-
         $categorie = $requetePreparee->fetch();
 
         return $categorie;
