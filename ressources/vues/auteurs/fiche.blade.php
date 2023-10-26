@@ -1,6 +1,7 @@
 @extends('gabarit')
 
 @section('contenu')
+    <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=auteur&action=index">Auteurs</a> > {{$auteur->getPrenomNom()}}</p>
     {{--  À modifier pour faire la page fiche de l'auteur  --}}
     <div class="ficheArtiste">
     <h2>Information sur {{$auteur->getPrenomNom()}}</h2>

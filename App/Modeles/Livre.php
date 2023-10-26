@@ -62,7 +62,7 @@ class Livre {
     }
     public static function trouverParNouveautes():array {
         $chaineSQL = 'SELECT * FROM livres
-        WHERE date_parution_quebec BETWEEN "2022-01-01" AND "2022-12-31"';
+        WHERE date_parution_quebec BETWEEN "2023-01-01" AND "2023-12-31"';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
@@ -74,7 +74,7 @@ class Livre {
     }
     public static function trouverParVenir():array {
         $chaineSQL = 'SELECT * FROM livres
-        WHERE date_parution_quebec BETWEEN "2023-10-18" AND "2024-12-31"';
+        WHERE date_parution_quebec BETWEEN "2024-01-01" AND "2024-12-31"';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
