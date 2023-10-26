@@ -1,7 +1,7 @@
 @extends('gabarit')
 
 @section('contenu')
-    <p class="filAriane">La Pastèque > Livres > {{$livre->getTitre()}}</p>
+    <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > {{$livre->getTitre()}}</p>
     <h1>{{$livre->getTitre()}}</h1>
     <ul class="elements_fiche">
         <div class="image_gauche">
