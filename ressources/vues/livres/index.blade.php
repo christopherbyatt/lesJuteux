@@ -10,10 +10,10 @@
             @foreach($livres as $livre)
                 <div class="livres__fiche">
                 <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
-                    @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w485.jpg"))
-                        <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
+                    @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg"))
+                        <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">
                     @else
-                        <img src="liaisons/images/livres/noImage_w485.jpg">
+                        <img src="liaisons/images/livres/noImage_w300.jpg">
                     @endif
 {{--                    <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">--}}
                 </a>
