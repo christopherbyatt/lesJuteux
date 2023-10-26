@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Modeles;
-
 use App\App;
-
+use \PDO;
 class Actualite
 {
     private int $id = 0;

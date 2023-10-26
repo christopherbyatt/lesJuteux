@@ -8,37 +8,25 @@
 #icon_compte{
   background-position: -315px 0;
 }
-#icon_panier{
-  background-position: -540px 0;
-}
 .nav__barreRecherche {
   margin: 0;
 }
 .icon{
   background-image : url("../images/deco/sprite.png");
-  background-repeat: no-repeat;
-  background-color: $rose;
   width: 45px;
   height: 45px;
   display: inline-block;
-  &:hover,
-  &:active {
-    outline: $background1 solid 2px;
-    border-radius: 1vh;
-  }
 }
 .nav{
   background-color: $rose;
-  background-size: 12%;
   height: 130px;
   &__ctn {
     height: 20rem;
   }
   &__largeur{
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     display: flex;
-    width: 90%;
     max-width: 1000px;
     margin: auto;
     padding-top: 3rem;
@@ -49,38 +37,26 @@
     justify-content: space-between;
     list-style-type: none;
     margin: 0;
-    padding: 2rem 0;
+    padding-top: 2rem;
   }
   &__recherche{
     text-align: center;
-    width: 41%;
+    width: 33%;
   }
   &__barre {
-    width: 90%;
+    width: 305px;
     height: 35px;
   }
   &__titre {
     font-family: "watermelon";
+    font-size: 5.8rem;
+    text-decoration: none;
     text-align: center;
     width: 33%;
-    display: inline-block;
-    height: 8rem;
-    color: transparent;
-    background-color: $rose;
-    background-image: url("../images/deco/titre.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 90%;
-    &:hover,
-    &:active {
-      outline: $background1 solid 2px;
-      border-radius: 3vh;
-    }
+    color: $lienNav;
   }
   &__icon{
-    width: 25%;
-    display: flex;
-    justify-content: space-between;
+    width: 33%;
   }
   &__lien{
     color: $lienNav;

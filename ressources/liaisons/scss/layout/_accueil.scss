@@ -5,17 +5,12 @@
   flex-wrap: wrap;
   margin: auto;
   padding: 10px;
-  width: 90%;
-  max-width: 1000px;
+  width: 1200px;
   justify-content: center;
   &__fiche {
     margin-left :20px;
     margin-right: 20px;
-    width: 30%;
     flex-basis: 30%;
-    &__img{
-      width: 100%;
-    }
   }
   &__auteurs{
     font-size: 1.4rem;
@@ -46,7 +41,6 @@
     padding-top: 4rem;
   }
   &__largeur{
-    width: 90%;
     max-width: 1000px;
     margin: auto;
   }
@@ -67,7 +61,6 @@
     padding-bottom: 4rem;
   }
   &__largeur {
-    width: 90%;
     max-width: 1000px;
     margin: auto;
   }

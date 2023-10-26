@@ -1,17 +1,7 @@
 .nav {
   &__largeur-menu {
-    width: 90%;
     max-width: 1000px;
     margin: auto;
-  }
-  &__lien{
-    font-family: "Caviar Dreams";
-    font-weight: bold;
-    text-decoration: none;
-    &:hover,
-    &:active{
-      text-decoration: underline;
-    }
   }
   &__menu{
     background-color: $vertMelon;
@@ -20,7 +10,6 @@
 }
 .footer {
   &__largeur-menu {
-    width: 90%;
     max-width: 1000px;
     margin: auto;
   }

@@ -1,7 +1,7 @@
 <nav class="nav__ctn">
     <div class="nav">
         <div class="nav__largeur">
-            <a href="index.php" class="nav__titre">La Pastèque</a>
+            <a href="index.php" class="nav__titre">La Pasteque</a>
             <div class="nav__recherche">
                 <form class="nav__barreRecherche" action="">
                     <input type="text" name="recherche" class="nav__barre">
@@ -11,7 +11,6 @@
                 <a href=""><span id="icon_position" class="icon"></span></a>
                 <a href=""><span id="icon_favoris" class="icon"></span></a>
                 <a href=""><span id="icon_compte" class="icon"></span></a>
-                <a href=""><span id="icon_panier" class="icon"></span></a>
             </div>
         </div>
     </div>

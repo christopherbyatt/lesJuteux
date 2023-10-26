@@ -3,7 +3,7 @@
 namespace App\Modeles;
 
 use App\App;
-
+use \PDO;
 class Traductions
 {
     private int $id = 0;
