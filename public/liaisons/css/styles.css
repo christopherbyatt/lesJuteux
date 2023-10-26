@@ -299,30 +299,45 @@ a {
 */
 /****** Layouts et Modules ******/
 /*Header*/
+/*footer*/
+.footer__lien {
+  color: #484141;
+}
+.footer__lien-mail {
+  color: #FDD5CE;
+}
+.footer__info {
+  justify-content: space-evenly;
+  align-items: flex-start;
+  display: flex;
+  max-width: 1400px;
+  margin: auto;
+  padding-bottom: 5rem;
+}
+.footer__info-1, .footer__info-2, .footer__info-3 {
+  max-width: 240px;
+}
+
+/*Header*/
 #icon_position {
-  background-position: -90px 0;
+  background-position: -135px 0;
 }
 
 #icon_favoris {
-  background-position: -225px 0;
+  background-position: -270px 0;
 }
 
 #icon_compte {
-  background-position: -315px 0;
+  background-position: -360px 0;
 }
 
 #icon_panier {
-  background-position: -540px 0;
-}
-
-.nav__barreRecherche {
-  margin: 0;
+  background-position: -585px 0;
 }
 
 .icon {
   background-image: url("../images/deco/sprite.png");
   background-repeat: no-repeat;
-  background-color: #FDD5CE;
   width: 45px;
   height: 45px;
   display: inline-block;
@@ -330,6 +345,33 @@ a {
 .icon:hover, .icon:active {
   outline: #484141 solid 2px;
   border-radius: 1vh;
+}
+
+.nav__barreRecherche {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+.nav__barreRecherche__btn {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+.nav__barreRecherche__btn__icon {
+  background-position: -34px 0;
+  background-image: url("../images/deco/sprite.png");
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  background-size: cover;
+  display: inline-block;
+}
+.nav__barreRecherche__btn__icon:hover, .nav__barreRecherche__btn__icon:active {
+  background-position: 0 0;
 }
 
 .nav {
@@ -349,6 +391,10 @@ a {
   margin: auto;
   padding-top: 3rem;
 }
+.nav__largeur-menu {
+  width: 90%;
+  max-width: 1000px;
+}
 .nav__liste {
   display: flex;
   flex-direction: row;
@@ -364,6 +410,8 @@ a {
 .nav__barre {
   width: 90%;
   height: 35px;
+  border: none;
+  border-radius: 0;
 }
 .nav__titre {
   font-family: "watermelon";
@@ -389,98 +437,8 @@ a {
 }
 .nav__lien {
   color: #484141;
-}
-
-/*footer*/
-#icon_position {
-  background-position: -90px 0;
-}
-
-#icon_favoris {
-  background-position: -225px 0;
-}
-
-#icon_compte {
-  background-position: -315px 0;
-}
-
-.footer {
-  background-color: #FDD5CE;
-  height: 130px;
-}
-.footer__largeur {
-  justify-content: space-evenly;
-  align-items: center;
-  display: flex;
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
-  padding-top: 2.5rem;
-}
-.footer__item {
   font-family: "Caviar Dreams";
   font-weight: bold;
-  text-decoration: none;
-}
-.footer__item:hover, .footer__item:active {
-  text-decoration: underline;
-}
-.footer__liste {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0;
-  padding: 2rem 0;
-}
-.footer__recherche {
-  text-align: center;
-  width: 41%;
-}
-.footer__barre {
-  width: 305px;
-  height: 35px;
-}
-.footer__titre {
-  font-family: "watermelon";
-  text-align: center;
-  width: 33%;
-  display: inline-block;
-  height: 8rem;
-  color: transparent;
-  background-color: #FDD5CE;
-  background-image: url("../images/deco/titre.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 90%;
-}
-.footer__titre:hover, .footer__titre:active {
-  outline: #484141 solid 2px;
-  border-radius: 3vh;
-}
-.footer__icon {
-  width: 25%;
-}
-.footer__icon:hover, .footer__icon:active {
-  outline: #484141 solid 2px;
-  border-radius: 3vh;
-}
-.footer__lien {
-  color: #484141;
-}
-.footer__lien-mail {
-  color: #FDD5CE;
-}
-.footer__info {
-  justify-content: space-evenly;
-  align-items: flex-start;
-  display: flex;
-  max-width: 1400px;
-  margin: auto;
-  padding-bottom: 5rem;
-}
-.footer__info-1, .footer__info-2, .footer__info-3 {
-  max-width: 240px;
 }
 
 /*Accueil*/
