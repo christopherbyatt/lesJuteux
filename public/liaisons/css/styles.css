@@ -587,57 +587,94 @@ div.elements_droite {
   padding-left: 40px;
 }
 div.elements_droite li.prixCAN__livre {
+  font-family: "Caviar Dreams";
+  font-weight: Bold;
   font-size: 50px;
 }
-
-.lien-auteurs {
-  margin-right: 10px;
+div.elements_droite .categorie__livre {
+  font-family: "Caviar Dreams";
+  font-weight: Bold;
+  font-size: 30px;
+  text-transform: uppercase;
 }
-
-div.format__livre {
+div.elements_droite .lien-auteurs {
+  margin-right: 10px;
+  font-family: "Caviar Dreams";
+  font-size: 25px;
+  text-decoration: none;
+}
+div.elements_droite .lien-auteurs:hover {
+  color: #CBE3B9;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
+}
+div.elements_droite div.format__livre {
   display: flex;
 }
-div.format__livre div.format__papier {
-  padding-right: 20px;
+div.elements_droite div.format__livre button.papier, div.elements_droite div.format__livre button.pdf {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 125px;
+  height: 65px;
+  font-family: "Caviar Dreams";
   font-size: 25px;
+  background-color: #484141;
+  color: #FDD5CE;
+  border: 2px solid #FDD5CE;
 }
-div.format__livre div.format__pdf {
-  padding-left: 20px;
-  font-size: 25px;
+div.elements_droite div.format__livre button.papier:hover,
+div.elements_droite div.format__livre button.pdf:hover {
+  color: #CBE3B9;
+  border: 2px solid #CBE3B9;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
 }
-
-div.quantite {
+div.elements_droite div.format__livre button.pdf {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+div.elements_droite div.format__livre button.papier {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+div.elements_droite div.quantite {
   display: flex;
   height: 50px !important;
 }
-div.quantite input#chiffre {
+div.elements_droite div.quantite input#chiffre {
   width: 75px;
   font-size: 30px;
   text-align: center;
   padding-left: 15px;
+  background-color: #484141;
+  color: white;
+  border: none;
 }
-div.quantite p {
+div.elements_droite div.quantite p {
   font-size: 25px;
   margin: 10px;
 }
-div.quantite p.moins {
+div.elements_droite div.quantite p.moins {
   background-image: url("../images/moins.png");
   background-size: contain;
   background-repeat: no-repeat;
   width: 30px;
 }
-div.quantite p.plus {
+div.elements_droite div.quantite p.moins:hover {
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
+}
+div.elements_droite div.quantite p.plus {
   background-image: url("../images/plus.png");
   background-size: contain;
   background-repeat: no-repeat;
   width: 30px;
 }
-div.quantite p.chiffre {
+div.elements_droite div.quantite p.plus:hover {
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
+}
+div.elements_droite div.quantite p.chiffre {
   padding-left: 20px;
   padding-right: 20px;
 }
-
-button.btnAjouter {
+div.elements_droite button.btnAjouter {
   font-size: 25px;
   background-color: #FDD5CE;
   color: #3C3737;
@@ -646,6 +683,10 @@ button.btnAjouter {
   border-radius: 10px;
   border: 1px #FDD5CE;
   margin-top: 30px;
+}
+div.elements_droite button.btnAjouter:hover {
+  background-color: #CBE3B9;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
 }
 
 /*# sourceMappingURL=styles.css.map */
