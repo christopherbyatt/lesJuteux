@@ -21,6 +21,7 @@
 
 <main>
     @yield('contenu')
+    <script src="liaisons/js/incrementationQte.js"></script>
 </main>
 
 <footer>

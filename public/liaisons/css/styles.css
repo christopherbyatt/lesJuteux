@@ -632,6 +632,10 @@ div.elements_droite li.prixCAN__livre {
   font-size: 50px;
 }
 
+.lien-auteurs {
+  margin-right: 10px;
+}
+
 div.format__livre {
   display: flex;
 }
