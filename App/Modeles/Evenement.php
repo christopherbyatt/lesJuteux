@@ -17,7 +17,7 @@ class Evenement
     public function __construct(){
     }
     public static function trouverTout():array{
-        $chaineSQL = 'SELECT * FROM evenements';
+        $chaineSQL = 'SELECT * FROM evenements ORDER BY evenements.date DESC LIMIT 0,3';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Evenement");
