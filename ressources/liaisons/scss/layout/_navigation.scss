@@ -1,0 +1,114 @@
+/*Header*/
+#icon_position{
+  background-position: -90px 0;
+}
+#icon_favoris{
+  background-position: -225px 0;
+}
+#icon_compte{
+  background-position: -315px 0;
+}
+#icon_panier{
+  background-position: -540px 0;
+}
+.icon{
+  background-image : url("../images/deco/sprite.png");
+  background-repeat: no-repeat;
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  &:hover,
+  &:active {
+    outline: $background1 solid 2px;
+    border-radius: 1vh;
+  }
+}
+.nav__barreRecherche {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  &__btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    &__icon{
+      background-image : url("../images/deco/sprite.png");
+      background-repeat: no-repeat;
+      width: 35px;
+      height: 35px;
+      background-size: cover;
+      display: inline-block;
+    }
+  }
+}
+.nav{
+  background-color: $rose;
+  background-size: 12%;
+  height: 130px;
+  &__ctn {
+    height: 20rem;
+  }
+  &__largeur{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding-top: 3rem;
+  }
+  &__largeur-menu {
+    width: 90%;
+    max-width: 1000px;
+  }
+  &__liste{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 2rem 0;
+  }
+  &__recherche{
+    text-align: center;
+    width: 41%;
+  }
+  &__barre {
+    width: 90%;
+    height: 35px;
+    border: none;
+    border-radius: 0;
+  }
+  &__titre {
+    font-family: "watermelon";
+    text-align: center;
+    width: 33%;
+    display: inline-block;
+    height: 8rem;
+    color: transparent;
+    background-color: $rose;
+    background-image: url("../images/deco/titre.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    &:hover,
+    &:active {
+      outline: $background1 solid 2px;
+      border-radius: 3vh;
+    }
+  }
+  &__icon{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__lien{
+    color: $lienNav;
+    font-family: "Caviar Dreams";
+    font-weight: bold;
+  }
+}
