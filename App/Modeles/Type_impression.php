@@ -3,7 +3,7 @@
 namespace App\Modeles;
 
 use App\App;
-
+use \PDO;
 class Type_impression
 {
     private int $id = 0;

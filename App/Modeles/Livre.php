@@ -154,5 +154,8 @@ class Livre {
     public function getAuteur():array{
         return Auteur::trouverParLivre($this->id);
     }
+    public function getCategorie():array{
+        return Categorie::trouverParLivre($this->id);
+    }
 
 }
