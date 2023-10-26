@@ -4,6 +4,7 @@ namespace App\Modeles;
 
 use App\App;
 use \PDO;
+
 class Categorie
 {
     private int $id = 0;
@@ -41,7 +42,9 @@ class Categorie
         $categories = $requetePreparee->fetchAll();
         return $categories;
     }
-    public static function trouverParLivre(int $idLivre):array{
+
+    public static function trouverParLivre(int $idLivre):array
+    {
         $chaineSQL = 'SELECT * FROM Categories 
          INNER JOIN livres ON livres.categorie_id = categories.id
          WHERE livres.categorie_id = :idLivre';
@@ -51,9 +54,37 @@ class Categorie
         // Exécuter la requête
         $requetePreparee->execute();
         // Récupérer le résultat
+
+        $categorie = $requetePreparee->fetch();
+        return $categorie;
+    }
+
+
+    public static function trouverParId(int $unIdCategorie):Categorie{
+        // Définir la chaine SQL
+        $chaineSQL = 'SELECT * FROM categories WHERE id=:idCategorie';
+        // Préparer la requête (optimisation)
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+
+        // BindParam
+        $requetePreparee->bindParam('idCategorie', $unIdCategorie);
+        // Définir le mode de récupération
+
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Categorie");
+        // Exécuter la requête
+        $requetePreparee->execute();
+        // Récupérer le résultat
+
         $categorieId = $requetePreparee->fetchAll();
         return $categorieId;
     }
+
+        $categorie = $requetePreparee->fetch();
+
+        return $categorie;
+    }
+
+
     public function getIdCategorie():int{
         return $this->id;
     }
