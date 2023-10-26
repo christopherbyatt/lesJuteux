@@ -29,6 +29,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
   color: white;
+  font-family: Arial, sans-serif;
   @media (min-width: 601px) {
   }
 }
@@ -74,12 +75,41 @@ h2,
   font-size: 3rem;
   text-transform: uppercase;
   text-align: center;
-  color: #CBE3B9;
-  padding-top: 2.6rem;
+  color: $vertMelon;
+  display: inline-block;
+  padding: 0 1rem;
+  &.pale{
+    background-color: $background1;
+  }
+  &.fonce {
+    background-color: $background2;
+  }
+  position: relative;
+  z-index: 100;
+  //padding-top: 2.6rem;
   &--desktop {
     font-size: 28px;
     font-size: 2.8rem;
   }
+}
+.ligne-h2 {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.ligne-h2:after {
+  content: '';
+  width: 100%; //You can change this if you want smaller/bigger borders
+  height: 2px;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background-color: $vertMelon;
 }
 
 h3,
