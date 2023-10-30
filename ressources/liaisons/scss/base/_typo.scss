@@ -51,21 +51,6 @@ h1,
   margin: 0;
   font-family: "fruity stories";
   color: #CBE3B9;
-  &--desktop {
-    font-size: 48px;
-    font-size: 4.8rem;
-    padding-bottom: 15px;
-    position: relative;
-    &:after {
-      content: "";
-      display: inline-block;
-      width: 150px;
-      height: 8px;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-    }
-  }
 }
 
 h2,
