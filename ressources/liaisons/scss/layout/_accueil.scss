@@ -2,6 +2,7 @@
 /*cette partie est aussi incluse dans la page index livres*/
 .livres {
   display: flex;
+  flex-wrap: wrap;
   margin: auto;
   padding: 10px;
   width: 90%;

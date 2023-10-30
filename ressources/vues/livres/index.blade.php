@@ -2,6 +2,27 @@
 
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > Livres</p>
+{{--    <div class="filtres-tri">--}}
+{{--        <div class="tris">--}}
+{{--            <form action="index.php?controleur=livre&action=index">--}}
+{{--        <label for="tri"></label>--}}
+{{--        <select name="tri" id="tri">--}}
+{{--            <option disabled selected value="defaut" class="trierParDansSelect" style="color: #484141">↕≡</option>--}}
+{{--            <option value="az-livre">Alphabétique de livre (A-Z)</option>--}}
+{{--            <option value="za-livre">Anti-alphabétique de livre (Z-A)</option>--}}
+{{--            <option value="az-auteur">Alphabétique d'auteur (A-Z)</option>--}}
+{{--            <option value="za-auteur">Anti-alphabétique d'auteur (Z-A)</option>--}}
+{{--            <option value="recent">Le plus récent</option>--}}
+{{--            <option value="ancien">Le plus ancien</option>--}}
+{{--        </select>--}}
+{{--            <button type="submit" class="btnAppliquerTri">Appliquer</button>--}}
+{{--            </form>--}}
+{{--            </div>--}}
+{{--    </div>--}}
+    <div class="affichage">
+        <button class="liste"></button>
+        <button class="grille"></button>
+    </div>
         <h1>Liste des livres</h1>
     <div class="background">
         <div class="ligne-h2">
@@ -106,6 +127,5 @@
             </div>
 {{--@endsection--}}
         @endif
-
 
     @endsection
