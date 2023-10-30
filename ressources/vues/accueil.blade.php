@@ -7,36 +7,36 @@
         <h2 class="fonce">Nouveautés</h2>
     </div>
     <div class="livres">
-        @foreach($livresNouveautes as $livreNouveaute)
+        @for($i=0;$i<3;$i++)
             <div class="livres__fiche">
-                <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreNouveaute->getId()}}">
-                    <img class="livres__fiche-nouveaute" src="liaisons/images/livres/{{$livreNouveaute->getISBNPapier()}}_w300.jpg">
+                <a href="index.php?controleur=livre&action=fiche&idLivre={{$livresNouveautes[$i]->getId()}}">
+                    <img class="livres__fiche-nouveaute" src="liaisons/images/livres/{{$livresNouveautes[$i]->getISBNPapier()}}_w300.jpg">
                 </a>
-                @foreach($livreNouveaute->getAuteur() as $auteur)
+                @foreach($livresNouveautes[$i]->getAuteur() as $auteur)
                     <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
                 @endforeach
-                <p class="livres__titre">{{$livreNouveaute->getTitre()}}</p>
-                <p class="livres__prix">{{$livreNouveaute->getPrixCan()}}$</p>
+                <p class="livres__titre">{{$livresNouveautes[$i]->getTitre()}}</p>
+                <p class="livres__prix">{{$livresNouveautes[$i]->getPrixCan()}}$</p>
             </div>
-        @endforeach
+        @endfor
     </div>
     </div>
         <div class="ligne-h2">
             <h2 class="pale">À venir</h2>
         </div>
         <div class="livres">
-            @foreach($livresAVenirs as $livreAVenir)
+            @for($i=0;$i<3;$i++)
                 <div class="livres__fiche">
-                    <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreAVenir->getId()}}">
-                        <img src="liaisons/images/livres/{{$livreAVenir->getISBNPapier()}}_w300.jpg">
+                    <a href="index.php?controleur=livre&action=fiche&idLivre={{$livresAVenirs[$i]->getId()}}">
+                        <img src="liaisons/images/livres/{{$livresAVenirs[$i]->getISBNPapier()}}_w300.jpg">
                     </a>
-                    @foreach($livreAVenir->getAuteur() as $auteur)
+                    @foreach($livresAVenirs[$i]->getAuteur() as $auteur)
                         <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
                     @endforeach
-                    <p class="livres__titre">{{$livreAVenir->getTitre()}}</p>
-                    <p class="livres__prix">{{$livreAVenir->getPrixCan()}}$</p>
+                    <p class="livres__titre">{{$livresAVenirs[$i]->getTitre()}}</p>
+                    <p class="livres__prix">{{$livresAVenirs[$i]->getPrixCan()}}$</p>
                 </div>
-            @endforeach
+            @endfor
         </div>
     <div>
         <div class="background">
