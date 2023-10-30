@@ -445,6 +445,7 @@ a {
 /*cette partie est aussi incluse dans la page index livres*/
 .livres {
   display: flex;
+  flex-wrap: wrap;
   margin: auto;
   padding: 10px;
   width: 90%;
@@ -544,6 +545,62 @@ body {
 .footer__menu {
   background-color: #CBE3B9;
   height: 60px;
+}
+
+div.tris {
+  display: flex;
+  margin-left: 75px;
+}
+div.tris select#tri {
+  background-color: #FDD5CE;
+  height: 70px;
+  width: 225px;
+  font-size: 16px;
+  text-align: center;
+  border: 2px solid #FDD5CE;
+}
+div.tris select#tri:hover,
+div.tris select#tri:focus {
+  border: 2px solid #CBE3B9;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
+}
+div.tris button.btnAppliquerTri {
+  background-color: #FDD5CE;
+  color: #484141;
+  border: 2px solid #FDD5CE;
+}
+div.tris button.btnAppliquerTri:hover {
+  background-color: #CBE3B9;
+  border: 2px solid #CBE3B9;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
+}
+
+div.affichage {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 75px;
+}
+div.affichage button.liste {
+  width: 70px;
+  height: 70px;
+  background-image: url("../images/liste.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #FDD5CE;
+  border: 2px solid #FDD5CE;
+}
+div.affichage button.grille {
+  width: 70px;
+  height: 70px;
+  background-image: url("../images/grille.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #FDD5CE;
+  border: 2px solid #FDD5CE;
 }
 
 .auteurs {
