@@ -6,6 +6,7 @@
         <div class="ligne-h2">
             <h2 class="pale">Tous nos livres</h2>
         </div>
+    @include('livres.filtres')
         <div class="livres">
             @foreach($livres as $livre)
                 <div class="livres__fiche">

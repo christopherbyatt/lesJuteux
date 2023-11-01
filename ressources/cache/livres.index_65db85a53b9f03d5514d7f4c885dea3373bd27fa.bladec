@@ -6,6 +6,7 @@
  <div class="ligne-h2">
  <h2 class="pale">Tous nos livres</h2>
  </div>
+ <?php echo $this->runChild('livres.filtres'); ?>
  <div class="livres">
  <?php $__currentLoopData = $livres; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $livre): $loop = $this->incrementLoopIndices();  ?>
