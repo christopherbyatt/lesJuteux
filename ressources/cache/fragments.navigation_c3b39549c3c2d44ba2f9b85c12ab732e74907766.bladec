@@ -1,5 +1,4 @@
-<nav class="nav__ctn">
- <div class="nav">
+<div class="nav">
  <div class="nav__largeur">
  <a href="index.php?controleur=site&action=accueil" class="nav__titre">La Pastèque</a>
  <div class="nav__recherche">
@@ -15,10 +14,11 @@
  <a href=""><span id="icon_panier" class="icon"></span></a>
  </div>
  </div>
- </div>
- <div class="nav__menu">
+</div>
+<div class="nav__menu">
+ <button class="btnMenu nav__boutonMenu"><span class="nav__boutonMenu__icon" id="icon_menuFerme"></span></button>
  <div class="nav__largeur-menu">
- <ul class="nav__liste">
+ <ul class="nav__liste ferme">
  <li class="nav__item">
  <a href="index.php?controleur=nouveaute&action=index" class="nav__lien">Nouveautés</a>
  </li>
@@ -42,5 +42,4 @@
  </li>
  </ul>
  </div>
- </div>
-</nav>
+</div>
