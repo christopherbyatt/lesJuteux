@@ -5,15 +5,11 @@
   flex-wrap: wrap;
   margin: auto;
   padding: 10px;
-  width: 90%;
   max-width: 1300px;
   justify-content: center;
   &__fiche {
     margin-right: 40px;
     margin-left: 40px;
-    max-width: 300px;
-    width: 30%;
-    flex-basis: 30%;
     &__img{
       width: 100%;
     }
@@ -21,16 +17,19 @@
   &__auteurs{
     font-size: 1.4rem;
     margin-bottom: -0.5rem;
+    max-width: 300px;
   }
   &__prix{
     font-weight: bold;
     font-size: 2rem;
     margin-top: -0.5rem;
+    max-width: 300px;
   }
   &__titre{
     font-size: 2rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    max-width: 300px;
   }
   &__lien{
     display: flex;
