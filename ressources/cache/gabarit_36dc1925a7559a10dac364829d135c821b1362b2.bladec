@@ -22,6 +22,7 @@
 
 <main>
  <?php echo $this->yieldContent('contenu'); ?>
+ <script src="liaisons/js/incrementationQte.js"></script>
 </main>
 
 <footer>

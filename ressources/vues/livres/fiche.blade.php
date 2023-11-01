@@ -16,11 +16,12 @@
             {{--    <li>Id: {{$livre->getId()}}</li>--}}
             <li class="categorie__livre">{{$categorie->getNom()}}</li>
             <li>Âge minimal: {{$livre->getAgeMin()}} ans</li>
+            <p class="fiche__auteurs">
             @foreach($livre->getAuteur() as $auteur)
-                <p><a
+                <a class="lien-auteurs"
                             href="index.php?controleur=auteur&action=fiche&idAuteur={{$auteur->getAuteurId()}}">{{$auteur->getPrenomNom()}}</a>
-                </p>
             @endforeach
+                </p>
             <li class="prixCAN__livre">{{$livre->getPrixCan()}} $</li>
             <li class="description__livre">{!! $livre->getLeLivre() !!}</li>
 
@@ -32,17 +33,19 @@
 
             <div class="format__livre">
                 <div class="format__papier">
-                    <p class="papier">Papier</p>
+                    <button class="papier">Papier</button>
                 </div>
                 <div class="format__pdf">
-                    <p class="pdf">PDF</p>
+                    <button class="pdf">PDF</button>
                 </div>
             </div>
 
             <div class="quantite">
-                <p class="moins">-</p>
-                <p class="chiffre">1</p>
-                <p class="plus">+</p>
+                <p class="moins" id="moins"></p>
+{{--                <p class="chiffre">1</p>--}}
+                <label for="chiffre"></label>
+                <input type="number" id="chiffre" name="chiffre" value="1">
+                <p class="plus" id="plus"></p>
             </div>
 
             <button class="btnAjouter">Ajouter au panier</button>
