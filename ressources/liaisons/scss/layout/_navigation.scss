@@ -1,15 +1,15 @@
 /*Header*/
 #icon_position{
-  background-position: -135px 0;
+  background-position: -138px 0;
 }
 #icon_favoris{
-  background-position: -270px 0;
+  background-position: -276px 0;
 }
 #icon_compte{
-  background-position: -360px 0;
+  background-position: -368px 0;
 }
 #icon_panier{
-  background-position: -585px 0;
+  background-position: -598px 0;
 }
 .icon{
   background-image : url("../images/deco/sprite.png");
@@ -36,7 +36,7 @@
     border: none;
     background-color: transparent;
     &__icon {
-      background-position: -34px 0;
+      background-position: -35px 0;
       background-image : url("../images/deco/sprite.png");
       background-repeat: no-repeat;
       width: 35px;
@@ -50,10 +50,19 @@
     }
   }
 }
+@media (min-width: 800px) {
+  .nav__barreRecherche {
+    &__btn {
+      &__icon {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
 .nav{
   background-color: $rose;
   background-size: 12%;
-  height: 130px;
   &__ctn {
     height: 20rem;
   }
@@ -64,7 +73,13 @@
     width: 90%;
     max-width: 1000px;
     margin: auto;
-    padding-top: 3rem;
+    padding: 3rem 0;
+    flex-direction: column;
+  }
+  @media (min-width: 800px) {
+    &__largeur{
+      flex-direction: row;
+    }
   }
   &__largeur-menu {
     width: 90%;
@@ -80,7 +95,13 @@
   }
   &__recherche{
     text-align: center;
-    width: 41%;
+    max-width: 480px;
+    width: 80%;
+  }
+  @media (min-width: 800px) {
+    &__recherche{
+      width: 41%;
+    }
   }
   &__barre {
     width: 90%;
@@ -91,29 +112,107 @@
   &__titre {
     font-family: "watermelon";
     text-align: center;
-    width: 33%;
+    width: 80%;
+    max-width: 400px;
     display: inline-block;
-    height: 8rem;
+    aspect-ratio: 19/3;
     color: transparent;
     background-color: $rose;
     background-image: url("../images/deco/titre.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 90%;
+    margin-bottom: 2rem;
     &:hover,
     &:active {
       outline: $background1 solid 2px;
       border-radius: 3vh;
     }
   }
+  @media (min-width: 800px) {
+    &__titre{
+      width: 33%;
+      margin: 0;
+    }
+  }
   &__icon{
-    width: 25%;
+    max-width: 250px;
+    width: 80%;
     display: flex;
     justify-content: space-between;
+    margin-top: 2rem;
+  }
+  @media (min-width: 800px) {
+    &__icon{
+      width: 25%;
+      margin: 0;
+    }
   }
   &__lien{
     color: $lienNav;
     font-family: "Caviar Dreams";
     font-weight: bold;
+  }
+}
+
+//Menu hamburger mobile
+.nav__boutonMenu__icon {
+  background-image : url("../images/deco/sprite.png");
+  background-repeat: no-repeat;
+  width: 45px;
+  height: 100%;
+  background-size: cover;
+  display: inline-block;
+}
+.btnMenu {
+  background-color: transparent;
+  border: none;
+  margin: auto;
+  width: 100%;
+  height: 45px;
+  display: block;
+  padding: 0;
+  &:hover,
+  &:active {
+    #icon_menuFerme {
+      background-position: -736px 0;
+    }
+    #icon_menuOuvert {
+      background-position: -782px 0;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .btnMenu {
+    display: none;
+  }
+}
+#icon_menuFerme {
+  background-position: -644px 0;
+}
+#icon_menuOuvert {
+  background-position: -690px 0;
+}
+
+.nav__menu {
+  overflow: hidden;
+  position: relative;
+}
+.nav__liste.ferme {
+  display: none;
+}
+.nav__liste.ouvert {
+  display: flex;
+}
+.nav__liste {
+  flex-direction: column;
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .nav__liste.ferme,
+  .nav__liste.ouvert {
+    flex-direction: row;
+    display: flex;
+    text-align: justify;
   }
 }
