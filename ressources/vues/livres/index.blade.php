@@ -20,15 +20,15 @@
 {{--            </div>--}}
 {{--    </div>--}}
     <div class="affichage">
-        <button class="liste"></button>
-        <button class="grille"></button>
+        <button class="btnListe" id="btnListe"></button>
+        <button class="btnGrille" id="btnGrille"></button>
     </div>
         <h1>Liste des livres</h1>
     <div class="background">
         <div class="ligne-h2">
             <h2 class="fonce">Tous nos livres</h2>
         </div>
-        <div class="livres">
+        <div class="livres liste" id="livres">
             @foreach($livres as $livre)
                 <div class="livres__fiche">
                 <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">

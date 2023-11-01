@@ -660,7 +660,7 @@ div.affichage {
   justify-content: flex-end;
   margin-right: 75px;
 }
-div.affichage button.liste {
+div.affichage button.btnListe {
   width: 70px;
   height: 70px;
   background-image: url("../images/liste.png");
@@ -671,7 +671,7 @@ div.affichage button.liste {
   background-color: #FDD5CE;
   border: 2px solid #FDD5CE;
 }
-div.affichage button.grille {
+div.affichage button.btnGrille {
   width: 70px;
   height: 70px;
   background-image: url("../images/grille.png");

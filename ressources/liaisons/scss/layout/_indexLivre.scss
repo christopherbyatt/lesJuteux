@@ -31,7 +31,7 @@ div.affichage {
   justify-content: flex-end;
   margin-right: 75px;
 
-  button.liste {
+  button.btnListe {
     width: 70px;
     height: 70px;
     background-image: url("../images/liste.png");
@@ -42,7 +42,7 @@ div.affichage {
     background-color: #FDD5CE;
     border: 2px solid #FDD5CE;
   }
-  button.grille {
+  button.btnGrille {
     width: 70px;
     height: 70px;
     background-image: url("../images/grille.png");
