@@ -1,9 +1,56 @@
 .ficheArtiste{
-
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px 20px 10px 20px ;
+  max-width: 1300px;
   &__biblio{
-
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
   }
   &__photo{
-
+    width: fit-content;
+    margin: auto;
+  }
+  &__url{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+  &__livres{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 300px;
+  }
+  &__titre,
+  &__prix{
+    max-width: 300px;
+  }
+}
+.auteurslivres {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 10px;
+  max-width: 1300px;
+  justify-content: center;
+  &__fiche {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  &__prix{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: -0.5rem;
+    max-width: 150px;
+  }
+  &__titre{
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 150px;
   }
 }

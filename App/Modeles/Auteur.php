@@ -88,4 +88,7 @@ class Auteur {
     public function getAuteurId():int{
         return $this->auteur_id;
     }
+    public function getLivre():array{
+        return Livre::trouverParAuteur($this->id);
+    }
 }
