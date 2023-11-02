@@ -718,6 +718,16 @@ div.affichage button.btnGrille {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 25% !important;
+  margin-right: 25% !important;
+}
+.mode-liste div#infosLivre {
+  margin-left: 20px;
+}
+.mode-liste .imgLivre {
+  margin-right: 20px;
 }
 
 .selected {
