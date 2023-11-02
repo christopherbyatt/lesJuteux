@@ -20,26 +20,27 @@
 <?php /*            </div>*/ ?>
 <?php /*    </div>*/ ?>
  <div class="affichage">
- <button class="liste"></button>
- <button class="grille"></button>
+ <button class="btnListe" id="btnListe"></button>
+ <button class="btnGrille selected" id="btnGrille"></button>
  </div>
  <h1>Liste des livres</h1>
  <div class="background">
  <div class="ligne-h2">
  <h2 class="fonce">Tous nos livres</h2>
  </div>
- <div class="livres">
+ <div class="livres grille" id="livres">
  <?php $__currentLoopData = $livres; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $livre): $loop = $this->incrementLoopIndices();  ?>
- <div class="livres__fiche">
+ <div class="livres__fiche mode-grille" id="livres__fiche">
  <a href="index.php?controleur=livre&action=fiche&idLivre=<?php echo \htmlentities($livre->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>">
  <?php if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg")): ?>
  <img src="liaisons/images/livres/<?php echo \htmlentities($livre->getISBNPapier()??'', ENT_QUOTES, 'UTF-8', false); ?>_w300.jpg">
  <?php else: ?>
- <img src="liaisons/images/livres/noImage_w300.jpg">
+ <img src="liaisons/images/livres/noImage_w300.jpg" class="imgLivre">
  <?php endif; ?>
 <?php /*                    <img src="liaisons/images/livres/<?php echo \htmlentities($livre->getISBNPapier()??'', ENT_QUOTES, 'UTF-8', false); ?>_w300.jpg">*/ ?>
  </a>
+ <div class="infosLivre" id="infosLivre">
  <?php $__currentLoopData = $livre->getAuteur(); $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $auteur): $loop = $this->incrementLoopIndices();  ?>
  <p class="livres__auteurs"><?php echo \htmlentities($auteur->getPrenomNom()??'', ENT_QUOTES, 'UTF-8', false); ?></p>
@@ -47,6 +48,7 @@
  <p class="livres__auteurs"><?php echo \htmlentities($livre->getPrenomNomAuteur()??'', ENT_QUOTES, 'UTF-8', false); ?></p>
  <p class="livres__titre"><?php echo \htmlentities($livre->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></p>
  <p class="livres__prix"><?php echo \htmlentities($livre->getPrixCan()??'', ENT_QUOTES, 'UTF-8', false); ?>$</p>
+ </div>
  </div>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </div>
@@ -95,19 +97,21 @@
  <div class="ligne-h2">
  <h2 class="pale">Nouveautés</h2>
  </div>
- <div class="livres">
+ <div class="livres grille" id="livres">
  <?php $__currentLoopData = $livresNouveautes; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $livreNouveaute): $loop = $this->incrementLoopIndices();  ?>
  <div class="livres__fiche">
  <a href="index.php?controleur=livre&action=fiche&idLivre=<?php echo \htmlentities($livreNouveaute->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>">
  <img class="livres__fiche-nouveaute" src="liaisons/images/livres/<?php echo \htmlentities($livreNouveaute->getISBNPapier()??'', ENT_QUOTES, 'UTF-8', false); ?>_w300.jpg">
  </a>
+ <div class="infosLivre" id="infosLivre">
  <?php $__currentLoopData = $livreNouveaute->getAuteur(); $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $auteur): $loop = $this->incrementLoopIndices();  ?>
  <p class="livres__auteurs"><?php echo \htmlentities($auteur->getPrenomNom()??'', ENT_QUOTES, 'UTF-8', false); ?></p>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  <p class="livres__titre"><?php echo \htmlentities($livreNouveaute->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></p>
  <p class="livres__prix"><?php echo \htmlentities($livreNouveaute->getPrixCan()??'', ENT_QUOTES, 'UTF-8', false); ?>$</p>
+ </div>
  </div>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </div>
@@ -122,12 +126,14 @@
  <a href="index.php?controleur=livre&action=fiche&idLivre=<?php echo \htmlentities($livreAVenir->getId()??'', ENT_QUOTES, 'UTF-8', false); ?>">
  <img src="liaisons/images/livres/<?php echo \htmlentities($livreAVenir->getISBNPapier()??'', ENT_QUOTES, 'UTF-8', false); ?>_w300.jpg">
  </a>
+ <div class="infosLivre" id="infosLivre">
  <?php $__currentLoopData = $livreAVenir->getAuteur(); $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $auteur): $loop = $this->incrementLoopIndices();  ?>
  <p class="livres__auteurs"><?php echo \htmlentities($auteur->getPrenomNom()??'', ENT_QUOTES, 'UTF-8', false); ?></p>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  <p class="livres__titre"><?php echo \htmlentities($livreAVenir->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></p>
  <p class="livres__prix"><?php echo \htmlentities($livreAVenir->getPrixCan()??'', ENT_QUOTES, 'UTF-8', false); ?>$</p>
+ </div>
  </div>
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </div>

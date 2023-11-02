@@ -660,7 +660,7 @@ div.affichage {
   justify-content: flex-end;
   margin-right: 75px;
 }
-div.affichage button.liste {
+div.affichage button.btnListe {
   width: 70px;
   height: 70px;
   background-image: url("../images/liste.png");
@@ -671,7 +671,7 @@ div.affichage button.liste {
   background-color: #FDD5CE;
   border: 2px solid #FDD5CE;
 }
-div.affichage button.grille {
+div.affichage button.btnGrille {
   width: 70px;
   height: 70px;
   background-image: url("../images/grille.png");
@@ -681,6 +681,59 @@ div.affichage button.grille {
   border-bottom-right-radius: 10px;
   background-color: #FDD5CE;
   border: 2px solid #FDD5CE;
+}
+
+.livres__fiche {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.liste {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px;
+  max-width: 1300px;
+  justify-content: center;
+}
+
+.grille {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 10px;
+  max-width: 1300px;
+  justify-content: center;
+}
+
+.mode-grille {
+  display: block;
+}
+
+.mode-liste {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 25% !important;
+  margin-right: 25% !important;
+}
+.mode-liste div#infosLivre {
+  margin-left: 20px;
+}
+.mode-liste .imgLivre {
+  margin-right: 20px;
+}
+
+.selected {
+  background-color: #CBE3B9 !important;
+  border: 2px solid #CBE3B9 !important;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9) !important;
 }
 
 .auteurs {

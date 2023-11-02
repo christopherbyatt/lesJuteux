@@ -31,7 +31,7 @@ div.affichage {
   justify-content: flex-end;
   margin-right: 75px;
 
-  button.liste {
+  button.btnListe {
     width: 70px;
     height: 70px;
     background-image: url("../images/liste.png");
@@ -42,7 +42,7 @@ div.affichage {
     background-color: #FDD5CE;
     border: 2px solid #FDD5CE;
   }
-  button.grille {
+  button.btnGrille {
     width: 70px;
     height: 70px;
     background-image: url("../images/grille.png");
@@ -54,3 +54,60 @@ div.affichage {
     border: 2px solid #FDD5CE;
   }
 }
+
+.livres__fiche {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.liste {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px;
+  max-width: 1300px;
+  justify-content: center;
+}
+
+.grille {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 10px;
+  max-width: 1300px;
+  justify-content: center;
+}
+
+.mode-grille {
+  display: block;
+}
+
+.mode-liste {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  //justify-content: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 25% !important;
+  margin-right: 25% !important;
+
+  div#infosLivre {
+    margin-left: 20px;
+  }
+
+  .imgLivre {
+    margin-right: 20px;
+  }
+}
+
+.selected {
+  background-color: #CBE3B9 !important;
+  border: 2px solid #CBE3B9 !important;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9) !important;
+}
+
