@@ -69,6 +69,7 @@ div.elements_droite {
   div.quantite {
     display: flex;
     height: 50px !important;
+    margin-top: 20px;
 
     input#chiffre {
       width: 75px;
@@ -122,6 +123,12 @@ div.elements_droite {
     border-radius: 10px;
     border: 1px #FDD5CE;
     margin-top: 30px;
+    background-image: url("../images/panier.png");
+    background-size: 35px;
+    background-position-y: center;
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+    padding-right: 7%;
   }
 
   button.btnAjouter:hover {

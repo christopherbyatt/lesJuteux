@@ -826,6 +826,7 @@ div.elements_droite div.format__livre button.papier {
 div.elements_droite div.quantite {
   display: flex;
   height: 50px !important;
+  margin-top: 20px;
 }
 div.elements_droite div.quantite input#chiffre {
   width: 75px;
@@ -871,6 +872,12 @@ div.elements_droite button.btnAjouter {
   border-radius: 10px;
   border: 1px #FDD5CE;
   margin-top: 30px;
+  background-image: url("../images/panier.png");
+  background-size: 35px;
+  background-position-y: center;
+  background-position-x: 90%;
+  background-repeat: no-repeat;
+  padding-right: 7%;
 }
 div.elements_droite button.btnAjouter:hover {
   background-color: #CBE3B9;
