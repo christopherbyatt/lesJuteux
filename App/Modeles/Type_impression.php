@@ -10,6 +10,24 @@ class Type_impression
     private string $nom = "";
     public function __construct(){
     }
+
+    public static function trouverParId(int $unIdImpression){
+        // Définir la chaine SQL
+        $chaineSQL = 'SELECT * FROM type_impression WHERE id=:idImpression';
+        // Préparer la requête (optimisation)
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+
+        // BindParam
+        $requetePreparee->bindParam('idImpression', $unIdImpression);
+        // Définir le mode de récupération
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Type_impression");
+        // Exécuter la requête
+        $requetePreparee->execute();
+        // Récupérer le résultat
+        $impression = $requetePreparee->fetch();
+
+        return $impression;
+    }
     public static function trouverTout():array{
         $chaineSQL = 'SELECT * FROM type_impression';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);

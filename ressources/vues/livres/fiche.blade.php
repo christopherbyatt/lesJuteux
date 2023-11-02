@@ -27,7 +27,8 @@
 
             <li>ISBN: {{$livre->getISBNPapier()}}</li>
             <li>Nombre de pages: {{$livre->getPagination()}}</li>
-{{--            <li>Type de couverture: {{$type_couverture->getNom()}}</li>--}}
+            <li>Type de couverture: {{$type_couverture->getNom()}}</li>
+            <li>Type d'impression: {{$type_impression->getNom()}}</li>
             <li>Date de parution au Québec: {{$livre->getDateQuebec()}}</li>
             <li>Date de parution en France: {{$livre->getDateFrance()}} ({{$livre->getPrixEuro()}} €)</li>
 

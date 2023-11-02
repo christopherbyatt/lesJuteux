@@ -5,6 +5,7 @@ namespace App\Modeles;
 use App\Modeles\Categorie;
 use App\Modeles\Type_couverture;
 use App\App;
+use App\Modeles\Type_impression;
 use \PDO;
 
 // Classe modèle
@@ -220,5 +221,9 @@ class Livre {
 
     public function getTypeCouvertureAssociee(){
         return Type_couverture::trouverParId($this->type_couverture_id);
+    }
+
+    public function getTypeImpressionAssociee(){
+        return Type_impression::trouverParId($this->type_impression_id);
     }
 }

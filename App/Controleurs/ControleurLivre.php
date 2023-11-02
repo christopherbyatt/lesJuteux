@@ -29,7 +29,8 @@ class ControleurLivre {
         $livre = Livre::trouverParId($id);
         $categorie = $livre->getCategorieAssociee();
         $couverture = $livre->getTypeCouvertureAssociee();
-        $tDonnees = array("message" => "Je suis la page Fiche auteurs...", "livre" => $livre, "categorie" => $categorie, "type_couverture" => $couverture);
+        $impression = $livre->getTypeImpressionAssociee();
+        $tDonnees = array("message" => "Je suis la page Fiche auteurs...", "livre" => $livre, "categorie" => $categorie, "type_couverture" => $couverture, "type_impression" => $impression);
         echo App::getBlade()->run("livres.fiche", $tDonnees);
     }
 
