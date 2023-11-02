@@ -33,10 +33,10 @@
 
             <div class="format__livre">
                 <div class="format__papier">
-                    <button class="papier">Papier</button>
+                    <button class="papier format-selectionne" id="papier">Papier</button>
                 </div>
                 <div class="format__pdf">
-                    <button class="pdf">PDF</button>
+                    <button class="pdf" id="pdf">PDF</button>
                 </div>
             </div>
 
