@@ -1,6 +1,8 @@
 <?php
 namespace App\Controleurs;
 use App\App;
+use App\Modeles\Categorie;
+use App\Modeles\Evenement;
 use App\Modeles\Livre;
 
 class ControleurLivre {
@@ -8,6 +10,7 @@ class ControleurLivre {
 //        $livres = Livre::trouverTout();
         $livresAVenirs = Livre::trouverParVenir();
         $livresNouveautes = Livre::trouverParNouveautes();
+        $lesCategories = Categorie::trouverTout();
 
         $urlPagination = 'index.php?controleur=livre&action=index';
 
@@ -20,7 +23,7 @@ class ControleurLivre {
         $livres = Livre::paginer($page,12);
         $nbrPages = ceil(livre::compter()/12 -1);
 
-        $tDonnees = array("message" => "Je suis la page Index auteurs...", "livres" => $livres ,"livresAVenirs" => $livresAVenirs, "livresNouveautes"=>$livresNouveautes, "numeroPage"=>$page, "urlPagination" => $urlPagination, "nombreTotalPages"=>$nbrPages);
+        $tDonnees = array("message" => "Je suis la page Index auteurs...", "livres" => $livres ,"livresAVenirs" => $livresAVenirs, "livresNouveautes"=>$livresNouveautes, "numeroPage"=>$page, "urlPagination" => $urlPagination, "nombreTotalPages"=>$nbrPages, "lesCategories"=>$lesCategories);
         echo App::getBlade()->run("livres.index", $tDonnees);
     }
 

@@ -1,0 +1,37 @@
+/*Tri et filtres de l'index des livres*/
+//Donner le même style au bouton et au lien
+
+#lancerRechercheLivres,
+#reinitialiserRechercheLivres {
+  border: $rose solid 0.2rem;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0.2rem 0.6rem;
+  display: inline-block;
+  border-radius: 0.3rem;
+  &:hover,
+  &:active {
+    border-color: $vertMelon;
+  }
+}
+#reinitialiserRechercheLivres {
+  background-color: $background1;
+  color: $rose;
+  padding: 0.3rem 0.7rem;
+  &:hover,
+  &:active {
+    color: $vertMelon;
+  }
+}
+#lancerRechercheLivres {
+  background-color: $rose;
+  color: $background1;
+  padding: 0.5rem 0.7rem;
+  &:hover,
+  &:active {
+    background-color: $vertMelon;
+  }
+}

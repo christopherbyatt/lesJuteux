@@ -626,6 +626,43 @@ body {
   height: 60px;
 }
 
+/*Tri et filtres de l'index des livres*/
+#lancerRechercheLivres,
+#reinitialiserRechercheLivres {
+  border: #FDD5CE solid 0.2rem;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0.2rem 0.6rem;
+  display: inline-block;
+  border-radius: 0.3rem;
+}
+#lancerRechercheLivres:hover, #lancerRechercheLivres:active,
+#reinitialiserRechercheLivres:hover,
+#reinitialiserRechercheLivres:active {
+  border-color: #CBE3B9;
+}
+
+#reinitialiserRechercheLivres {
+  background-color: #484141;
+  color: #FDD5CE;
+  padding: 0.3rem 0.7rem;
+}
+#reinitialiserRechercheLivres:hover, #reinitialiserRechercheLivres:active {
+  color: #CBE3B9;
+}
+
+#lancerRechercheLivres {
+  background-color: #FDD5CE;
+  color: #484141;
+  padding: 0.5rem 0.7rem;
+}
+#lancerRechercheLivres:hover, #lancerRechercheLivres:active {
+  background-color: #CBE3B9;
+}
+
 .auteurs {
   display: flex;
   flex-wrap: wrap;
