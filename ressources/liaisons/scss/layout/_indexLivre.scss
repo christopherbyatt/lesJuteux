@@ -1,0 +1,113 @@
+div.tris {
+  display: flex;
+  margin-left: 75px;
+  select#tri {
+    background-color: #FDD5CE;
+    height: 70px;
+    width: 225px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #FDD5CE;
+  }
+  select#tri:hover,
+  select#tri:focus{
+    border: 2px solid #CBE3B9;
+    filter: drop-shadow(0 0 0.75rem #CBE3B9);
+  }
+  button.btnAppliquerTri {
+    background-color: #FDD5CE;
+    color: #484141;
+    border: 2px solid #FDD5CE;
+  }
+  button.btnAppliquerTri:hover {
+    background-color: #CBE3B9;
+    border: 2px solid #CBE3B9;
+    filter: drop-shadow(0 0 0.75rem #CBE3B9);
+  }
+}
+
+div.affichage {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 75px;
+
+  button.btnListe {
+    width: 70px;
+    height: 70px;
+    background-image: url("../images/liste.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #FDD5CE;
+    border: 2px solid #FDD5CE;
+  }
+  button.btnGrille {
+    width: 70px;
+    height: 70px;
+    background-image: url("../images/grille.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #FDD5CE;
+    border: 2px solid #FDD5CE;
+  }
+}
+
+.livres__fiche {
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.liste {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px;
+  max-width: 1300px;
+  justify-content: center;
+}
+
+.grille {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 10px;
+  max-width: 1300px;
+  justify-content: center;
+}
+
+.mode-grille {
+  display: block;
+}
+
+.mode-liste {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  //justify-content: flex-start;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 25% !important;
+  margin-right: 25% !important;
+
+  div#infosLivre {
+    margin-left: 20px;
+  }
+
+  .imgLivre {
+    margin-right: 20px;
+  }
+}
+
+.selected {
+  background-color: #CBE3B9 !important;
+  border: 2px solid #CBE3B9 !important;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9) !important;
+}
+

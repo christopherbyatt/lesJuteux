@@ -13,6 +13,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <script defer src="liaisons/scripts/menu.js"></script>
+{{--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
     <title>La Pastèque</title>
 </head>
 <body>
@@ -22,6 +23,8 @@
 
 <main>
     @yield('contenu')
+    <script src="liaisons/js/incrementationQte.js"></script>
+    <script src="liaisons/js/affichageListeGrille.js"></script>
 </main>
 
 <footer>

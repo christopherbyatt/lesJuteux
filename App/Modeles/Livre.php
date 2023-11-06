@@ -33,9 +33,35 @@ class Livre {
     private string $prenom =" ";
     private string $nom = " ";
 
+    private array $arr_tri = array();
+
     // Méthodes statiques
     public function __construct() {
 
+    }
+
+    public static function trier($selection) {
+        $arr_tri[0] = array();
+        $arr_tri[0]["value"] = "defaut";
+        $arr_tri[0]["nom"] = "Par défaut";
+        $arr_tri[1] = array();
+        $arr_tri[1]["value"] = "az-livre";
+        $arr_tri[1]["nom"] = "A-Z (Livre)";
+        $arr_tri[2] = array();
+        $arr_tri[2]["value"] = "za-livre";
+        $arr_tri[2]["nom"] = "Z-A (Livre)";
+        $arr_tri[3] = array();
+        $arr_tri[3]["value"] = "az-auteur";
+        $arr_tri[3]["nom"] = "A-Z (Auteur)";
+        $arr_tri[4] = array();
+        $arr_tri[4]["value"] = "za-auteur";
+        $arr_tri[4]["nom"] = "Z-A (Auteur)";
+        $arr_tri[5] = array();
+        $arr_tri[5]["value"] = "recent";
+        $arr_tri[5]["nom"] = "Récent";
+        $arr_tri[6] = array();
+        $arr_tri[6]["value"] = "ancien";
+        $arr_tri[6]["nom"] = "Ancien";
     }
     public static function compter(){
         $chaineSQL = 'SELECT COUNT(*) as total FROM livres';
@@ -62,7 +88,7 @@ class Livre {
     }
     public static function trouverParNouveautes():array {
         $chaineSQL = 'SELECT * FROM livres
-        WHERE date_parution_quebec BETWEEN "2022-01-01" AND "2022-12-31"';
+        WHERE date_parution_quebec BETWEEN "2023-01-01" AND "2023-12-31"';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
@@ -74,7 +100,7 @@ class Livre {
     }
     public static function trouverParVenir():array {
         $chaineSQL = 'SELECT * FROM livres
-        WHERE date_parution_quebec BETWEEN "2023-10-18" AND "2024-12-31"';
+        WHERE date_parution_quebec BETWEEN "2024-01-01" AND "2024-12-31"';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
@@ -195,5 +221,4 @@ class Livre {
     public function getTypeCouvertureAssociee(){
         return Type_couverture::trouverParId($this->type_couverture_id);
     }
-
 }
