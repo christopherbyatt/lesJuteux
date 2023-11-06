@@ -27,16 +27,17 @@
 
             <li>ISBN: {{$livre->getISBNPapier()}}</li>
             <li>Nombre de pages: {{$livre->getPagination()}}</li>
-{{--            <li>Type de couverture: {{$type_couverture->getNom()}}</li>--}}
+            <li>Type de couverture: {{$type_couverture->getNom()}}</li>
+            <li>Type d'impression: {{$type_impression->getNom()}}</li>
             <li>Date de parution au Québec: {{$livre->getDateQuebec()}}</li>
             <li>Date de parution en France: {{$livre->getDateFrance()}} ({{$livre->getPrixEuro()}} €)</li>
 
             <div class="format__livre">
                 <div class="format__papier">
-                    <button class="papier">Papier</button>
+                    <button class="papier format-selectionne" id="papier">Papier</button>
                 </div>
                 <div class="format__pdf">
-                    <button class="pdf">PDF</button>
+                    <button class="pdf" id="pdf">PDF</button>
                 </div>
             </div>
 

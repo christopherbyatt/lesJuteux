@@ -25,6 +25,7 @@
     @yield('contenu')
     <script src="liaisons/js/incrementationQte.js"></script>
     <script src="liaisons/js/affichageListeGrille.js"></script>
+    <script src="liaisons/js/choisirFormatLivre.js"></script>
 </main>
 
 <footer>

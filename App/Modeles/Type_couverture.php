@@ -13,7 +13,7 @@ class Type_couverture
 
     public static function trouverParId(int $unIdCouverture){
         // Définir la chaine SQL
-        $chaineSQL = 'SELECT * FROM categories WHERE id=:idCouverture';
+        $chaineSQL = 'SELECT * FROM type_couverture WHERE id=:idCouverture';
         // Préparer la requête (optimisation)
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
 
