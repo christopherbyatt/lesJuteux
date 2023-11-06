@@ -20,29 +20,31 @@
 {{--            </div>--}}
 {{--    </div>--}}
     <div class="affichage">
-        <button class="liste"></button>
-        <button class="grille"></button>
+        <button class="btnListe" id="btnListe"></button>
+        <button class="btnGrille selected" id="btnGrille"></button>
     </div>
         <h1>Liste des livres</h1>
     <div class="background">
         <div class="ligne-h2">
             <h2 class="fonce">Tous nos livres</h2>
         </div>
-        <div class="livres">
+        <div class="livres grille" id="livres">
             @foreach($livres as $livre)
-                <div class="livres__fiche">
+                <div class="livres__fiche mode-grille" id="livres__fiche">
                 <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
                     @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg"))
                         <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">
                     @else
-                        <img src="liaisons/images/livres/noImage_w300.jpg">
+                        <img src="liaisons/images/livres/noImage_w300.jpg" class="imgLivre">
                     @endif
                 </a>
+                    <div class="infosLivre" id="infosLivre">
                     @foreach($livre->getAuteur() as $auteur)
                     <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
                     @endforeach
                     <p class="livres__titre">{{$livre->getTitre()}}</p>
                     <p class="livres__prix">{{$livre->getPrixCan()}}$</p>
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -90,17 +92,19 @@
             <div class="ligne-h2">
                 <h2 class="pale">Nouveautés</h2>
             </div>
-        <div class="livres">
+            <div class="livres grille" id="livres">
             @foreach($livresNouveautes as $livreNouveaute)
                 <div class="livres__fiche">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreNouveaute->getId()}}">
                         <img class="livres__fiche-nouveaute" src="liaisons/images/livres/{{$livreNouveaute->getISBNPapier()}}_w300.jpg">
                     </a>
+                    <div class="infosLivre" id="infosLivre">
                     @foreach($livreNouveaute->getAuteur() as $auteur)
                         <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
                     @endforeach
                     <p class="livres__titre">{{$livreNouveaute->getTitre()}}</p>
                     <p class="livres__prix">{{$livreNouveaute->getPrixCan()}}$</p>
+                    </div>
                 </div>
             @endforeach
         </div>
@@ -114,11 +118,13 @@
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreAVenir->getId()}}">
                         <img src="liaisons/images/livres/{{$livreAVenir->getISBNPapier()}}_w300.jpg">
                     </a>
+                    <div class="infosLivre" id="infosLivre">
                     @foreach($livreAVenir->getAuteur() as $auteur)
                         <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
                     @endforeach
                     <p class="livres__titre">{{$livreAVenir->getTitre()}}</p>
                     <p class="livres__prix">{{$livreAVenir->getPrixCan()}}$</p>
+                    </div>
                 </div>
             @endforeach
             </div>
