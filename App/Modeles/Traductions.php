@@ -18,7 +18,7 @@ class Traductions
         $chaineSQL = 'SELECT * FROM traductions';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         // Définir le mode de récupération
-        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Traduction");
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Traductions");
         // Exécuter la requête
         $requetePreparee->execute();
         // Récupérer le résultat

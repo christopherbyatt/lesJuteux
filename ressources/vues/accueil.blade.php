@@ -53,6 +53,8 @@
                 @endforeach
                 </div>
     </div>
+        </div>
+        </div>
     <div class="ligne-h2">
         <h2 class="pale">Événements</h2>
     </div>

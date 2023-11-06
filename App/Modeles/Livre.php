@@ -6,6 +6,7 @@ use App\Modeles\Categorie;
 use App\Modeles\Type_couverture;
 use App\App;
 use App\Modeles\Type_impression;
+use http\Params;
 use \PDO;
 
 // Classe modèle
@@ -33,6 +34,10 @@ class Livre {
     private $type_couverture_id = 0;
     private string $prenom =" ";
     private string $nom = " ";
+    private string $notice = '';
+    private string $site_web = '';
+    private int $livre_id = 0;
+    private int $auteur_id =0;
 
     private array $arr_tri = array();
 
@@ -148,6 +153,17 @@ class Livre {
 
         return $livre;
     }
+    public static function trouverParAuteur(int $idAuteur):array{
+        $chaineSQL = 'SELECT livres.id, livres.isbn_papier, livres.titre, livres.prix_can FROM livres 
+    INNER JOIN livres_auteurs on livres_auteurs.livre_id = livres.id 
+         WHERE livres_auteurs.auteur_id = :idAuteur';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->bindParam('idAuteur', $idAuteur);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
+        $requetePreparee->execute();
+        $livreId = $requetePreparee->fetchAll();
+        return $livreId;
+    }
     public function getId():int{
         return $this->id;
     }
@@ -214,16 +230,16 @@ class Livre {
     public function getCategorie():array{
         return Categorie::trouverParLivre($this->id);
     }
-
     public function getCategorieAssociee(){
         return Categorie::trouverParId((int)$this->categorie_id);
     }
-
     public function getTypeCouvertureAssociee(){
         return Type_couverture::trouverParId($this->type_couverture_id);
     }
-
     public function getTypeImpressionAssociee(){
         return Type_impression::trouverParId($this->type_impression_id);
+     }
+    public function getReconnaissances():array{
+        return Reconnaissances::trouverParLivre($this->id);
     }
 }
