@@ -37,7 +37,6 @@
                     @else
                         <img src="liaisons/images/livres/noImage_w300.jpg">
                     @endif
-{{--                    <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">--}}
                 </a>
                     @foreach($livre->getAuteur() as $auteur)
                     <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>

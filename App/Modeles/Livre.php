@@ -153,7 +153,7 @@ class Livre {
         return $livre;
     }
     public static function trouverParAuteur(int $idAuteur):array{
-        $chaineSQL = 'SELECT * FROM livres 
+        $chaineSQL = 'SELECT livres.id, livres.isbn_papier, livres.titre, livres.prix_can FROM livres 
     INNER JOIN livres_auteurs on livres_auteurs.livre_id = livres.id 
          WHERE livres_auteurs.auteur_id = :idAuteur';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
@@ -237,7 +237,7 @@ class Livre {
     public function getTypeCouvertureAssociee(){
         return Type_couverture::trouverParId($this->type_couverture_id);
     }
-    public function getReconnaissances(){
+    public function getReconnaissances():array{
         return Reconnaissances::trouverParLivre($this->id);
     }
 }

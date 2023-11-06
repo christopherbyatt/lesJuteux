@@ -43,21 +43,19 @@
         @foreach($auteur->getLivre() as $livre)
             <div class="auteursLivres__fiche">
             <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
-                @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w150.jpg"))
-                    <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w150.jpg">
+                @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg"))
+                    <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">
                 @else
-                    <img src="liaisons/images/livres/noImage_w150.jpg">
+                    <img src="liaisons/images/livres/noImage_w300.jpg">
                 @endif
             </a>
                 <p class="auteursLivres__titre">{{$livre->getTitre()}}</p>
                 <p class="auteursLivres__prix">{{$livre->getPrixCan()}}$</p>
-{{--                @foreach($livre->getReconnaissances() as $reconnaissance)--}}
-{{--                    <p>{{$reconnaissance->getLaReconnaissance()}}</p>--}}
-{{--                @endforeach--}}
+                @foreach($livre->getReconnaissances() as $reconnaissance)
+                    <li class="auteurslivres__recon">{{$reconnaissance->getLaReconnaissance()}}</li>
+                @endforeach
             </div>
         @endforeach
-
-    </div>
 
     </div>
 @endsection
