@@ -11,5 +11,3 @@
             <p class="footer__texte"><h4>Nous joindre</h4><a class="footer__lien-mail" href="">info@lapasteque.com</a><br><br><h4>Fondateurs et comité de rédaction:</h4>Martin Brault<br><a class="footer__lien-mail"href="">brault@lapasteque.com</a><br>(514)502-0836<br><br>Frédéric Gauthier<br><a class="footer__lien-mail" href="">fred@lapasteque.com</a><br>(514)627-1585</p>
         </div>
     </div>
-
-</ul>

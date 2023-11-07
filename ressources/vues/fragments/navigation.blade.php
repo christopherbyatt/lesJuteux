@@ -2,9 +2,9 @@
     <div class="nav__largeur">
         <a href="index.php?controleur=site&action=accueil" class="nav__titre">La Pastèque</a>
         <div class="nav__recherche">
-            <form class="nav__barreRecherche" action="">
+            <form class="nav__barreRecherche" action="index.php?controleur=site&action=accueil">
                 <input type="text" name="recherche" class="nav__barre">
-                <button class="nav__barreRecherche__btn" id="nav__barreRecherche__btn"><span class="nav__barreRecherche__btn__icon"></span></button>
+                <button class="nav__barreRecherche__btn"><span class="nav__barreRecherche__btn__icon"></span></button>
             </form>
         </div>
         <div class="nav__icon">

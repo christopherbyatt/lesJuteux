@@ -20,32 +20,39 @@
     text-align: center;
   }
 }
-.auteurslivres {
-  display: flex;
-  flex-wrap: wrap;
+.auteursLivres {
   margin: auto;
   padding: 10px;
-  max-width: 1300px;
-  justify-content: center;
+  max-width: 1200px;
   &__fiche {
     margin-right: 40px;
     margin-left: 40px;
-  }
-  &__prix{
-    font-weight: bold;
-    font-size: 2rem;
-    margin-top: -0.5rem;
-    max-width: 300px;
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 20px;
   }
   &__titre{
     font-size: 2rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     max-width: 300px;
+    text-align: center;
+  }
+  &__liste{
+    padding-top: 45px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    display: inline-block;
+    width: 60%;
+    margin: 0;
   }
   &__recon{
-    max-width: 300px;
     list-style: none;
     padding-bottom: 1.5rem;
+  }
+  &__titreReco{
+    font-size: 25px;
   }
 }
