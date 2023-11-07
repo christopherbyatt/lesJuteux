@@ -5,6 +5,7 @@ namespace App\Modeles;
 use App\Modeles\Categorie;
 use App\Modeles\Type_couverture;
 use App\App;
+use App\Modeles\Type_impression;
 use http\Params;
 use \PDO;
 
@@ -229,14 +230,15 @@ class Livre {
     public function getCategorie():array{
         return Categorie::trouverParLivre($this->id);
     }
-
     public function getCategorieAssociee(){
         return Categorie::trouverParId((int)$this->categorie_id);
     }
-
     public function getTypeCouvertureAssociee(){
         return Type_couverture::trouverParId($this->type_couverture_id);
     }
+    public function getTypeImpressionAssociee(){
+        return Type_impression::trouverParId($this->type_impression_id);
+     }
     public function getReconnaissances():array{
         return Reconnaissances::trouverParLivre($this->id);
     }
