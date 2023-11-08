@@ -1,0 +1,65 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('contenu'); ?>
+ <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > <?php echo \htmlentities($livre->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <h1><?php echo \htmlentities($livre->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></h1>
+ <ul class="elements_fiche">
+ <div class="image_gauche">
+ <?php if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w485.jpg")): ?>
+ <img src="liaisons/images/livres/<?php echo \htmlentities($livre->getISBNPapier()??'', ENT_QUOTES, 'UTF-8', false); ?>_w485.jpg">
+ <?php else: ?>
+ <img src="liaisons/images/livres/noImage_w485.jpg">
+ <?php endif; ?>
+<?php /*            <img src="liaisons/images/livres/<?php echo \htmlentities($livre->getISBNPapier()??'', ENT_QUOTES, 'UTF-8', false); ?>_w485.jpg">*/ ?>
+ </div>
+ <div class="elements_droite">
+ <?php /*    <li>Id: <?php echo \htmlentities($livre->getId()??'', ENT_QUOTES, 'UTF-8', false); ?></li>*/ ?>
+ <li class="categorie__livre"><?php echo \htmlentities($categorie->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></li>
+ <li>Âge minimal: <?php echo \htmlentities($livre->getAgeMin()??'', ENT_QUOTES, 'UTF-8', false); ?> ans</li>
+ <p class="fiche__auteurs">
+ <?php $__currentLoopData = $livre->getAuteur(); $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $auteur): $loop = $this->incrementLoopIndices();  ?>
+ <a class="lien-auteurs"
+ href="index.php?controleur=auteur&action=fiche&idAuteur=<?php echo \htmlentities($auteur->getAuteurId()??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($auteur->getPrenomNom()??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </p>
+ <li class="prixCAN__livre"><?php echo \htmlentities($livre->getPrixCan()??'', ENT_QUOTES, 'UTF-8', false); ?> $</li>
+ <li class="description__livre"><?php echo $livre->getLeLivre(); ?></li>
+
+ <li>ISBN: <?php echo \htmlentities($livre->getISBNPapier()??'', ENT_QUOTES, 'UTF-8', false); ?></li>
+ <li>Nombre de pages: <?php echo \htmlentities($livre->getPagination()??'', ENT_QUOTES, 'UTF-8', false); ?></li>
+ <li>Type de couverture: <?php echo \htmlentities($type_couverture->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></li>
+ <li>Type d'impression: <?php echo \htmlentities($type_impression->getNom()??'', ENT_QUOTES, 'UTF-8', false); ?></li>
+ <li>Date de parution au Québec: <?php echo \htmlentities($livre->getDateQuebec()??'', ENT_QUOTES, 'UTF-8', false); ?></li>
+ <li>Date de parution en France: <?php echo \htmlentities($livre->getDateFrance()??'', ENT_QUOTES, 'UTF-8', false); ?> (<?php echo \htmlentities($livre->getPrixEuro()??'', ENT_QUOTES, 'UTF-8', false); ?> €)</li>
+
+ <div class="format__livre">
+ <div class="format__papier">
+ <button class="papier format-selectionne" id="papier">Papier</button>
+ </div>
+ <div class="format__pdf">
+ <button class="pdf" id="pdf">PDF</button>
+ </div>
+ </div>
+
+ <div class="quantite">
+ <p class="moins" id="moins"></p>
+<?php /*                <p class="chiffre">1</p>*/ ?>
+ <label for="chiffre"></label>
+ <input type="number" id="chiffre" name="chiffre" value="1">
+ <p class="plus" id="plus"></p>
+ </div>
+
+ <button class="btnAjouter">Ajouter au panier</button>
+<?php /*            <li>Titre: <?php echo \htmlentities($livre->getTitre()??'', ENT_QUOTES, 'UTF-8', false); ?></li>*/ ?>
+<?php /*            <li>Arguments: <?php echo $livre->getArguments(); ?></li>*/ ?>
+<?php /*            <li>Statut: <?php echo \htmlentities($livre->getStatut()??'', ENT_QUOTES, 'UTF-8', false); ?></li>*/ ?>
+<?php /*            <li>Format: <?php echo \htmlentities($livre->getFormat()??'', ENT_QUOTES, 'UTF-8', false); ?></li>*/ ?>
+<?php /*            <li>Tirage: <?php echo \htmlentities($livre->getTirage()??'', ENT_QUOTES, 'UTF-8', false); ?></li>*/ ?>
+<?php /*            <li>Id Categorie: <?php echo \htmlentities($livre->getCategorieId()??'', ENT_QUOTES, 'UTF-8', false); ?></li>*/ ?>
+<?php /*            <li>Id type d'impression: <?php echo \htmlentities($livre->getTypeImpressionId()??'', ENT_QUOTES, 'UTF-8', false); ?></li>*/ ?>
+<?php /*            <li>Id type couverture: <?php echo \htmlentities($livre->getTypeCouvertureId()??'', ENT_QUOTES, 'UTF-8', false); ?></li>*/ ?>
+ </div>
+ </ul>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('gabarit'); } ?>
