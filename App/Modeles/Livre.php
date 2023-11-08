@@ -110,7 +110,7 @@ class Livre {
         $livresAVenir = $requetePreparee->fetchAll();
         return $livresAVenir;
     }
-    public static function paginer(int $unNoDePage, int $unNbrParPage){
+    public static function paginer(int $unNoDePage, int $unNbrParPage):array {
         $pdo = App::getPdo();
         $occurence = $unNoDePage * 5;
         // Définir la chaine SQL
@@ -129,6 +129,10 @@ class Livre {
         $livres = $requetePreparee->fetchAll();
 
         return $livres;
+    }
+    public static function paginerFiltres(int $unNoDePage, int $unNbrParPage, string $unTri, array $desFiltres, string $unVoirNos):array {
+
+        return [];
     }
     public static function trouverParId(int $unIdLivre):Livre {
         // Définir la chaine SQL

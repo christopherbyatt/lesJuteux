@@ -20,8 +20,20 @@ class ControleurLivre {
             $page = 0;
         }
 
-        $livres = Livre::paginer($page,12);
-        $nbrPages = ceil(livre::compter()/12 -1);
+        if(isset($_GET['filtres'])) {
+            $filtre = $_GET['filtres'];
+        }
+        else {
+            $filtre = false;
+        }
+
+        if($filtre === true) {
+
+        }
+        else {
+            $livres = Livre::paginer($page,12);
+            $nbrPages = ceil(livre::compter()/12 -1);
+        }
 
         $tDonnees = array("message" => "Je suis la page Index auteurs...", "livres" => $livres ,"livresAVenirs" => $livresAVenirs, "livresNouveautes"=>$livresNouveautes, "numeroPage"=>$page, "urlPagination" => $urlPagination, "nombreTotalPages"=>$nbrPages, "lesCategories"=>$lesCategories);
         echo App::getBlade()->run("livres.index", $tDonnees);

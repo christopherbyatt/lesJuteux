@@ -173,5 +173,4 @@
     <span style="color:#999">Dernier</span><!-- Bouton dernier inactif -->
     @endif
         </div>
-    <script src="liaisons/scripts/triEtFiltres.js"></script>
     @endsection
