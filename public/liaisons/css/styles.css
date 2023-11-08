@@ -754,12 +754,6 @@ div.affichage button.btnGrille {
   margin-left: 25% !important;
   margin-right: 25% !important;
 }
-.mode-liste div#infosLivre {
-  margin-left: 20px;
-}
-.mode-liste .imgLivre {
-  margin-right: 20px;
-}
 
 .selected {
   background-color: #CBE3B9 !important;
@@ -784,6 +778,13 @@ div.affichage button.btnGrille {
   font-size: 2rem;
   margin-top: 0.5rem;
 }
+.auteurs div#infosAuteur {
+  margin-left: 20px;
+}
+.auteurs .imgAuteur {
+  margin-right: 20px;
+}
+
 .ficheArtiste {
   display: flex;
   flex-direction: column;
@@ -920,7 +921,6 @@ div.elements_droite div.quantite input#chiffre {
   padding-left: 15px;
   background-color: #484141;
   color: white;
-  border: none;
 }
 div.elements_droite div.quantite p {
   font-size: 25px;

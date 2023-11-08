@@ -96,13 +96,28 @@ div.affichage {
   margin-left: 25% !important;
   margin-right: 25% !important;
 
-  div#infosLivre {
-    margin-left: 20px;
-  }
-
-  .imgLivre {
-    margin-right: 20px;
-  }
+  //@media(min-width: 800px) {
+  //  .mode-liste {
+  //    display: flex;
+  //    flex-direction: row;
+  //    align-items: center;
+  //    //justify-content: flex-start;
+  //    margin-top: 20px;
+  //    margin-bottom: 20px;
+  //    margin-left: 25% !important;
+  //    margin-right: 25% !important;
+  //
+  //    div#infosLivre {
+  //      margin-left: 20px;
+  //    }
+  //  }
+  //
+  //  .liste {
+  //    .imgLivre {
+  //      margin-right: 20px;
+  //    }
+  //  }
+  //}
 }
 
 .selected {

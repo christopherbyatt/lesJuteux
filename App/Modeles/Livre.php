@@ -224,6 +224,10 @@ class Livre {
     public function getTypeCouvertureId():int{
         return $this->type_couverture_id;
     }
+
+    public function getAuteurId():int{
+        return $this->auteur_id;
+    }
     public function getAuteur():array{
         return Auteur::trouverParLivre($this->id);
     }

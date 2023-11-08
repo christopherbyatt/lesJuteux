@@ -60,4 +60,32 @@
 {{--            <li>Id type couverture: {{$livre->getTypeCouvertureId()}}</li>--}}
         </div>
     </ul>
+<div class="background">
+    <div class="ligne-h2">
+        <h2 class="fonce">Également de cet auteur</h2>
+    </div>
+    <div class="auteursLivres">
+        @foreach($livre->getAuteur() as $auteur)
+            @foreach($auteur->getLivresAssocies() as $livre)
+                {{$livre->getTitre()}}
+            @endforeach
+            <div class="auteursLivres__fiche">
+{{--                {{$auteur->getNom()}}--}}
+{{--                <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">--}}
+{{--                    @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg"))--}}
+{{--                        <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">--}}
+{{--                    @else--}}
+{{--                        <img src="liaisons/images/livres/noImage_w300.jpg">--}}
+{{--                    @endif--}}
+{{--                </a>--}}
+{{--                <p class="auteursLivres__titre">{{$livre->getTitre()}}</p>--}}
+{{--                <p class="auteursLivres__prix">{{$livre->getPrixCan()}}$</p>--}}
+{{--                @foreach($livre->getReconnaissances() as $reconnaissance)--}}
+{{--                    <li class="auteurslivres__recon">{{$reconnaissance->getLaReconnaissance()}}</li>--}}
+{{--                @endforeach--}}
+            </div>
+        @endforeach
+    </div>
+
+    </div>
 @endsection
