@@ -24,7 +24,7 @@
             <div class="ligne-h2">
         <h2 class="pale">Bibliographie</h2>
             </div>
-        <p class="ficheArtiste__biblio">{{$auteur->getNotice()}}</p>
+        <p class="ficheArtiste__biblio">{!!$auteur->getNotice()!!}</p>
         </div>
     <div class="background">
     <div class="ficheArtiste">
@@ -42,6 +42,7 @@
     <div class="auteursLivres">
         @foreach($auteur->getLivre() as $livre)
             <div class="auteursLivres__fiche">
+                <h3 class="auteursLivres__titre">{{$livre->getTitre()}}</h3>
             <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
                 @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg"))
                     <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">
@@ -49,13 +50,15 @@
                     <img src="liaisons/images/livres/noImage_w300.jpg">
                 @endif
             </a>
-                <p class="auteursLivres__titre">{{$livre->getTitre()}}</p>
-                <p class="auteursLivres__prix">{{$livre->getPrixCan()}}$</p>
+                <ul class="auteursLivres__liste">
+                    @if(count($livre->getReconnaissances())!=0)
+                    <p class="auteursLivres__titreReco">Prix et reconnaissances</p>
+                    @endif
                 @foreach($livre->getReconnaissances() as $reconnaissance)
-                    <li class="auteurslivres__recon">{{$reconnaissance->getLaReconnaissance()}}</li>
+                    <li class="auteursLivres__recon">{!! $reconnaissance->getLaReconnaissance()!!}</li>
                 @endforeach
+                </ul>
             </div>
         @endforeach
-
     </div>
 @endsection

@@ -41,7 +41,7 @@ class Reconnaissances
         return $reconnaissances;
     }
     public static function trouverParLivre(int $idLivre):array{
-        $chaineSQL = 'SELECT la_reconnaissance FROM reconnaissances WHERE livre_id = :idLivre';
+        $chaineSQL = 'SELECT la_reconnaissance FROM reconnaissances WHERE livre_id = :idLivre ORDER BY RAND() LIMIT 0,5';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->bindParam('idLivre', $idLivre);
         $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Reconnaissances");
