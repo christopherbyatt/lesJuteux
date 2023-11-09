@@ -116,7 +116,7 @@
             @foreach($livresAVenirs as $livreAVenir)
                 <div class="livres__fiche">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreAVenir->getId()}}">
-                        <img src="liaisons/images/livres/{{$livreAVenir->getISBNPapier()}}_w300.jpg">
+                        <img src="liaisons/images/livres/{{$livreAVenir->getISBNPapier()}}_w300.jpg" class="imgAVenir">
                     </a>
                     <div class="infosLivre" id="infosLivre">
                     @foreach($livreAVenir->getAuteur() as $auteur)

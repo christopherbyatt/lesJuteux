@@ -93,6 +93,6 @@ class Auteur {
     }
 
     public function getLivresAssocies(){
-        return Livre::trouverParAuteur($this->id);
+        return Livre::trouverParAuteur($this->auteur_id);
     }
 }

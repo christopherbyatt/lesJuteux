@@ -741,18 +741,16 @@ div.affichage button.btnGrille {
   justify-content: center;
 }
 
-.mode-grille {
-  display: block;
-}
-
 .mode-liste {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 25% !important;
-  margin-right: 25% !important;
+  justify-content: center;
+}
+.mode-liste div#infosLivre {
+  margin-left: 20px;
 }
 
 .selected {
@@ -761,6 +759,23 @@ div.affichage button.btnGrille {
   filter: drop-shadow(0 0 0.75rem #CBE3B9) !important;
 }
 
+@media (min-width: 800px) {
+  .mode-grille {
+    display: block;
+  }
+  .mode-liste {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 25% !important;
+    margin-right: 25% !important;
+  }
+  .mode-liste div#infosLivre {
+    margin-left: 20px;
+  }
+}
 .auteurs {
   display: flex;
   flex-wrap: wrap;
@@ -777,9 +792,6 @@ div.affichage button.btnGrille {
   font-weight: bold;
   font-size: 2rem;
   margin-top: 0.5rem;
-}
-.auteurs div#infosAuteur {
-  margin-left: 20px;
 }
 .auteurs .imgAuteur {
   margin-right: 20px;
@@ -918,7 +930,6 @@ div.elements_droite div.quantite input#chiffre {
   width: 75px;
   font-size: 30px;
   text-align: center;
-  padding-left: 15px;
   background-color: #484141;
   color: white;
 }
@@ -972,6 +983,39 @@ div.elements_droite button.format-selectionne {
   color: #CBE3B9 !important;
   border: 2px solid #CBE3B9 !important;
   filter: drop-shadow(0 0 0.75rem #CBE3B9);
+}
+div.elements_droite div a .imgLivre {
+  margin-right: 20px;
+}
+div.elements_droite div.livre__reconnaissances {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  border: 2px solid #FDD5CE;
+  flex-direction: column;
+  align-items: center;
+}
+div.elements_droite h3.titreReconnaissances {
+  color: #FDD5CE;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+div.elements_droite li.uneReconnaissance {
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+input {
+  /* Firefox */
+  -moz-appearance: textfield;
+  /* Chrome */
+}
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
