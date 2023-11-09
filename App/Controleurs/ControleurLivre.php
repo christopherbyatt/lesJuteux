@@ -26,10 +26,15 @@ class ControleurLivre {
 
     public function fiche():void{
         $id = (int) $_GET['idLivre'];
+//        $idAuteur = (int) $_GET['idAuteur'];
         $livre = Livre::trouverParId($id);
         $categorie = $livre->getCategorieAssociee();
         $couverture = $livre->getTypeCouvertureAssociee();
         $impression = $livre->getTypeImpressionAssociee();
+//        $auteur = $livre->getAuteurId();
+//        var_dump($auteur);
+//        $livresAuteur = Livre::trouverParAuteur(2);
+//        var_dump($livresAuteur);
         $tDonnees = array("message" => "Je suis la page Fiche auteurs...", "livre" => $livre, "categorie" => $categorie, "type_couverture" => $couverture, "type_impression" => $impression);
         echo App::getBlade()->run("livres.fiche", $tDonnees);
     }

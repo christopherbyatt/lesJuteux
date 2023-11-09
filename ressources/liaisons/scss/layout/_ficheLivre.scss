@@ -76,10 +76,10 @@ div.elements_droite {
       width: 75px;
       font-size: 30px;
       text-align: center;
-      padding-left: 15px;
+      //padding-left: 15px;
       background-color: #484141;
       color: white;
-      border: none;
+      //border: none;
     }
 
     p {
@@ -141,5 +141,47 @@ div.elements_droite {
     color: #CBE3B9 !important;
     border: 2px solid #CBE3B9 !important;
     filter: drop-shadow(0 0 0.75rem #CBE3B9);
+  }
+
+  div a {
+    .imgLivre {
+      margin-right: 20px;
+    }
+  }
+
+  div.livre__reconnaissances {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    border: 2px solid #FDD5CE;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h3.titreReconnaissances {
+    color: #FDD5CE;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  li.uneReconnaissance {
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+// Pour retirer les flèches sur l'input number (Quantité)
+// Source: https://kodex.pierrelebedel.fr/css/retirer-fleches-inputs-number/
+input{
+  /* Firefox */
+  -moz-appearance: textfield;
+
+  /* Chrome */
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin:0;
   }
 }

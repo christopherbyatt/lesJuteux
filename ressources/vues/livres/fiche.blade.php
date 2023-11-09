@@ -32,6 +32,13 @@
             <li>Date de parution au Québec: {{$livre->getDateQuebec()}}</li>
             <li>Date de parution en France: {{$livre->getDateFrance()}} ({{$livre->getPrixEuro()}} €)</li>
 
+            <div class="livre__reconnaissances">
+            <h3 class="titreReconnaissances">Reconnaissances</h3>
+            @foreach($livre->getReconnaissances() as $reconnaissance)
+                <li class="uneReconnaissance">{!! $reconnaissance->getLaReconnaissance() !!}</li>
+            @endforeach
+            </div>
+
             <div class="format__livre">
                 <div class="format__papier">
                     <button class="papier format-selectionne" id="papier">Papier</button>
@@ -60,4 +67,33 @@
 {{--            <li>Id type couverture: {{$livre->getTypeCouvertureId()}}</li>--}}
         </div>
     </ul>
+<div class="background sectionSuggestions">
+    <div class="ligne-h2">
+        <h2 class="fonce">Également de cet auteur</h2>
+    </div>
+    <div class="auteursLivres">
+        @foreach($livre->getAuteur() as $auteur)
+            @foreach($auteur->getLivresAssocies() as $book)
+                @if ($book->getId() != $livre->getId())
+                        <div class="livres__fiche" id="livres__fiche">
+                            <a href="index.php?controleur=livre&action=fiche&idLivre={{$book->getId()}}">
+                                @if(is_file("liaisons/images/livres/".$book->getISBNPapier()."_w300.jpg"))
+                                    <img src="liaisons/images/livres/{{$book->getISBNPapier()}}_w300.jpg" class="imgLivre">
+                                @else
+                                    <img src="liaisons/images/livres/noImage_w300.jpg" class="imgLivre">
+                                @endif
+                            </a>
+                            <div class="infosLivre" id="infosLivre">
+                                @foreach($book->getAuteur() as $auteur)
+                                    <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
+                                @endforeach
+                                <p class="livres__titre">{{$book->getTitre()}}</p>
+                                <p class="livres__prix">{{$book->getPrixCan()}}$</p>
+                            </div>
+                        </div>
+                @endif
+            @endforeach
+        @endforeach
+        </div>
+    </div>
 @endsection
