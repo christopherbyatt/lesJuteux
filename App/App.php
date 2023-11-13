@@ -18,17 +18,38 @@ class App {
         $this->routerRequete();
     }
 
+    public static function getServeur(): string
+    {
+        // Vérifier la nature du serveur (local VS production)
+        $env = 'null';
+        if ((substr($_SERVER['HTTP_HOST'], 0, 9) == 'localhost') ||
+            (substr($_SERVER['HTTP_HOST'], 0, 7) == '199.202')){
+            $env = 'serveur-local';
+        } else {
+            $env = 'serveur-production';
+        }
+        return $env;
+    }
+
     public static function getPDO() {
         if (App::$refPDO == null) {
-            // Exemple de paramètre de connexion
-            $serveur = 'localhost';
-            $utilisateur = 'root';
-            $motDePasse = 'root';
-            $nomBd = '23_rpni3_lesjuteux';
-            $chaineDSN = "mysql:dbname=$nomBd;host=$serveur";    // Data source name
-
-            // Tentative de connexion
-            $pdo = new PDO($chaineDSN, $utilisateur, $motDePasse);
+            if(App::getServeur() === 'serveur-local')
+            {
+                $serveur = 'localhost';
+                $utilisateur = 'root';
+                $motDePasse = 'root';
+                $nomBd = '23_rpni3_lesjuteux';
+                $chaineDSN = "mysql:dbname=$nomBd;host=$serveur";    // Data source name
+                $pdo = new PDO($chaineDSN, $utilisateur, $motDePasse);
+            }else if(App::getServeur() === 'serveur-production'){
+                // echo "Erreur: Vous devez configurer la connexion du serveur de production (timunix3).";
+                $serveur = 'localhost';
+                $utilisateur = '23_rpni3_lesjuteux';
+                $motDePasse = 'lC(D*auUiI8HG14w';
+                $nomBd = '23_rpni3_lesjuteux';
+                $chaineDSN = "mysql:dbname=$nomBd;host=$serveur";    // Data source name
+                $pdo = new PDO($chaineDSN, $utilisateur, $motDePasse);
+            }
             // Changement d'encodage des caractères UTF-8
             $pdo->exec("SET NAMES utf8");
             // Affectation des attributs de la connexion : Obtenir des rapports d'erreurs et d'exception avec errorInfo()
