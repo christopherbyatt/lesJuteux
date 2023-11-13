@@ -32,12 +32,14 @@
             <li>Date de parution au Québec: {{$livre->getDateQuebec()}}</li>
             <li>Date de parution en France: {{$livre->getDateFrance()}} ({{$livre->getPrixEuro()}} €)</li>
 
+            @if ($livre->getReconnaissances() != null)
             <div class="livre__reconnaissances">
             <h3 class="titreReconnaissances">Reconnaissances</h3>
             @foreach($livre->getReconnaissances() as $reconnaissance)
                 <li class="uneReconnaissance">{!! $reconnaissance->getLaReconnaissance() !!}</li>
             @endforeach
             </div>
+            @endif
 
             <div class="format__livre">
                 <div class="format__papier">
