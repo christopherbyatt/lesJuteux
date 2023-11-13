@@ -808,42 +808,67 @@ div.affichage button.btnGrille {
 }
 
 .auteursLivres {
-  margin: auto;
-  padding: 10px;
-  max-width: 1200px;
-}
-.auteursLivres__fiche {
-  margin-right: 40px;
-  margin-left: 40px;
-  position: relative;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding: 20px;
 }
 .auteursLivres__titre {
-  font-size: 2rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  max-width: 300px;
+  text-align: center;
+  padding-bottom: 1.7rem;
+  padding-top: 2.4rem;
+  font-size: 2.4rem;
+  margin: 0;
+}
+.auteursLivres__image {
   text-align: center;
 }
 .auteursLivres__liste {
-  padding-top: 45px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  float: right;
-  display: inline-block;
-  width: 60%;
-  margin: 0;
-}
-.auteursLivres__recon {
-  list-style: none;
-  padding-bottom: 1.5rem;
+  margin: auto;
+  max-width: 60%;
 }
 .auteursLivres__titreReco {
-  font-size: 25px;
+  font-size: 24px;
 }
 
+@media (min-width: 900px) {
+  .auteursLivres {
+    margin: auto;
+    padding: 10px;
+    max-width: 1200px;
+  }
+  .auteursLivres__fiche {
+    margin-right: 40px;
+    margin-left: 40px;
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .auteursLivres__titre {
+    margin: 0;
+    padding-top: 8px;
+    max-width: 300px;
+    text-align: center;
+  }
+  .auteursLivres__image {
+    text-align: start;
+  }
+  .auteursLivres__liste {
+    padding-top: 45px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: right;
+    display: inline-block;
+    width: 60%;
+    margin: 0;
+  }
+  .auteursLivres__recon {
+    list-style: none;
+    padding-bottom: 1rem;
+  }
+  .auteursLivres__titreReco {
+    font-size: 28px;
+    padding-top: 2.5rem;
+  }
+}
 div.pagination {
   display: flex;
   justify-content: center;
