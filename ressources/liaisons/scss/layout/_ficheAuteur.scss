@@ -1,3 +1,4 @@
+
 .ficheArtiste{
   display: flex;
   flex-direction: column;
@@ -20,39 +21,69 @@
     text-align: center;
   }
 }
-.auteursLivres {
-  margin: auto;
-  padding: 10px;
-  max-width: 1200px;
-  &__fiche {
-    margin-right: 40px;
-    margin-left: 40px;
-    position: relative;
-    padding-bottom: 20px;
-    padding-top: 20px;
-  }
+.auteursLivres{
+  padding: 20px;
   &__titre{
-    font-size: 2rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    max-width: 300px;
     text-align: center;
-  }
-  &__liste{
-    padding-top: 45px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    float: right;
-    display: inline-block;
-    width: 60%;
+    padding-bottom: 1.7rem;
+    padding-top: 2.4rem;
+    font-size: 2.4rem;
     margin: 0;
   }
-  &__recon{
-    list-style: none;
-    padding-bottom: 1.5rem;
+  &__image{
+     text-align: center;
+   }
+  &__liste{
+    margin: auto;
+    max-width: 60%;
   }
-  &__titreReco{
-    font-size: 25px;
+  &__titreReco {
+    font-size: 24px;
+  }
+}
+@media (min-width: 900px) {
+  .auteursLivres {
+    margin: auto;
+    padding: 10px;
+    max-width: 1200px;
+
+    &__fiche {
+      margin-right: 40px;
+      margin-left: 40px;
+      position: relative;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+
+    &__titre {
+      margin: 0;
+      padding-top: 8px;
+      max-width: 300px;
+      text-align: center;
+    }
+    &__image{
+      text-align: start;
+    }
+
+    &__liste {
+      padding-top: 45px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      float: right;
+      display: inline-block;
+      width: 60%;
+      margin: 0;
+    }
+
+    &__recon {
+      list-style: none;
+      padding-bottom: 1rem;
+    }
+
+    &__titreReco {
+      font-size: 28px;
+      padding-top: 2.5rem;
+    }
   }
 }
