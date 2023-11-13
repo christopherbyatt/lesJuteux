@@ -33,7 +33,7 @@
                 <div class="livres__fiche mode-grille" id="livres__fiche">
                 <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
                     @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg"))
-                        <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">
+                        <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg" class="imgLivre">
                     @else
                         <img src="liaisons/images/livres/noImage_w300.jpg" class="imgLivre">
                     @endif
@@ -116,7 +116,7 @@
             @foreach($livresAVenirs as $livreAVenir)
                 <div class="livres__fiche">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreAVenir->getId()}}">
-                        <img src="liaisons/images/livres/{{$livreAVenir->getISBNPapier()}}_w300.jpg">
+                        <img src="liaisons/images/livres/{{$livreAVenir->getISBNPapier()}}_w300.jpg" class="imgAVenir">
                     </a>
                     <div class="infosLivre" id="infosLivre">
                     @foreach($livreAVenir->getAuteur() as $auteur)

@@ -91,4 +91,8 @@ class Auteur {
     public function getLivre():array{
         return Livre::trouverParAuteur($this->id);
     }
+
+    public function getLivresAssocies(){
+        return Livre::trouverParAuteur($this->auteur_id);
+    }
 }
