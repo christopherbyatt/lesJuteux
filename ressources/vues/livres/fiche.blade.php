@@ -56,7 +56,8 @@
                 <p class="plus" id="plus"></p>
             </div>
 
-            <button class="btnAjouter">Ajouter au panier</button>
+            <button class="btnAjouter" id="btnAjouter">Ajouter au panier</button>
+            <p class="pConfirmation" id="pConfirmation"></p>
 {{--            <li>Titre: {{$livre->getTitre()}}</li>--}}
 {{--            <li>Arguments: {!! $livre->getArguments() !!}</li>--}}
 {{--            <li>Statut: {{$livre->getStatut()}}</li>--}}

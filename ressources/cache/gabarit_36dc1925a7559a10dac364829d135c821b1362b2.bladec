@@ -26,6 +26,7 @@
  <script src="liaisons/js/incrementationQte.js"></script>
  <script src="liaisons/js/affichageListeGrille.js"></script>
  <script src="liaisons/js/choisirFormatLivre.js"></script>
+ <script src="liaisons/js/confirmationPanier.js"></script>
 </main>
 
 <footer>
