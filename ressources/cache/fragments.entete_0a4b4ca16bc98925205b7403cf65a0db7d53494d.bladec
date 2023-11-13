@@ -1,1 +1,0 @@
-<?php echo $this->runChild("fragments.navigation"); ?>

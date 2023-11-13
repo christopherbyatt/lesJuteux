@@ -4,6 +4,7 @@ namespace App;
 use App\Controleurs\ControleurSite;
 use App\Controleurs\ControleurAuteur;
 use App\Controleurs\ControleurLivre;
+use App\Controleurs\ControleurPanier;
 use \PDO;
 use eftec\bladeone\BladeOne;
 
@@ -121,8 +122,15 @@ class App {
                     $objControleur->fiche();
                     break;
             }
-        }else{
-            echo 'Erreur 404 - Page introuvable.';
+        }else if ($nomControleur === 'panier') {
+            $objControleur = new ControleurPanier();
+            switch ($nomAction) {
+                case 'index':
+                    $objControleur->index();
+                    break;
+            }
+        } else {
+                echo 'Erreur 404 - Page introuvable.';
         }
     }
 }
