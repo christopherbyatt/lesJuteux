@@ -106,9 +106,6 @@ class App {
                 case 'fiche':
                     $objControleur->fiche();
                     break;
-                case 'tri':
-                    $objControleur->tri();
-                    break;
             }
         }
         else if ($nomControleur === 'auteur'){
