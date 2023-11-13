@@ -19,6 +19,14 @@ class Auteur {
     public function __construct() {
 
     }
+
+    public static function compter(){
+        $chaineSQL = 'SELECT COUNT(*) as total FROM auteurs';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->execute();
+        $resultat = $requetePreparee->fetch();
+        return $resultat["total"];
+    }
     public static function trouverTout():array{
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM auteurs ORDER BY auteurs.nom ASC';
@@ -63,6 +71,27 @@ class Auteur {
         $auteurId = $requetePreparee->fetchAll();
         return $auteurId;
 
+    }
+
+    public static function paginer(int $unNoDePage, int $unNbrParPage){
+        $pdo = App::getPdo();
+        $occurence = $unNoDePage * 5;
+        // Définir la chaine SQL
+        $chaineSQL = 'SELECT * FROM auteurs LIMIT :unNoPage, :unNbrPage';
+        // Préparer la requête (optimisation)
+        $requetePreparee = $pdo->prepare($chaineSQL);
+
+        // BindParam
+        $requetePreparee->bindParam('unNoPage', $occurence, PDO::PARAM_INT);
+        $requetePreparee->bindParam('unNbrPage', $unNbrParPage, PDO::PARAM_INT);
+        // Définir le mode de récupération
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Auteur");
+        // Exécuter la requête
+        $requetePreparee->execute();
+        // Récupérer le résultat
+        $livres = $requetePreparee->fetchAll();
+
+        return $livres;
     }
     public function getId():int{
         return $this->id;
