@@ -6,6 +6,8 @@ use App\Controleurs\ControleurAuteur;
 use App\Controleurs\ControleurLivre;
 use \PDO;
 use eftec\bladeone\BladeOne;
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 class App {
     private static ?PDO $refPDO = null;

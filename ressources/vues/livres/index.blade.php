@@ -138,6 +138,7 @@
 <!-- Si on est pas sur la première page et s'il y a plus d'une page -->
         <div class="pagination">
 @if ($numeroPage > 0)
+
     <a href= "{{ $urlPagination . "&page=" . 0  }}">Premier</a>
 @else
     <span style="color:#999">Premier</span> <!-- Bouton premier inactif -->

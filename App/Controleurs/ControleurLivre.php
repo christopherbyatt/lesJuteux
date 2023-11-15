@@ -14,7 +14,17 @@ class ControleurLivre
         $livresNouveautes = Livre::trouverParNouveautes();
         $lesCategories = Categorie::trouverTout();
 
-        $urlPagination = 'index.php?controleur=livre&action=index';
+        // Code pour trouver l'URL actuel de JavaTPoint
+        // https://www.javatpoint.com/how-to-get-current-page-url-in-php
+        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+            $urlPagination = "https://";
+        else
+            $urlPagination = "http://";
+        // Append the host(domain name, ip) to the URL.
+        $urlPagination.= $_SERVER['HTTP_HOST'];
+
+        // Append the requested resource location to the URL
+        $urlPagination.= $_SERVER['REQUEST_URI'];
 
         if (isset($_GET['page'])) {
             $page = $_GET['page'];
@@ -28,9 +38,19 @@ class ControleurLivre
             $filtre = false;
         }
 
+        if(isset($_POST["choixCategorie"])){
+            $lesChoixCategorie = $_POST["choixCategorie"];
+            foreach ($lesChoixCategorie as $unChoixCategorie) {
+                $urlPagination .= "&choixCategorie[]=" . $unChoixCategorie;
+            }
+        }
+        elseif(isset($_GET["choixCategorie"])) {
+            $lesChoixCategorie = $_GET["choixCategorie"];
+        }
+
         if ($filtre === true) {
-            $livres = Livre::paginerFiltres($page, 12, $_POST['choixCategorie']);
-            $nbrPages = ceil(livre::compterFiltre($_POST['choixCategorie']) / 12 - 1);
+            $livres = Livre::paginerFiltres($page, 12, $lesChoixCategorie);
+            $nbrPages = ceil(livre::compterFiltre($lesChoixCategorie) / 12 - 1);
         } else {
             $livres = Livre::paginer($page, 12);
             $nbrPages = ceil(livre::compter() / 12 - 1);

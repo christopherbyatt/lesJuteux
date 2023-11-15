@@ -150,11 +150,11 @@ class Livre {
         if(count($desFiltres) !== 0){
             $chaineSQL = $chaineSQL . " WHERE categorie_id in(".$desCategories.")";
         }
-        echo $chaineSQL;
+//        echo $chaineSQL;
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->execute();
         $resultat = $requetePreparee->fetch();
-        var_dump($resultat["COUNT(*)"]);
+//        var_dump($resultat["COUNT(*)"]);
         return $resultat["COUNT(*)"];
     }
     public static function trouverParId(int $unIdLivre):Livre {
