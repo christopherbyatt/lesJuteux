@@ -20,8 +20,10 @@
 {{--            <li class="listeVoirNos__choix"><input type="radio" class="listeVoirNos__choix__radio" id="nouveautes" name="choixVoirNos" value="nouveautes"><label for="nouveautes">Nos nouveautés</label></li>--}}
 {{--            <li class="listeVoirNos__choix"><input type="radio" class="listeVoirNos__choix__radio" id="livresAVenir" name="choixVoirNos" value="livresAVenir"><label for="livresAVenir">Nos livres à venir</label></li>--}}
 {{--        </ul>--}}
-        <button id="lancerRechercheLivres" class="filtreEtTri__bouttonRecherche" type="submit">Relancer la recherche</button>
-        <a id="reinitialiserRechercheLivres" class="filtreEtTri__bouttonReinitialiser" href="index.php?controleur=livre&action=index">Réinitialiser la recherche</a>
-</form>
+        <div class="lesbtns">
+            <button id="lancerRechercheLivres" class="filtreEtTri__bouttonRecherche" type="submit">Relancer la recherche</button>
+            <a id="reinitialiserRechercheLivres" class="filtreEtTri__bouttonReinitialiser" href="index.php?controleur=livre&action=index">Réinitialiser la recherche</a>
+        </div>
+    </form>
     <script src="liaisons/scripts/triEtFiltres.js"></script>
 </div>
