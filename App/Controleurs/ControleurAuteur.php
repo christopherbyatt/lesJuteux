@@ -8,7 +8,18 @@ class ControleurAuteur {
     public function index():void {
         $auteurs = Auteur::trouverTout();
 
-        $tDonnees = array("message" => "Je suis la page Index auteurs...", "auteurs" => $auteurs);
+        $urlPagination = 'index.php?controleur=auteur&action=index';
+
+        if(isset($_GET['page'])){
+            $page = $_GET['page'];
+        }else {
+            $page = 0;
+        }
+
+        $livres = Auteur::paginer($page,12);
+        $nbrPages = ceil(Auteur::compter()/12 -1);
+
+        $tDonnees = array("message" => "Je suis la page Index auteurs...", "auteurs" => $auteurs, "livres" => $livres, "numeroPage"=>$page, "urlPagination" => $urlPagination, "nombreTotalPages"=>$nbrPages);
         echo App::getBlade()->run("auteurs.index", $tDonnees);
     }
 
