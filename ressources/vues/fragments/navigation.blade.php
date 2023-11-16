@@ -20,7 +20,7 @@
     <div class="nav__largeur-menu">
         <ul class="nav__liste ferme">
             <li class="nav__item">
-                <a href="index.php?controleur=nouveaute&action=index" class="nav__lien">Nouveautés</a>
+                <a href="index.php?controleur=livre&action=nouveautes" class="nav__lien">Nouveautés</a>
             </li>
             <li class="nav__item">
                 <a href="index.php?controleur=livre&action=index" class="nav__lien">Livres</a>

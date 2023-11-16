@@ -6,9 +6,7 @@ use App\Modeles\Livre;
 
 class ControleurAuteur {
     public function index():void {
-        $auteurs = Auteur::trouverTout();
-
-        $urlPagination = 'index.php?controleur=auteur&action=index';
+        $urlPagination= "index.php?controleur=auteur&action=index";
 
         if(isset($_GET['page'])){
             $page = $_GET['page'];
@@ -16,10 +14,10 @@ class ControleurAuteur {
             $page = 0;
         }
 
-        $livres = Auteur::paginer($page,12);
+        $auteurs = Auteur::paginer($page,12);
         $nbrPages = ceil(Auteur::compter()/12 -1);
 
-        $tDonnees = array("message" => "Je suis la page Index auteurs...", "auteurs" => $auteurs, "livres" => $livres, "numeroPage"=>$page, "urlPagination" => $urlPagination, "nombreTotalPages"=>$nbrPages);
+        $tDonnees = array("message" => "Je suis la page Index auteurs...", "auteurs" => $auteurs, "numeroPage"=>$page, "urlPagination" => $urlPagination, "nombreTotalPages"=>$nbrPages);
         echo App::getBlade()->run("auteurs.index", $tDonnees);
     }
 

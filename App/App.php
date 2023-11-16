@@ -118,6 +118,9 @@ class App {
                 case 'index':
                     $objControleur->index();
                     break;
+                case 'nouveautes':
+                    $objControleur->nouveautes();
+                    break;
                 case 'fiche':
                     $objControleur->fiche();
                     break;

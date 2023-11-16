@@ -7,8 +7,7 @@ use App\Modeles\Livre;
 
 class ControleurLivre
 {
-    public function index(): void
-    {
+    public function index():void {
 //        $livres = Livre::trouverTout();
         $livresAVenirs = Livre::trouverParVenir();
         $livresNouveautes = Livre::trouverParNouveautes();
@@ -59,8 +58,23 @@ class ControleurLivre
         echo App::getBlade()->run("livres.index", $tDonnees);
     }
 
+    public function nouveautes():void {
+        if (isset($_GET['page'])) {
+            $page = $_GET['page'];
+        } else {
+            $page = 0;
+        }
 
-    public function fiche():void{
+        $urlPagination = 'index.php?controleur=nouveaute&action=index';
+
+        $livres = Livre::paginerNouveautes($page, 12);
+        $nbrPages = ceil(livre::compterNouveautes() / 12 - 1);
+
+        $tDonnees = array("message" => "Je suis la page Index auteurs...", "livres" => $livres, "numeroPage" => $page, "urlPagination" => $urlPagination, "nombreTotalPages" => $nbrPages);
+        echo App::getBlade()->run("livres.nouveautes", $tDonnees);
+    }
+
+    public function fiche():void {
         $id = (int) $_GET['idLivre'];
 //        $idAuteur = (int) $_GET['idAuteur'];
 
