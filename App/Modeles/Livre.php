@@ -45,30 +45,6 @@ class Livre {
     public function __construct() {
 
     }
-
-    public static function trier($selection) {
-        $arr_tri[0] = array();
-        $arr_tri[0]["value"] = "defaut";
-        $arr_tri[0]["nom"] = "Par défaut";
-        $arr_tri[1] = array();
-        $arr_tri[1]["value"] = "az-livre";
-        $arr_tri[1]["nom"] = "A-Z (Livre)";
-        $arr_tri[2] = array();
-        $arr_tri[2]["value"] = "za-livre";
-        $arr_tri[2]["nom"] = "Z-A (Livre)";
-        $arr_tri[3] = array();
-        $arr_tri[3]["value"] = "az-auteur";
-        $arr_tri[3]["nom"] = "A-Z (Auteur)";
-        $arr_tri[4] = array();
-        $arr_tri[4]["value"] = "za-auteur";
-        $arr_tri[4]["nom"] = "Z-A (Auteur)";
-        $arr_tri[5] = array();
-        $arr_tri[5]["value"] = "recent";
-        $arr_tri[5]["nom"] = "Récent";
-        $arr_tri[6] = array();
-        $arr_tri[6]["value"] = "ancien";
-        $arr_tri[6]["nom"] = "Ancien";
-    }
     public static function compter(){
         $chaineSQL = 'SELECT COUNT(*) as total FROM livres';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
@@ -116,9 +92,9 @@ class Livre {
         $livresAVenir = $requetePreparee->fetchAll();
         return $livresAVenir;
     }
-    public static function paginer(int $unNoDePage, int $unNbrParPage){
+    public static function paginer(int $unNoDePage, int $unNbrParPage):array {
         $pdo = App::getPdo();
-        $occurence = $unNoDePage * 5;
+        $occurence = $unNoDePage * $unNbrParPage;
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM livres LIMIT :unNoPage, :unNbrPage';
         // Préparer la requête (optimisation)
@@ -135,6 +111,57 @@ class Livre {
         $livres = $requetePreparee->fetchAll();
 
         return $livres;
+    }
+    public static function paginerFiltres(int $unNoDePage, int $unNbrParPage, array $desFiltres):array {
+//        SELECT * FROM `livres` WHERE categorie_id in(1,2) AND date_parution_quebec > '2020-01-01' ORDER BY titre ASC
+        $pdo = App::getPdo();
+        $occurence = $unNoDePage * $unNbrParPage;
+        $desCategories = "";
+        foreach ($desFiltres as $unFiltre) {
+            if($desCategories === "") {
+                $desCategories = $desCategories . $unFiltre;
+            }
+            else {
+                $desCategories = $desCategories . ", " . $unFiltre;
+            }
+        }
+        // Définir la chaine SQL
+        $chaineSQL = 'SELECT * FROM livres';
+        if(count($desFiltres) !== 0){
+            $chaineSQL = $chaineSQL . " WHERE categorie_id in(".$desCategories.")";
+        }
+        $chaineSQL = $chaineSQL . " LIMIT ".$occurence.", ".$unNbrParPage;
+        // Préparer la requête (optimisation)
+        $requetePreparee = $pdo->prepare($chaineSQL);
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
+        // Exécuter la requête
+        $requetePreparee->execute();
+        // Récupérer le résultat
+        $livres = $requetePreparee->fetchAll();
+
+        return $livres;
+    }
+    public static function compterFiltre(array $desFiltres) {
+        $desCategories = "";
+        foreach ($desFiltres as $unFiltre) {
+            if($desCategories === "") {
+                $desCategories = $desCategories . $unFiltre;
+            }
+            else {
+                $desCategories = $desCategories . ", " . $unFiltre;
+            }
+        }
+        // Définir la chaine SQL
+        $chaineSQL = 'SELECT COUNT(*) FROM livres';
+        if(count($desFiltres) !== 0){
+            $chaineSQL = $chaineSQL . " WHERE categorie_id in(".$desCategories.")";
+        }
+//        echo $chaineSQL;
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->execute();
+        $resultat = $requetePreparee->fetch();
+//        var_dump($resultat["COUNT(*)"]);
+        return $resultat["COUNT(*)"];
     }
     public static function trouverParId(int $unIdLivre):Livre {
         // Définir la chaine SQL

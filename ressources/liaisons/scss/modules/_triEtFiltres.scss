@@ -1,0 +1,99 @@
+/*Tri et filtres de l'index des livres*/
+//Donner le même style au bouton et au lien
+
+#lancerRechercheLivres,
+#reinitialiserRechercheLivres {
+  border: $rose solid 0.2rem;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0.2rem 0.6rem;
+  display: inline-block;
+  border-radius: 0.3rem;
+  &:hover,
+  &:active {
+    border-color: $vertMelon;
+  }
+}
+#reinitialiserRechercheLivres {
+  background-color: $background1;
+  color: $rose;
+  padding: 0.3rem 0.7rem;
+  &:hover,
+  &:active {
+    color: $vertMelon;
+  }
+}
+#lancerRechercheLivres {
+  background-color: $rose;
+  color: $background1;
+  padding: 0.5rem 0.7rem;
+  margin-bottom: 2rem;
+  &:hover,
+  &:active {
+    background-color: $vertMelon;
+  }
+}
+@media (min-width: 800px) {
+  #lancerRechercheLivres {
+    margin-bottom: 0;
+  }
+}
+
+.filtreEtTri__titre {
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .filtreEtTri__titre {
+    margin-left: 2rem;
+    text-align: justify;
+  }
+}
+.listeFiltre__choix {
+  list-style: none;
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .listeFiltre__choix {
+    flex-basis: 30%;
+    text-align: justify;
+  }
+}
+.filtreEtTri {
+  margin: 0 auto 2rem auto;
+  padding-bottom: 3.5rem;
+  width: 90%;
+  max-width: 1000px;
+  border: $rose solid 2px;
+  border-radius: 2rem;
+}
+.listeFiltre {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: space-around;
+  padding-left: 0;
+}
+@media (min-width: 800px) {
+  .listeFiltre {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 4rem;
+  }
+}
+.lesbtns {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  max-width: 90%;
+  margin: auto;
+}
+@media (min-width: 800px) {
+  .lesbtns {
+    flex-direction: row;
+  }
+}

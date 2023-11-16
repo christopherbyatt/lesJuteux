@@ -27,7 +27,7 @@ class Evenement
         $evenements = $requetePreparee->fetchAll();
         return $evenements;
     }
-    public function getIdEvenement():int{
+    public function getId():int{
         return $this->id;
     }
     public function getTitre():string{
