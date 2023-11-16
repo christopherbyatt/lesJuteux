@@ -8,7 +8,7 @@
     //height: 60px;
     padding: 1rem 0;
   }
-  #icon_full:hover {
+  #icon_full:hover, #icon_full:active {
     background-image:url("../images/coeurPlein.png");
     background-size: 40px;
     background-repeat: no-repeat;
