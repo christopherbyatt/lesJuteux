@@ -75,7 +75,7 @@ class Auteur {
 
     public static function paginer(int $unNoDePage, int $unNbrParPage){
         $pdo = App::getPdo();
-        $occurence = $unNoDePage * 5;
+        $occurence = $unNoDePage * $unNbrParPage;
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM auteurs LIMIT :unNoPage, :unNbrPage';
         // Préparer la requête (optimisation)

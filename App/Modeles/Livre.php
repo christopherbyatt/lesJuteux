@@ -94,7 +94,7 @@ class Livre {
     }
     public static function paginer(int $unNoDePage, int $unNbrParPage):array {
         $pdo = App::getPdo();
-        $occurence = $unNoDePage * 5;
+        $occurence = $unNoDePage * $unNbrParPage;
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM livres LIMIT :unNoPage, :unNbrPage';
         // Préparer la requête (optimisation)
@@ -115,7 +115,7 @@ class Livre {
     public static function paginerFiltres(int $unNoDePage, int $unNbrParPage, array $desFiltres):array {
 //        SELECT * FROM `livres` WHERE categorie_id in(1,2) AND date_parution_quebec > '2020-01-01' ORDER BY titre ASC
         $pdo = App::getPdo();
-        $occurence = $unNoDePage * 5;
+        $occurence = $unNoDePage * $unNbrParPage;
         $desCategories = "";
         foreach ($desFiltres as $unFiltre) {
             if($desCategories === "") {

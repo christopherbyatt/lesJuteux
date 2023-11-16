@@ -6,9 +6,17 @@ use App\Modeles\Livre;
 
 class ControleurAuteur {
     public function index():void {
-        $auteurs = Auteur::trouverTout();
+        // Code pour trouver l'URL actuel de JavaTPoint
+        // https://www.javatpoint.com/how-to-get-current-page-url-in-php
+        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+            $urlPagination = "https://";
+        else
+            $urlPagination = "http://";
+        // Append the host(domain name, ip) to the URL.
+        $urlPagination.= $_SERVER['HTTP_HOST'];
 
-        $urlPagination = 'index.php?controleur=auteur&action=index';
+        // Append the requested resource location to the URL
+        $urlPagination.= $_SERVER['REQUEST_URI'];
 
         if(isset($_GET['page'])){
             $page = $_GET['page'];
@@ -16,10 +24,10 @@ class ControleurAuteur {
             $page = 0;
         }
 
-        $livres = Auteur::paginer($page,12);
+        $auteurs = Auteur::paginer($page,12);
         $nbrPages = ceil(Auteur::compter()/12 -1);
 
-        $tDonnees = array("message" => "Je suis la page Index auteurs...", "auteurs" => $auteurs, "livres" => $livres, "numeroPage"=>$page, "urlPagination" => $urlPagination, "nombreTotalPages"=>$nbrPages);
+        $tDonnees = array("message" => "Je suis la page Index auteurs...", "auteurs" => $auteurs, "numeroPage"=>$page, "urlPagination" => $urlPagination, "nombreTotalPages"=>$nbrPages);
         echo App::getBlade()->run("auteurs.index", $tDonnees);
     }
 
