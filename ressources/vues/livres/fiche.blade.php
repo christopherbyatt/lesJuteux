@@ -32,12 +32,14 @@
             <li>Date de parution au Québec: {{$livre->getDateQuebec()}}</li>
             <li>Date de parution en France: {{$livre->getDateFrance()}} ({{$livre->getPrixEuro()}} €)</li>
 
+            @if ($livre->getReconnaissances() != null)
             <div class="livre__reconnaissances">
             <h3 class="titreReconnaissances">Reconnaissances</h3>
             @foreach($livre->getReconnaissances() as $reconnaissance)
                 <li class="uneReconnaissance">{!! $reconnaissance->getLaReconnaissance() !!}</li>
             @endforeach
             </div>
+            @endif
 
             <div class="format__livre">
                 <div class="format__papier">
@@ -56,7 +58,8 @@
                 <p class="plus" id="plus"></p>
             </div>
 
-            <button class="btnAjouter">Ajouter au panier</button>
+            <button class="btnAjouter" id="btnAjouter">Ajouter au panier</button>
+            <p class="pConfirmation" id="pConfirmation"></p>
 {{--            <li>Titre: {{$livre->getTitre()}}</li>--}}
 {{--            <li>Arguments: {!! $livre->getArguments() !!}</li>--}}
 {{--            <li>Statut: {{$livre->getStatut()}}</li>--}}

@@ -7,6 +7,8 @@ use App\Controleurs\ControleurLivre;
 use App\Controleurs\ControleurPanier;
 use \PDO;
 use eftec\bladeone\BladeOne;
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 class App {
     private static ?PDO $refPDO = null;
@@ -127,9 +129,6 @@ class App {
                     break;
                 case 'fiche':
                     $objControleur->fiche();
-                    break;
-                case 'tri':
-                    $objControleur->tri();
                     break;
             }
         }
