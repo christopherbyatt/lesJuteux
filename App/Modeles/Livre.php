@@ -45,7 +45,7 @@ class Livre {
     public function __construct() {
 
     }
-    public static function compter(){
+    public static function compter():int {
         $chaineSQL = 'SELECT COUNT(*) as total FROM livres';
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->execute();
@@ -141,7 +141,7 @@ class Livre {
 
         return $livres;
     }
-    public static function compterFiltre(array $desFiltres) {
+    public static function compterFiltre(array $desFiltres):int {
         $desCategories = "";
         foreach ($desFiltres as $unFiltre) {
             if($desCategories === "") {
@@ -156,13 +156,54 @@ class Livre {
         if(count($desFiltres) !== 0){
             $chaineSQL = $chaineSQL . " WHERE categorie_id in(".$desCategories.")";
         }
-//        echo $chaineSQL;
+    //        echo $chaineSQL;
         $requetePreparee = App::getPDO()->prepare($chaineSQL);
         $requetePreparee->execute();
         $resultat = $requetePreparee->fetch();
-//        var_dump($resultat["COUNT(*)"]);
+    //        var_dump($resultat["COUNT(*)"]);
         return $resultat["COUNT(*)"];
     }
+    public static function paginerNouveautes(int $unNoDePage, int $unNbrParPage):array {
+        $pdo = App::getPdo();
+        $occurence = $unNoDePage * $unNbrParPage;
+        // Idée code pour date il y a 6 mois StackOverflow
+        // https://stackoverflow.com/questions/2625469/php-simplest-way-to-get-the-date-of-the-month-6-months-prior-on-the-first
+        $date1an = date('Y-m-d', strtotime("-12 months"));
+        $dateAjd = date('Y-m-d', time());
+//        echo $date1an;
+        // Définir la chaine SQL
+        $chaineSQL = 'SELECT * FROM livres WHERE date_parution_quebec>:date1an AND date_parution_quebec<:dateAjd LIMIT :unNoPage, :unNbrPage';
+        // Préparer la requête (optimisation)
+        $requetePreparee = $pdo->prepare($chaineSQL);
+
+        // BindParam
+        $requetePreparee->bindParam('unNoPage', $occurence, PDO::PARAM_INT);
+        $requetePreparee->bindParam('unNbrPage', $unNbrParPage, PDO::PARAM_INT);
+        $requetePreparee->bindParam('date1an', $date1an, PDO::PARAM_STR);
+        $requetePreparee->bindParam('dateAjd', $dateAjd, PDO::PARAM_STR);
+
+        // Définir le mode de récupération
+        $requetePreparee->setFetchMode(PDO::FETCH_CLASS, "App\Modeles\Livre");
+        // Exécuter la requête
+        $requetePreparee->execute();
+        // Récupérer le résultat
+        $livres = $requetePreparee->fetchAll();
+
+        return $livres;
+    }
+    public static function compterNouveautes():int {
+        $date1an = date('Y-m-d', strtotime("-12 months"));
+        $dateAjd = date('Y-m-d', time());
+
+        $chaineSQL = 'SELECT COUNT(*) as total FROM livres WHERE date_parution_quebec>:date1an AND date_parution_quebec<:dateAjd';
+        $requetePreparee = App::getPDO()->prepare($chaineSQL);
+        $requetePreparee->bindParam('date1an', $date1an, PDO::PARAM_STR);
+        $requetePreparee->bindParam('dateAjd', $dateAjd, PDO::PARAM_STR);
+        $requetePreparee->execute();
+        $resultat = $requetePreparee->fetch();
+        return $resultat["total"];
+    }
+
     public static function trouverParId(int $unIdLivre):Livre {
         // Définir la chaine SQL
         $chaineSQL = 'SELECT * FROM livres 

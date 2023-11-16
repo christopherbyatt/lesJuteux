@@ -110,22 +110,14 @@ class App {
                 default:
                     echo 'Erreur 404 - Page introuvable.';
             }
-        } else if ($nomControleur === 'nouveaute'){
-            $objControleur = new ControleurNouveaute();
-            switch ($nomAction) {
-                case 'index':
-                    $objControleur->index();
-                    break;
-                case 'fiche':
-                    $objControleur->fiche();
-                    break;
-            }
-        }
-        else if ($nomControleur === 'livre'){
+        } else if ($nomControleur === 'livre'){
             $objControleur = new ControleurLivre();
             switch ($nomAction) {
                 case 'index':
                     $objControleur->index();
+                    break;
+                case 'nouveautes':
+                    $objControleur->nouveautes();
                     break;
                 case 'fiche':
                     $objControleur->fiche();
