@@ -19,7 +19,6 @@ class App {
         date_default_timezone_set('America/Montreal');
         $this->routerRequete();
     }
-
     public static function getServeur(): string
     {
         // Vérifier la nature du serveur (local VS production)
@@ -32,6 +31,7 @@ class App {
         }
         return $env;
     }
+
 
     public static function getPDO() {
         if (App::$refPDO == null) {
