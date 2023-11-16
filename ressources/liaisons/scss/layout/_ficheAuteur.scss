@@ -41,8 +41,24 @@
     font-size: 24px;
   }
 }
+.auteursLivresAssocies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media (min-width: 730px) {
+  .auteursLivresAssocies {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
 @media (min-width: 900px) {
-  .auteursLivres {
+  .auteursLivresAssocies {
+    display: flex;
+    justify-content: center;
     margin: auto;
     padding: 10px;
     max-width: 1200px;

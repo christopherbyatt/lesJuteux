@@ -3,6 +3,10 @@
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > {{$livre->getTitre()}}</p>
     <h1>{{$livre->getTitre()}}</h1>
+    <ul class="icones_favoris">
+        <a><li><img src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></li></a>
+        <a><li><img src="liaisons/images/loupeFavoris.png" class="icones_favoris-fiche"></li></a>
+    </ul>
     <ul class="elements_fiche">
         <div class="image_gauche">
             @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w485.jpg"))
@@ -74,7 +78,7 @@
     <div class="ligne-h2">
         <h2 class="fonce">Également de cet auteur</h2>
     </div>
-    <div class="auteursLivres">
+    <div class="auteursLivresAssocies">
         @foreach($livre->getAuteur() as $auteur)
             @foreach($auteur->getLivresAssocies() as $book)
                 @if ($book->getId() != $livre->getId())
@@ -98,5 +102,9 @@
             @endforeach
         @endforeach
         </div>
+    </div>
+    <div class="changerLivre">
+        <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId() - 1}}"><p>< Livre précédent</p></a>
+        <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId() + 1}}"><p>Livre suivant ></p></a>
     </div>
 @endsection

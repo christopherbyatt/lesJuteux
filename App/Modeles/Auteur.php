@@ -89,9 +89,9 @@ class Auteur {
         // Exécuter la requête
         $requetePreparee->execute();
         // Récupérer le résultat
-        $livres = $requetePreparee->fetchAll();
+        $auteurs = $requetePreparee->fetchAll();
 
-        return $livres;
+        return $auteurs;
     }
     public function getId():int{
         return $this->id;

@@ -26,6 +26,21 @@ div.tris {
   }
 }
 
+ul.icones_favoris {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+  a {
+    li {
+      list-style-type: none;
+      margin-right: 15px;
+      img.icones_favoris-fiche {
+        width: 50px;
+      }
+    }
+  }
+}
+
 div.affichage {
   display: flex;
   justify-content: flex-end;
@@ -147,5 +162,10 @@ div.affichage {
       margin-left: 20px;
     }
 }
+}
+
+div.changerLivre {
+  display: flex;
+  justify-content: space-around;
 }
 
