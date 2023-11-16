@@ -30,6 +30,7 @@ class App {
         return $env;
     }
 
+
     public static function getPDO() {
         if (App::$refPDO == null) {
             if(App::getServeur() === 'serveur-local')
