@@ -841,29 +841,46 @@ div.affichage button.btnGrille {
   font-size: 24px;
 }
 
+.auteursLivresAssocies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 730px) {
+  .auteursLivresAssocies {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
 @media (min-width: 900px) {
-  .auteursLivres {
+  .auteursLivresAssocies {
+    display: flex;
+    justify-content: center;
     margin: auto;
     padding: 10px;
     max-width: 1200px;
   }
-  .auteursLivres__fiche {
+  .auteursLivresAssocies__fiche {
     margin-right: 40px;
     margin-left: 40px;
     position: relative;
     padding-bottom: 20px;
     padding-top: 20px;
   }
-  .auteursLivres__titre {
+  .auteursLivresAssocies__titre {
     margin: 0;
     padding-top: 8px;
     max-width: 300px;
     text-align: center;
   }
-  .auteursLivres__image {
+  .auteursLivresAssocies__image {
     text-align: start;
   }
-  .auteursLivres__liste {
+  .auteursLivresAssocies__liste {
     padding-top: 45px;
     position: absolute;
     top: 0;
@@ -873,11 +890,11 @@ div.affichage button.btnGrille {
     width: 60%;
     margin: 0;
   }
-  .auteursLivres__recon {
+  .auteursLivresAssocies__recon {
     list-style: none;
     padding-bottom: 1rem;
   }
-  .auteursLivres__titreReco {
+  .auteursLivresAssocies__titreReco {
     font-size: 28px;
     padding-top: 2.5rem;
   }

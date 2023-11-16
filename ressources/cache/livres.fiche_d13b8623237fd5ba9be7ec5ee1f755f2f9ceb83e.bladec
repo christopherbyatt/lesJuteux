@@ -76,7 +76,7 @@
  <div class="ligne-h2">
  <h2 class="fonce">Également de cet auteur</h2>
  </div>
- <div class="auteursLivres">
+ <div class="auteursLivresAssocies">
  <?php $__currentLoopData = $livre->getAuteur(); $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $auteur): $loop = $this->incrementLoopIndices();  ?>
  <?php $__currentLoopData = $auteur->getLivresAssocies(); $this->addLoop($__currentLoopData);$this->getFirstLoop();

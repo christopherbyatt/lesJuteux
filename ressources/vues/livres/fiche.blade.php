@@ -74,7 +74,7 @@
     <div class="ligne-h2">
         <h2 class="fonce">Également de cet auteur</h2>
     </div>
-    <div class="auteursLivres">
+    <div class="auteursLivresAssocies">
         @foreach($livre->getAuteur() as $auteur)
             @foreach($auteur->getLivresAssocies() as $book)
                 @if ($book->getId() != $livre->getId())
