@@ -19,9 +19,9 @@
                 <div class="livres__fiche mode-grille" id="livres__fiche">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
                         @if ($livre->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livre->getDateQuebec() < date('Y-m-d', time()))
-                            <div class="livreNouveautesEtiquette">Nouveauté</div>
+                            <div class="livreNouveautesEtiquette"><span class="brilleEtiquette"></span>Nouveauté</div>
                         @elseif($livre->getDateQuebec() > date('Y-m-d', time()))
-                            <div class="livreAVenirEtiquette">À venir</div>
+                            <div class="livreAVenirEtiquette"><span class="brilleEtiquette"></span>À venir</div>
                         @else
                             <div class="etiquetteVidePourReplirLEspace"></div>
                         @endif

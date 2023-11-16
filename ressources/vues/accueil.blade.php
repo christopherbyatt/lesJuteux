@@ -11,14 +11,14 @@
             <div class="livres__fiche">
                 <a href="index.php?controleur=livre&action=fiche&idLivre={{$livresNouveautes[$i]->getId()}}">
                     @if ($livresNouveautes[$i]->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livresNouveautes[$i]->getDateQuebec() < date('Y-m-d', time()))
-                        <div class="livreNouveautesEtiquette">Nouveauté</div>
+                        <div class="livreNouveautesEtiquette"><span class="brilleEtiquette"></span>Nouveauté</div>
                     @elseif($livresNouveautes[$i]->getDateQuebec() > date('Y-m-d', time()))
-                        <div class="livreAVenirEtiquette">À venir</div>
+                        <div class="livreAVenirEtiquette"><span class="brilleEtiquette"></span>À venir</div>
                     @else
                         <div class="etiquetteVidePourReplirLEspace"></div>
                     @endif
                     <img class="livres__fiche-nouveaute" src="liaisons/images/livres/{{$livresNouveautes[$i]->getISBNPapier()}}_w300.jpg">
-                </a>
+                </a><span class="brilleEtiquette"></span>
                 @foreach($livresNouveautes[$i]->getAuteur() as $auteur)
                     <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
                 @endforeach
@@ -36,9 +36,9 @@
                 <div class="livres__fiche">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livresAVenirs[$i]->getId()}}">
                         @if ($livresAVenirs[$i]->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livresAVenirs[$i]->getDateQuebec() < date('Y-m-d', time()))
-                            <div class="livreNouveautesEtiquette">Nouveauté</div>
+                            <div class="livreNouveautesEtiquette"><span class="brilleEtiquette"></span>Nouveauté</div>
                         @elseif($livresAVenirs[$i]->getDateQuebec() > date('Y-m-d', time()))
-                            <div class="livreAVenirEtiquette">À venir</div>
+                            <div class="livreAVenirEtiquette"><span class="brilleEtiquette"></span>À venir</div>
                         @else
                             <div class="etiquetteVidePourReplirLEspace"></div>
                         @endif
