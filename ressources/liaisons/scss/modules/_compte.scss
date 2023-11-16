@@ -1,0 +1,46 @@
+.compte {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin: auto;
+  width: 50%;
+  input, {
+    display: block;
+  }
+  input[type=submit]{
+    margin: 3rem auto auto auto;
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    background-color: #CBE3B9;
+    border: none;
+  }
+  input[type=text],
+  input[type=password]{
+    margin-bottom: 1.8rem;
+  }
+  &__background{
+    max-width: 600px;
+    margin: auto;
+  }
+  @media (min-width: 800px){
+    &__background{
+      margin: -2.8rem auto auto auto;
+    }
+  }
+  &__lien{
+    text-align: center;
+    margin-top: -1.5rem;
+  }
+  @media (min-width: 800px){
+    &__lien{
+      margin-top: -2rem;
+    }
+  }
+  &__champLong{
+    width: 85%;
+    height: 25px;
+  }
+  &__barre{
+    height: 25px;
+    border: none;
+    border-radius: 0;
+  }
+}

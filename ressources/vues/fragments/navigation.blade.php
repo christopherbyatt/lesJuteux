@@ -11,6 +11,8 @@
             <a href=""><span id="icon_position" class="icon"></span></a>
             <a href=""><span id="icon_favoris" class="icon"><span id="icon_full" class="icon"></span></span></a>
             <a href=""><span id="icon_compte" class="icon"></span></a>
+            <a href=""><span id="icon_favoris" class="icon"></span></a>
+            <a href="index.php?controleur=compte&action=connexion"><span id="icon_compte" class="icon"></span></a>
             <a href="index.php?controleur=panier&action=index"><span id="icon_panier" class="icon"></span></a>
         </div>
     </div>
@@ -20,7 +22,7 @@
     <div class="nav__largeur-menu">
         <ul class="nav__liste ferme">
             <li class="nav__item">
-                <a href="index.php?controleur=nouveaute&action=index" class="nav__lien">Nouveautés</a>
+                <a href="index.php?controleur=livre&action=nouveautes" class="nav__lien">Nouveautés</a>
             </li>
             <li class="nav__item">
                 <a href="index.php?controleur=livre&action=index" class="nav__lien">Livres</a>

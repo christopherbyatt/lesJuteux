@@ -2,23 +2,6 @@
 
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > Livres</p>
-{{--    <div class="filtres-tri">--}}
-{{--        <div class="tris">--}}
-{{--            <form action="index.php?controleur=livre&action=index">--}}
-{{--        <label for="tri"></label>--}}
-{{--        <select name="tri" id="tri">--}}
-{{--            <option disabled selected value="defaut" class="trierParDansSelect" style="color: #484141">↕≡</option>--}}
-{{--            <option value="az-livre">Alphabétique de livre (A-Z)</option>--}}
-{{--            <option value="za-livre">Anti-alphabétique de livre (Z-A)</option>--}}
-{{--            <option value="az-auteur">Alphabétique d'auteur (A-Z)</option>--}}
-{{--            <option value="za-auteur">Anti-alphabétique d'auteur (Z-A)</option>--}}
-{{--            <option value="recent">Le plus récent</option>--}}
-{{--            <option value="ancien">Le plus ancien</option>--}}
-{{--        </select>--}}
-{{--            <button type="submit" class="btnAppliquerTri">Appliquer</button>--}}
-{{--            </form>--}}
-{{--            </div>--}}
-{{--    </div>--}}
     <div class="affichage">
         <button class="btnListe" id="btnListe"></button>
         <button class="btnGrille selected" id="btnGrille"></button>
@@ -33,6 +16,13 @@
             @foreach($livres as $livre)
                 <div class="livres__fiche mode-grille" id="livres__fiche">
                 <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
+                    @if ($livre->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livre->getDateQuebec() < date('Y-m-d', time()))
+                        <div class="livreNouveautesEtiquette"><span class="brilleEtiquette"></span>Nouveauté</div>
+                    @elseif($livre->getDateQuebec() > date('Y-m-d', time()))
+                        <div class="livreAVenirEtiquette"><span class="brilleEtiquette"></span>À venir</div>
+                    @else
+                        <div class="etiquetteVidePourReplirLEspace"></div>
+                    @endif
                     @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg"))
                         <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg" class="imgLivre">
                     @else
@@ -97,6 +87,13 @@
             @foreach($livresNouveautes as $livreNouveaute)
                 <div class="livres__fiche">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreNouveaute->getId()}}">
+                        @if ($livreNouveaute->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livreNouveaute->getDateQuebec() < date('Y-m-d', time()))
+                            <div class="livreNouveautesEtiquette"><span class="brilleEtiquette"></span>Nouveauté</div>
+                        @elseif($livreNouveaute->getDateQuebec() > date('Y-m-d', time()))
+                            <div class="livreAVenirEtiquette"><span class="brilleEtiquette"></span>À venir</div>
+                        @else
+                            <div class="etiquetteVidePourReplirLEspace"></div>
+                        @endif
                         <img class="livres__fiche-nouveaute" src="liaisons/images/livres/{{$livreNouveaute->getISBNPapier()}}_w300.jpg">
                     </a>
                     <div class="infosLivre" id="infosLivre">
@@ -117,6 +114,13 @@
             @foreach($livresAVenirs as $livreAVenir)
                 <div class="livres__fiche">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livreAVenir->getId()}}">
+                        @if ($livreAVenir->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livreAVenir->getDateQuebec() < date('Y-m-d', time()))
+                            <div class="livreNouveautesEtiquette"><span class="brilleEtiquette"></span>Nouveauté</div>
+                        @elseif($livreAVenir->getDateQuebec() > date('Y-m-d', time()))
+                            <div class="livreAVenirEtiquette"><span class="brilleEtiquette"></span>À venir</div>
+                        @else
+                            <div class="etiquetteVidePourReplirLEspace"></div>
+                        @endif
                         <img src="liaisons/images/livres/{{$livreAVenir->getISBNPapier()}}_w300.jpg" class="imgAVenir">
                     </a>
                     <div class="infosLivre" id="infosLivre">

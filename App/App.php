@@ -5,6 +5,7 @@ use App\Controleurs\ControleurSite;
 use App\Controleurs\ControleurAuteur;
 use App\Controleurs\ControleurLivre;
 use App\Controleurs\ControleurPanier;
+use App\Controleurs\ControleurCompte;
 use \PDO;
 use eftec\bladeone\BladeOne;
 error_reporting(E_ALL);
@@ -19,7 +20,6 @@ class App {
         date_default_timezone_set('America/Montreal');
         $this->routerRequete();
     }
-
     public static function getServeur(): string
     {
         // Vérifier la nature du serveur (local VS production)
@@ -32,6 +32,7 @@ class App {
         }
         return $env;
     }
+
 
     public static function getPDO() {
         if (App::$refPDO == null) {
@@ -89,7 +90,7 @@ class App {
         }
 
         // Instantier le bon controleur et executer la bonne action
-        if ($nomControleur === 'site'){
+        if ($nomControleur === 'site') {
             $objControleur = new ControleurSite();
             switch ($nomAction) {
                 case 'accueil':
@@ -110,22 +111,15 @@ class App {
                 default:
                     echo 'Erreur 404 - Page introuvable.';
             }
-        } else if ($nomControleur === 'nouveaute'){
-            $objControleur = new ControleurNouveaute();
-            switch ($nomAction) {
-                case 'index':
-                    $objControleur->index();
-                    break;
-                case 'fiche':
-                    $objControleur->fiche();
-                    break;
-            }
         }
         else if ($nomControleur === 'livre'){
             $objControleur = new ControleurLivre();
             switch ($nomAction) {
                 case 'index':
                     $objControleur->index();
+                    break;
+                case 'nouveautes':
+                    $objControleur->nouveautes();
                     break;
                 case 'fiche':
                     $objControleur->fiche();
@@ -149,8 +143,16 @@ class App {
                     $objControleur->index();
                     break;
             }
-        } else {
-                echo 'Erreur 404 - Page introuvable.';
+        } else if ($nomControleur === 'compte'){
+            $objControleur = new ControleurCompte();
+            switch ($nomAction){
+                case 'connexion':
+                    $objControleur->connexion();
+                    break;
+                case 'creation':
+                    $objControleur->creation();
+                    break;
+            }
         }
     }
 }
