@@ -8,6 +8,26 @@
     //height: 60px;
     padding: 1rem 0;
   }
+  #icon_full:hover {
+    background-image:url("../images/coeurPlein.png");
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    // Inspiration pour l'animation: https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/
+    animation: fadeInAnimation ease 800ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 .footer {
   &__largeur-menu {
