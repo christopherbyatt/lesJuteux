@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#ffffff">
     <script defer src="liaisons/scripts/menu.js"></script>
 {{--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
-    <title>La Pastèque</title>
+    <title>La Pastèque - {{$title}}</title>
 </head>
 <body>
 <header >

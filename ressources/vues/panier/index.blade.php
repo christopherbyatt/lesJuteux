@@ -1,4 +1,4 @@
-@extends('gabarit')
+@extends('gabarit', ['title'=>'Mon panier'])
 @section('contenu')
     <h1>Mon Panier</h1>
     <div class="panier">

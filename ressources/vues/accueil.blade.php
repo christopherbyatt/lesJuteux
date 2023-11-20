@@ -1,4 +1,4 @@
-@extends('gabarit')
+@extends('gabarit', ['title'=>'Accueil'])
 
 @section('contenu')
     <h1>Accueil</h1>
@@ -7,50 +7,18 @@
         <h2 class="fonce">Nouveautés</h2>
     </div>
     <div class="livres">
-        @for($i=0;$i<3;$i++)
-            <div class="livres__fiche">
-                <a href="index.php?controleur=livre&action=fiche&idLivre={{$livresNouveautes[$i]->getId()}}">
-                    @if ($livresNouveautes[$i]->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livresNouveautes[$i]->getDateQuebec() < date('Y-m-d', time()))
-                        <div class="livreNouveautesEtiquette"><span class="brilleEtiquette"></span>Nouveauté</div>
-                    @elseif($livresNouveautes[$i]->getDateQuebec() > date('Y-m-d', time()))
-                        <div class="livreAVenirEtiquette"><span class="brilleEtiquette"></span>À venir</div>
-                    @else
-                        <div class="etiquetteVidePourReplirLEspace"></div>
-                    @endif
-                    <img class="livres__fiche-nouveaute" src="liaisons/images/livres/{{$livresNouveautes[$i]->getISBNPapier()}}_w300.jpg">
-                </a><span class="brilleEtiquette"></span>
-                @foreach($livresNouveautes[$i]->getAuteur() as $auteur)
-                    <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
-                @endforeach
-                <p class="livres__titre">{{$livresNouveautes[$i]->getTitre()}}</p>
-                <p class="livres__prix">{{$livresNouveautes[$i]->getPrixCan()}}$</p>
-            </div>
-        @endfor
+        @foreach($livresNouveautes as $livreNouveaute)
+            @include('fragments.lienLivre', ['livre'=>$livreNouveaute])
+        @endforeach
     </div>
     </div>
         <div class="ligne-h2">
             <h2 class="pale">À venir</h2>
         </div>
         <div class="livres">
-            @for($i=0;$i<3;$i++)
-                <div class="livres__fiche">
-                    <a href="index.php?controleur=livre&action=fiche&idLivre={{$livresAVenirs[$i]->getId()}}">
-                        @if ($livresAVenirs[$i]->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livresAVenirs[$i]->getDateQuebec() < date('Y-m-d', time()))
-                            <div class="livreNouveautesEtiquette"><span class="brilleEtiquette"></span>Nouveauté</div>
-                        @elseif($livresAVenirs[$i]->getDateQuebec() > date('Y-m-d', time()))
-                            <div class="livreAVenirEtiquette"><span class="brilleEtiquette"></span>À venir</div>
-                        @else
-                            <div class="etiquetteVidePourReplirLEspace"></div>
-                        @endif
-                        <img src="liaisons/images/livres/{{$livresAVenirs[$i]->getISBNPapier()}}_w300.jpg">
-                    </a>
-                    @foreach($livresAVenirs[$i]->getAuteur() as $auteur)
-                        <p class="livres__auteurs">{{$auteur->getPrenomNom()}}</p>
-                    @endforeach
-                    <p class="livres__titre">{{$livresAVenirs[$i]->getTitre()}}</p>
-                    <p class="livres__prix">{{$livresAVenirs[$i]->getPrixCan()}}$</p>
-                </div>
-            @endfor
+            @foreach($livresAVenirs as $livreAVenir)
+                @include('fragments.lienLivre', ['livre'=>$livreAVenir])
+            @endforeach
         </div>
     <div>
         <div class="background">
