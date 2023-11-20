@@ -1,4 +1,4 @@
-@extends('gabarit')
+@extends('gabarit', ['title'=>'Fiche de '.$livre->getTitre()])
 
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > {{$livre->getTitre()}}</p>
@@ -9,6 +9,14 @@
     </ul>
     <ul class="elements_fiche">
         <div class="image_gauche">
+            @if ($livre->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livre->getDateQuebec() < date('Y-m-d', time()))
+                <div class="livreNouveautesEtiquette" style="margin-right: 10%; margin-bottom:-10px;><span class="brilleEtiquette"></span>Nouveauté</div>
+            @elseif($livre->getDateQuebec() > date('Y-m-d', time()))
+                <div class="livreAVenirEtiquette" style="margin-right: 10%; margin-bottom:-10px;"><span class="brilleEtiquette"></span>À venir</div>
+            @else
+                <div class="etiquetteVidePourReplirLEspace"></div>
+            @endif
+
             @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w485.jpg"))
             <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
             @else
