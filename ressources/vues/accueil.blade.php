@@ -1,4 +1,4 @@
-@extends('gabarit')
+@extends('gabarit', ['title'=>'Accueil'])
 
 @section('contenu')
     <h1>Accueil</h1>

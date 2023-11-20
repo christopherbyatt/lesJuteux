@@ -1,4 +1,4 @@
-@extends('gabarit')
+@extends('gabarit', ['title'=>'Index des nouveautés'])
 
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > Nouveautés</p>

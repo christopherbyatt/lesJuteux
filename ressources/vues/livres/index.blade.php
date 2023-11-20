@@ -1,4 +1,4 @@
-@extends('gabarit')
+@extends('gabarit', ['title'=>'Index des livres'])
 
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > Livres</p>
@@ -11,7 +11,7 @@
         <div class="ligne-h2">
             <h2 class="fonce">Tous nos livres</h2>
         </div>
-    @include('livres.filtres')
+    @include('fragments.filtresLivre')
         <div class="livres grille" id="livres">
             @foreach($livres as $livre)
                 @include('fragments.lienLivre', ['livre'=>$livre])

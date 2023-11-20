@@ -1,7 +1,6 @@
-@extends('gabarit')
+@extends('gabarit', ['title'=>'Index des auteurs'])
 
 @section('contenu')
-    {{--  À modifier pour faire la page index des auteurs  --}}
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > Auteurs</p>
     <div class="affichage">
         <button class="btnListe" id="btnListe"></button>

@@ -1,4 +1,4 @@
-@extends('gabarit')
+@extends('gabarit', ['title'=>'Création de compte'])
 @section('contenu')
     <h1>Créer un compte</h1>
     <div class="background compte__background">
