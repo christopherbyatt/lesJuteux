@@ -9,7 +9,7 @@
         </div>
         <div class="nav__icon">
             <a href=""><span id="icon_position" class="icon"></span></a>
-            <a href=""><span id="icon_favoris" class="icon"></span></a>
+            <a href=""><span id="icon_favoris" class="icon"><span id="icon_full" class="icon"></span></span></a>
             <a href="index.php?controleur=compte&action=connexion"><span id="icon_compte" class="icon"></span></a>
             <a href="index.php?controleur=panier&action=index"><span id="icon_panier" class="icon"></span></a>
         </div>

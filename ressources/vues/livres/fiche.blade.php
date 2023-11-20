@@ -70,7 +70,7 @@
                 <p class="plus" id="plus"></p>
             </div>
 
-            <button class="btnAjouter" id="btnAjouter">Ajouter au panier</button>
+            <button class="btnAjouter" id="btnAjouter">Ajouter au panier<span id="icon_panier" class="icon"></span></button>
             <p class="pConfirmation" id="pConfirmation"></p>
 {{--            <li>Titre: {{$livre->getTitre()}}</li>--}}
 {{--            <li>Arguments: {!! $livre->getArguments() !!}</li>--}}
