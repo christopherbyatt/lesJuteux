@@ -8,16 +8,17 @@
     //height: 60px;
     padding: 1rem 0;
   }
-  #icon_full:hover, #icon_full:active {
-    background-image:url("../images/coeurPlein.png");
-    background-size: 40px;
-    background-repeat: no-repeat;
-    background-position: center;
 
-    // Inspiration pour l'animation: https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/
-    animation: fadeInAnimation ease 800ms;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  #icon_favoris:hover, #icon_favoris:active {
+      background-image:url("../images/coeurPlein.png");
+      background-size: 42px;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      // Inspiration pour l'animation: https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/
+      animation: fadeInAnimation ease 800ms;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
   }
 
   @keyframes fadeInAnimation {
