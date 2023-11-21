@@ -17,7 +17,7 @@
     <title>La Pastèque - {{$title}}</title>
 </head>
 <body>
-<header >
+<header>
     @include('fragments.entete')
 </header>
 

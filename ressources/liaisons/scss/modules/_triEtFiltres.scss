@@ -51,16 +51,6 @@
     text-align: justify;
   }
 }
-.listeFiltre__choix {
-  list-style: none;
-  text-align: center;
-}
-@media (min-width: 800px) {
-  .listeFiltre__choix {
-    flex-basis: 30%;
-    text-align: justify;
-  }
-}
 .filtreEtTri {
   margin: 0 auto 2rem auto;
   padding-bottom: 3.5rem;
@@ -76,6 +66,37 @@
   justify-items: center;
   justify-content: space-around;
   padding-left: 0;
+  &__choix {
+    list-style: none;
+    text-align: center;
+    &__label {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      &__checkbox {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      &__checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+      }
+    }
+  }
 }
 @media (min-width: 800px) {
   .listeFiltre {
@@ -83,6 +104,10 @@
     flex-direction: row;
     justify-content: space-around;
     padding-left: 4rem;
+    &__choix {
+      flex-basis: 30%;
+      text-align: justify;
+    }
   }
 }
 .lesbtns {
