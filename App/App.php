@@ -108,6 +108,12 @@ class App {
                 case 'contact':
                     $objControleur->contact();
                     break;
+                case 'paiement':
+                    $objControleur->paiement();
+                    break;
+                case 'confirmation':
+                    $objControleur->confirmation();
+                    break;
                 default:
                     echo 'Erreur 404 - Page introuvable.';
             }
