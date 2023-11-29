@@ -12,6 +12,7 @@ div.elements_droite{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-top: 15px;
   align-items: center;
 }
 
@@ -20,7 +21,9 @@ div.elements_droite{
     flex-direction: row;
   }
   div.elements_droite {
+    margin-top: 0px;
     flex-direction: column;
+    align-items: flex-start;
   }
 }
 
