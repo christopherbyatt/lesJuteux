@@ -71,6 +71,30 @@
             </div>
 
             <button class="btnAjouter" id="btnAjouter">Ajouter au panier<span id="icon_panier" class="icon"></span></button>
+
+            <!-- Modal inspiré de: https://www.w3schools.com/howto/howto_css_modals.asp -->
+
+            <!-- Trigger/Open The Modal -->
+{{--            <button id="myBtn">Open Modal</button>--}}
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body" id="modal-body">
+                        <p class="modal-texte"></p>
+                    </div>
+                    <a class="modal-lien" href="index.php?controleur=panier&action=index">Voir le panier</a>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+
+            </div>
+
             <p class="pConfirmation" id="pConfirmation"></p>
 {{--            <li>Titre: {{$livre->getTitre()}}</li>--}}
 {{--            <li>Arguments: {!! $livre->getArguments() !!}</li>--}}
