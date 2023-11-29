@@ -44,7 +44,7 @@ class ControleurSite {
             $leNom = $_POST['nom'];
             $lePrenom = $_POST['prenom'];
             $leCourriel = $_POST['courriel'];
-            $lAdresse = $_POST[''];
+            $lAdresse = $_POST['adresse'];
             $laVille = $_POST['ville'];
             $laProvince = $_POST['province'];
             $lePays = $_POST['pays'];

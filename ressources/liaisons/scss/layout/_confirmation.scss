@@ -1,0 +1,71 @@
+//styles confirmation
+.conteneurConfirm {
+  margin: 5rem auto;
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  &__confirmation,
+  &__infosConfirmation {
+    margin-bottom: 3rem;
+    & p:first-child {
+      font-size: 2rem;
+    }
+    &__texte {
+      margin: 0.6rem;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .conteneurConfirm {
+    flex-direction: row;
+    justify-content: space-between;
+    &__confirmation {
+      margin: 0;
+      flex-basis: 55%;
+    }
+    &__infosConfirmation {
+      margin: 0;
+      flex-basis: 40%;
+    }
+  }
+}
+.btnConfirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  margin: 5rem auto;
+  & a {
+    font-size: 2rem;
+    display: inline-block;
+    margin-top: 3rem;
+  }
+  & button {
+    background-color: $rose;
+    font-size: 2.5rem;
+    color: $background2;
+    width: 28.5rem;
+    height: 7rem;
+    border-radius: 1rem;
+    border: 1px solid $rose;
+    font-family: "Caviar Dreams";
+    font-weight: bold;
+    &:hover,
+    &:active {
+      background-color: $vertMelon;
+      filter: drop-shadow(0 0 0.75rem $vertMelon);
+    }
+  }
+}
+@media (min-width: 800px) {
+  .btnConfirmation {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    & a {
+      margin: 0;
+    }
+  }
+}

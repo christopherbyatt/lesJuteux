@@ -1,7 +1,7 @@
 @extends('gabarit', ['title'=>'Paiement'])
 
 @section('contenu')
-    <form class="">
+    <form class="" action="index.php?controleur=site&action=confirmation" method="POST">
         <div class="sectionPaiement partie01">
             <h3>Livraison</h3>
             <div class="sectionPaiement__section" id="identification">
@@ -47,7 +47,7 @@
                     <p>Désolé de l'inconvénient.</p>
                 </div>
                 <label for="codePostal"> Code Postal: (Ex: A1A 1A1)</label>
-                <input type="number" id="codePostal" name="codePostal">
+                <input type="text" id="codePostal" name="codePostal">
                 <label for="memeAdresse" class="sectionPaiement__section__label">Utiliser comme adresse de facturation<input type="checkbox" id="memeAdresse" name="memeAdresse" class="sectionPaiement__section__label__checkbox"><span class="sectionPaiement__section__label__checkmark"></span></label>
             </div>
             <button type="button" id="btnPartie01">Continuer</button>
@@ -87,14 +87,14 @@
                     <label for="pays">Pays:</label>
                     <select id="pays" name="pays">
                         <option value="0" selected>Choississez un pays:</option>
-                        <option value="1">Canada</option>
+                        <option value="Canada">Canada</option>
                     </select>
                     <div class="sectionPaiement__section__avertissementPays">
                         <p>Notre système ne nous permet actuellement que de livrer au Canada.</p>
                         <p>Désolé de l'inconvénient.</p>
                     </div>
                     <label for="codePostal"> Code Postal: (Ex: A1A 1A1)</label>
-                    <input type="number" id="codePostal" name="codePostal">
+                    <input type="text" id="codePostal" name="codePostal">
                 @else
                     <a href="">Modifier</a>
                     <p>1234 une rue, no app</p>
