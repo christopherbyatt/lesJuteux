@@ -1,13 +1,35 @@
+
 ul.elements_fiche {
   display: flex;
   list-style-type: none;
   align-items: center;
   margin-bottom: 75px;
+  flex-direction: column;
+}
+div.elements_droite{
+  padding-right: 40px;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+@media(min-width: 1000px){
+  ul.elements_fiche {
+    flex-direction: row;
+  }
+  div.elements_droite {
+    flex-direction: column;
+  }
 }
 
 div.elements_droite {
-  padding-right: 40px;
-  padding-left: 40px;
+  //padding-right: 40px;
+  //padding-left: 40px;
+  //display: flex;
+  //flex-direction: column;
+  //flex-wrap: wrap;
 
   li.prixCAN__livre {
     font-family: "Caviar Dreams";
