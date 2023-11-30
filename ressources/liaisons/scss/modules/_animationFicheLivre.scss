@@ -1,0 +1,15 @@
+// Idée de l'animtaion inspirée de StackOverflow
+// https://stackoverflow.com/questions/34821217/easily-create-an-animated-glow
+.livres__fiche img:hover {
+  background-color: transparent;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px $vertMelon;
+  }
+  to {
+    box-shadow: 0 0 10px 10px $vertMelon;
+  }
+}
