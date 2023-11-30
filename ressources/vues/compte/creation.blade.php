@@ -3,7 +3,7 @@
     <h1>Créer un compte</h1>
     <div class="background compte__background">
     <form action="index.php?controleur=site&action=accueil" class="compte" method="POST">
-        <label for="courriel">Couriel</label>
+        <label for="courriel">Courriel</label>
         <input class="compte__champLong compte__barre" type="text" id="courriel" name="courriel">
         <label for="motDePasse">Choisir un mot de passe</label>
         <input class="compte__barre" type="password" id="motDePasse" name="motDePasse">

@@ -1,25 +1,53 @@
 .panier {
-  display: flex;
+  width: 80%;
+  display: block;
   margin: auto;
-  width: 60%;
-  justify-content: space-around;
-  padding-bottom: 5rem;
   padding-top: 2rem;
-  &__image{
-    height: 150px;
-    width: 100px;
+  padding-bottom: 5rem;
+  &__info {
+    display: block;
+    text-align: center;
   }
-  &__info{
+  &__quantitePrix {
+    display: block;
+    text-align: center;
+  }
+}
+input[type=number] {
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 900px) {
+  .panier {
     display: flex;
+    margin: auto;
+    width: 60%;
+    justify-content: space-around;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+
+    &__image {
+      height: 150px;
+      width: 100px;
+    }
+
+    &__info {
+      display: flex;
+      text-align: start;
+    }
+
+    &__texte {
+      padding-left: 2rem;
+    }
+
+    &__quantitePrix {
+      margin-top: 25.5px;
+      margin-bottom: 25.5px;
+    }
   }
-  &__texte{
-    padding-left: 2rem;
-  }
-  &__quantitePrix{
-    margin-top: 25.5px;
-    margin-bottom: 25.5px;
-  }
-  input[type=number]{
+  input[type=number] {
     width: 25px;
+    height: 15px;
   }
 }
