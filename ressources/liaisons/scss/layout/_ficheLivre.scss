@@ -269,3 +269,7 @@ input{
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
+
+#myModal {
+  z-index: 200;
+}

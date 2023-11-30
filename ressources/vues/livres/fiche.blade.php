@@ -5,8 +5,8 @@
     <h1>{{$livre->getTitre()}}</h1>
     <ul class="icones_favoris">
 {{--        <a href=""><span id="icon_favoris-rose" class="icon"><img src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></span></a>--}}
-        <a><li id="icon_favoris-rose"><img src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></li></a>
-        <a><li><img src="liaisons/images/loupeFavoris.png" class="icones_favoris-fiche"></li></a>
+        <a><li id="icon_favoris-rose"><img alt="Ajouter aux favoris" src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></li></a>
+        <a><li><img alt="Voir ma liste de favoris" src="liaisons/images/loupeFavoris.png" class="icones_favoris-fiche"></li></a>
     </ul>
     <ul class="elements_fiche">
         <div class="image_gauche">
