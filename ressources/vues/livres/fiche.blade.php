@@ -4,7 +4,8 @@
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > {{$livre->getTitre()}}</p>
     <h1>{{$livre->getTitre()}}</h1>
     <ul class="icones_favoris">
-        <a><li><img src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></li></a>
+{{--        <a href=""><span id="icon_favoris-rose" class="icon"><img src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></span></a>--}}
+        <a><li id="icon_favoris-rose"><img src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></li></a>
         <a><li><img src="liaisons/images/loupeFavoris.png" class="icones_favoris-fiche"></li></a>
     </ul>
     <ul class="elements_fiche">
