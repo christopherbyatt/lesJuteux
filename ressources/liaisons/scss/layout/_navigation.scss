@@ -204,11 +204,20 @@
   flex-direction: column;
   text-align: center;
 }
+.nav__item {
+  padding-bottom: 1.8rem;
+  font-size: 1.8rem;
+}
 @media (min-width: 800px) {
   .nav__liste.ferme,
   .nav__liste.ouvert {
     flex-direction: row;
     display: flex;
     text-align: justify;
+  }
+  .nav__item {
+    padding-bottom: 0;
+    font-size: 1.6rem;
+
   }
 }
