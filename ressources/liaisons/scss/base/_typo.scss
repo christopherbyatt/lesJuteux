@@ -48,9 +48,10 @@ h1,
   font-size: 60px;
   font-size: 6rem;
   text-align: center;
-  margin: 0;
   font-family: "fruity stories";
-  color: #CBE3B9;
+  color: $vertMelon;
+  width: 95%;
+  margin: auto;
 }
 @media (min-width: 800px) {
   h1{
