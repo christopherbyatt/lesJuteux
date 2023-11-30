@@ -2,7 +2,7 @@
 
 @section('contenu')
     <h1>Accueil</h1>
-    <div class="background">
+    git pull
     <div class="ligne-h2">
         <h2 class="fonce">Nouveautés</h2>
     </div>
