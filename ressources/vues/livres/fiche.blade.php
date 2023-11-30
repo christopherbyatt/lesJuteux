@@ -19,9 +19,9 @@
             @endif
 
             @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w485.jpg"))
-            <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
+            <img alt="Couverture de {{$livre->getTitre()}}" src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
             @else
-            <img src="liaisons/images/livres/noImage_w485.jpg">
+            <img src="liaisons/images/livres/noImage_w485.jpg" alt="Aucune couverture disponible">
             @endif
 {{--            <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">--}}
         </div>
