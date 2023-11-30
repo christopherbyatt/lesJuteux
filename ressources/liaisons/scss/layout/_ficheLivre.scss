@@ -5,6 +5,7 @@ ul.elements_fiche {
   align-items: center;
   margin-bottom: 75px;
   flex-direction: column;
+  padding-left: 0px;
 }
 div.elements_droite{
   padding-right: 40px;
@@ -19,6 +20,7 @@ div.elements_droite{
 @media(min-width: 1000px){
   ul.elements_fiche {
     flex-direction: row;
+    padding-left: 40px;
   }
   div.elements_droite {
     margin-top: 0px;
@@ -252,4 +254,24 @@ input{
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+#icon_favoris-rose:link {
+  background-image:url("../images/favorisRose.png");
+}
+
+#icon_favoris-rose:hover, #icon_favoris-rose:active {
+  background-image:url("../images/coeurPleinRose.png");
+  background-size: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  //margin-right: 10px;
+
+  // Inspiration pour l'animation: https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/
+  animation: fadeInAnimation ease 800ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#myModal {
+  z-index: 200;
 }
