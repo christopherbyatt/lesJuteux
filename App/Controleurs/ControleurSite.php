@@ -6,6 +6,7 @@ use App\App;
 use App\Modeles\Actualite;
 use App\Modeles\Evenement;
 use App\Modeles\Livre;
+use App\Modeles\Utilisateur;
 
 class ControleurSite {
     public function accueil(): void {
@@ -32,5 +33,24 @@ class ControleurSite {
     public function contact(): void {
         $tDonnees = array("message"=>"Je suis la page Contact...");
         echo App::getBlade()->run("page",$tDonnees);
+    }
+    public function paiement():void {
+        $unUser = Utilisateur::trouverParId(1);
+        $tDonnees = array('utilisateur'=>$unUser);
+        echo App::getBlade()->run('paiement', $tDonnees);
+    }
+    public function confirmation():void {
+        if(isset($_POST)) {
+            $leNom = $_POST['nom'];
+            $lePrenom = $_POST['prenom'];
+            $leCourriel = $_POST['courriel'];
+            $lAdresse = $_POST['adresse'];
+            $laVille = $_POST['ville'];
+            $laProvince = $_POST['province'];
+            $lePays = $_POST['pays'];
+            $leCodePostal = $_POST['codePostal'];
+        }
+        $tDonnees = array('leNom'=>$leNom, 'lePrenom'=>$lePrenom, 'leCourriel'=>$leCourriel, 'lAdresse'=>$lAdresse, 'laVille'=>$laVille, 'laProvince'=>$laProvince, 'lePays'=>$lePays, 'leCodePostal'=>$leCodePostal);
+        echo App::getBlade()->run('confirmation', $tDonnees);
     }
 }

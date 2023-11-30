@@ -3,5 +3,19 @@
 * @todo Compléter selon l'énoncé de l'exercice
 */
 a{
-  color : $rose
+  color : $rose;
+  &:hover,
+  &:active {
+    color: $vertMelon;
+  }
+  &.nav__lien {
+    &:hover,
+    &:active {
+      color: $background2;
+      filter: drop-shadow(0 0 0.75rem $background2);
+    }
+  }
+  &.nav__titre {
+    color: transparent;
+  }
 }

@@ -19,8 +19,7 @@
   display: inline-block;
   &:hover,
   &:active {
-    outline: $background1 solid 2px;
-    border-radius: 1vh;
+    filter: drop-shadow(0 0 0.75rem $background2);
   }
 }
 .nav__barreRecherche {
@@ -117,16 +116,13 @@
     display: inline-block;
     aspect-ratio: 19/3;
     color: transparent;
-    background-color: $rose;
     background-image: url("../images/deco/titre.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 90%;
     margin-bottom: 2rem;
     &:hover,
     &:active {
-      outline: $background1 solid 2px;
-      border-radius: 3vh;
+      filter: drop-shadow(0 0 0.75rem $background2);
     }
   }
   @media (min-width: 800px) {
