@@ -267,12 +267,18 @@ input{
   background-size: 48px;
   background-repeat: no-repeat;
   background-position: center;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
+
   //margin-right: 10px;
 
   // Inspiration pour l'animation: https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/
   animation: fadeInAnimation ease 800ms;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+.icones_favoris-fiche:hover {
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
 }
 
 #myModal {
