@@ -1,4 +1,5 @@
-@extends('gabarit', ['title'=>'Paiement'])
+
+@extends('gabarit', ['title'=>'Paiement', 'description'=>'Passez au paiement sécuritairement pour acheter vos livres chez La Pastèque. Un paiement rapide et efficace qui vous permettra d\'avoir vos classiques préférés livrés chez vous.', 'keywords'=>['achat de livres', 'librairie en ligne', 'paiement sécurisé', 'transactions de romans', 'acheter des livres en ligne', 'paiement fluide', 'best-sellers', 'collection diversifiée de livres', 'transactions rapides', 'paiement pour les amateurs de livres', 'québecois', 'La Pastèque']])
 
 @section('contenu')
     <span aria-hidden="true" id="topOfTheWorld"></span>
@@ -88,7 +89,7 @@
                     </div>
                     <div class="sectionPaiement__section" id="adresseDeFacturation">
                         <h3>Adresse de Facturation</h3>
-                        @if(true)
+                        <div id="adresseSiDifferente" class="visible">
                             <label for="adresseFacturation">Adresse:</label>
                             <input type="text" id="adresseFacturation" name="adresseFacturation" class="sectionPaiement__section__input large">
                             <label for="villeFacturation">Ville</label>
@@ -123,13 +124,14 @@
                             </div>
                             <label for="codePostalFacturation"> Code Postal: (Ex: A1A 1A1)</label>
                             <input type="text" id="codePostalFacturation" name="codePostalFacturation" class="sectionPaiement__section__input small">
-                        @else
-                            <a href="">Modifier</a>
+                        </div>
+                        <div id="adresseSiMeme" class="invisible">
+                            <button type="button" class="sectionPaiement__section__btnModif" id="modifierAdresse">Modifier</button>
                             <p>1234 une rue, no app</p>
                             <p>Une ville</p>
                             <p>Une province, un pays</p>
                             <p>Un code postal</p>
-                        @endif
+                        </div>
                     </div>
                     <div class="sectionPaiement__section" id="modePaiement">
                         <h3>Mode de paiement</h3>
@@ -210,7 +212,8 @@
                     <div class="ligne-h2">
                         <h2 class="fonce">Adresse de livraison</h2>
                     </div>
-                    <a href="">Modifier</a>
+{{--                    <a href="">Modifier</a>--}}
+                    <button class="sectionPaiement__section__btnModif" id="">Modifier</button>
                     <p>1234 une rue, no app</p>
                     <p>Une ville</p>
                     <p>Une province, un pays</p>
@@ -251,8 +254,9 @@
                     <div class="ligne-h2">
                         <h2 class="fonce">Informations de paiement</h2>
                     </div>
-                    <a href="">Modifier</a>
-                    <h5>Adresse de facturation:</h5>
+{{--                    <a href="">Modifier</a>--}}
+                    <button class="sectionPaiement__section__btnModif" id="">Modifier</button>
+                    <h3>Adresse de facturation:</h3>
                     <p>1234 une rue, no app</p>
                     <p>Une ville</p>
                     <p>Une province, un pays</p>

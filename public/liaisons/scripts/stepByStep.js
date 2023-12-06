@@ -2,6 +2,8 @@ document.getElementById('btnPartie01').addEventListener('click', function() { al
 document.getElementById('btnPartie02').addEventListener('click', function() { allerPage('3')});
 document.getElementById('btnSubmit').addEventListener('click', envoyer);
 
+document.getElementById('modifierAdresse').addEventListener('click', ouvrirForm);
+
 let section01 = document.getElementById('paiementPartie1');
 let section02 = document.getElementById('paiementPartie2');
 let section03 = document.getElementById('paiementPartie3');
@@ -9,6 +11,9 @@ let section03 = document.getElementById('paiementPartie3');
 let btn01 = document.getElementById('btnAllerPartie01');
 let btn02 = document.getElementById('btnAllerPartie02');
 let btn03 = document.getElementById('btnAllerPartie03');
+
+let adresseSiMeme = document.getElementById('adresseSiMeme');
+let adresseSiDifferente = document.getElementById('adresseSiDifferente');
 
 btn01.addEventListener('click', testSiActif);
 btn02.addEventListener('click', testSiActif);
@@ -41,6 +46,26 @@ function allerPage(unePage) {
             section02.classList.remove('invisible');
             section02.classList.add('visible');
             btn02.classList.add('active');
+            if(document.getElementById('memeAdresse').checked){
+                if(adresseSiMeme.classList.contains('invisible')) {
+                    adresseSiMeme.classList.add('visible');
+                    adresseSiMeme.classList.remove('invisible');
+                }
+                if(adresseSiDifferente.classList.contains('visible')) {
+                    adresseSiDifferente.classList.add('invisible');
+                    adresseSiDifferente.classList.remove('visible');
+                }
+            }
+            else {
+                if(adresseSiDifferente.classList.contains('invisible')) {
+                    adresseSiDifferente.classList.add('visible');
+                    adresseSiDifferente.classList.remove('invisible');
+                }
+                if(adresseSiMeme.classList.contains('visible')) {
+                    adresseSiMeme.classList.add('invisible');
+                    adresseSiMeme.classList.remove('visible');
+                }
+            }
             break;
         case '3':
             section03.classList.remove('invisible');
@@ -62,6 +87,16 @@ function testSiActif(e) {
         else if(e.target.value === '3' || e.target.classList.contains('3')) {
             allerPage('3');
         }
+    }
+}
+function ouvrirForm() {
+    if(adresseSiDifferente.classList.contains('invisible')) {
+        adresseSiDifferente.classList.add('visible');
+        adresseSiDifferente.classList.remove('invisible');
+    }
+    if(adresseSiMeme.classList.contains('visible')) {
+        adresseSiMeme.classList.add('invisible');
+        adresseSiMeme.classList.remove('visible');
     }
 }
 function envoyer() {

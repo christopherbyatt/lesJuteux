@@ -1,4 +1,5 @@
-@extends('gabarit', ['title'=>'Fiche de '.$auteur->getPrenomNom()])
+
+@extends('gabarit', ['title'=>'Apprenez-en sur '.$auteur->getPrenomNom(), 'description'=>'Fiche de '.$auteur->getPrenomNom().', un auteur. Découvrez sa biographie, les prix reçus et les livres qui ont été écrits par cet écrivain.', 'keywords'=>['auteur', 'écrivains', 'biographie', 'livres', $auteur->getPrenomNom(), 'québecois', 'La Pastèque']])
 
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=auteur&action=index">Auteurs</a> > {{$auteur->getPrenomNom()}}</p>

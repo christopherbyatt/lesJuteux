@@ -1,4 +1,4 @@
-@extends('gabarit', ['title'=>'Mon panier'])
+@extends('gabarit', ['title'=>'Mon panier', 'description'=>'Accédez à votre panier, ajoutez-y des articles et passez au paiement rapidement et sécuriatairement.', 'keywords'=>['panier', 'livres', 'librairie', 'paiement', 'ajouter au panier', 'québecois', 'La Pastèque']])
 @section('contenu')
     <h1>Mon Panier</h1>
     <div class="panier background">

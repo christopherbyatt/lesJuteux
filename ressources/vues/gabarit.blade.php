@@ -12,6 +12,8 @@
     <link rel="mask-icon" href="liaisons/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="{{$description}}">
+    <meta name="keywords" content="@foreach($keywords as $keyword){{$keyword}}@if($loop->remaining), @endif @endforeach">
     <script defer src="liaisons/scripts/menu.js"></script>
 {{--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
     <title>{{$title}} - La Pastèque</title>

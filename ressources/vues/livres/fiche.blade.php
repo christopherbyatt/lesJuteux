@@ -1,4 +1,5 @@
-@extends('gabarit', ['title'=>'Fiche de '.$livre->getTitre()])
+
+@extends('gabarit', ['title'=>'Fiche de '.$livre->getTitre(), 'description'=>'Découvrez le livre '.$livre->getTitre().'. Lisez la description, voyez le prix, ajoutez le à votre panier chez La Pastèque', 'keywords'=>['ajouter au panier', 'prix', 'livre', $livre->getTitre(), 'québecois', 'La Pastèque']])
 
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > {{$livre->getTitre()}}</p>

@@ -1,4 +1,5 @@
-@extends('gabarit', ['title'=>'Création de compte'])
+
+@extends('gabarit', ['title'=>'Création du compte', 'description'=>'Connectez-vous ou créez-vous un compte chez La Pastèque pour des offres exclusives sur de multiples ouvrages québecois.', 'keywords'=>['compte', 'création', 'connexion', 'livres', 'bd', 'québecois', 'La Pastèque']])
 @section('contenu')
     <h1>Créer un compte</h1>
     <div class="background compte__background">

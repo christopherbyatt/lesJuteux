@@ -1,4 +1,5 @@
-@extends('gabarit', ['title'=>'Index des auteurs'])
+
+@extends('gabarit', ['title'=>'Index des auteurs', 'description'=>'Explorez nos divers auteurs talentueux qui ont participé à l\'écriture de nos livres disponibles en vente sur La Pastèque. Découvrez les œuvres, les biographies, les prix de multiples écrivains.' , 'keywords'=>['auteurs', 'écrivains', 'biographies', 'auteurs divers', 'québecois', 'La Pastèque']])
 
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > Auteurs</p>
