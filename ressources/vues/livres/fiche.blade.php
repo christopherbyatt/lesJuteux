@@ -86,10 +86,12 @@
                     <div class="modal-header">
                         <span class="close">&times;</span>
                     </div>
+{{--                    <div class="modal-body-top">--}}
                     <div class="modal-body" id="modal-body">
-                        <p class="modal-texte"></p>
+{{--                        <p class="modal-texte"></p>--}}
                     </div>
                     <a class="modal-lien" href="index.php?controleur=panier&action=index">Voir le panier</a>
+{{--                    </div>--}}
                     <div class="modal-footer">
                     </div>
                 </div>

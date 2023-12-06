@@ -237,11 +237,36 @@ input{
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #FDD5CE;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  //padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-texte {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  //font-family: "Caviar Dreams";
+  //font-weight: bold;
+}
+
+.modal-lien {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+}
+
+.modal-lien:hover {
+  filter: drop-shadow(0 0 0.75rem #484141);
+}
+
+.modal-footer {
+  background-color: #CBE3B9;
+  height: 30px;
+  margin-top: 30px;
 }
 
 /* The Close Button */
@@ -283,4 +308,9 @@ input{
 
 #myModal {
   z-index: 200;
+}
+
+span.close {
+  margin-right: 15px;
+  margin-top: 5px;
 }
