@@ -12,7 +12,7 @@
         </div>
         <div class="panier__quantitePrix">
             <label for="chiffre">Quantité : </label>
-            <input type="number" id="chiffre" name="chiffre" value="1">
+            <input type="number" id="chiffre" name="chiffre" class="quantite" value="1">
             <p>Total : 11.11$</p>
             <a href="">Retirer du panier</a>
         </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="panier__quantitePrix">
             <label for="chiffre">Quantité : </label>
-            <input type="number" id="chiffre" name="chiffre" value="1">
+            <input type="number" id="chiffre" name="chiffre" class="quantite" value="1">
             <p>Total : 11.11$</p>
             <a href="">Retirer du panier</a>
         </div>
