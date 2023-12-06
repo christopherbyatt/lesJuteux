@@ -5,8 +5,9 @@
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > {{$livre->getTitre()}}</p>
     <h1>{{$livre->getTitre()}}</h1>
     <ul class="icones_favoris">
-        <a><li><img src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></li></a>
-        <a><li><img src="liaisons/images/loupeFavoris.png" class="icones_favoris-fiche"></li></a>
+{{--        <a href=""><span id="icon_favoris-rose" class="icon"><img src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></span></a>--}}
+        <a><li id="icon_favoris-rose"><img alt="Ajouter aux favoris" src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></li></a>
+        <a><li><img alt="Voir ma liste de favoris" src="liaisons/images/loupeFavoris.png" class="icones_favoris-fiche"></li></a>
     </ul>
     <ul class="elements_fiche">
         <div class="image_gauche">
@@ -19,9 +20,9 @@
             @endif
 
             @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w485.jpg"))
-            <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
+            <img alt="Couverture de {{$livre->getTitre()}}" src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
             @else
-            <img src="liaisons/images/livres/noImage_w485.jpg">
+            <img src="liaisons/images/livres/noImage_w485.jpg" alt="Aucune couverture disponible">
             @endif
 {{--            <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">--}}
         </div>
