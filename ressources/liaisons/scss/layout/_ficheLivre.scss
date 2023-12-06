@@ -105,6 +105,7 @@ div.elements_droite {
       text-align: center;
       //padding-left: 15px;
       background-color: #484141;
+      height: 50px;
       color: white;
       //border: none;
     }
@@ -118,7 +119,8 @@ div.elements_droite {
       background-image: url("../images/moins.png");
       background-size: contain;
       background-repeat: no-repeat;
-      width: 30px;
+      width: 40px;
+      height: 40px;
     }
 
     p.moins:hover {
@@ -129,7 +131,8 @@ div.elements_droite {
       background-image: url("../images/plus.png");
       background-size: contain;
       background-repeat: no-repeat;
-      width: 30px;
+      width: 40px;
+      height: 40px;
     }
 
     p.plus:hover {
@@ -234,11 +237,36 @@ input{
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #FDD5CE;
   margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
+  //padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal-texte {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  //font-family: "Caviar Dreams";
+  //font-weight: bold;
+}
+
+.modal-lien {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+}
+
+.modal-lien:hover {
+  filter: drop-shadow(0 0 0.75rem #484141);
+}
+
+.modal-footer {
+  background-color: #CBE3B9;
+  height: 30px;
+  margin-top: 30px;
 }
 
 /* The Close Button */
@@ -264,6 +292,8 @@ input{
   background-size: 48px;
   background-repeat: no-repeat;
   background-position: center;
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
+
   //margin-right: 10px;
 
   // Inspiration pour l'animation: https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/
@@ -272,6 +302,15 @@ input{
   animation-fill-mode: forwards;
 }
 
+.icones_favoris-fiche:hover {
+  filter: drop-shadow(0 0 0.75rem #CBE3B9);
+}
+
 #myModal {
   z-index: 200;
+}
+
+span.close {
+  margin-right: 15px;
+  margin-top: 5px;
 }
