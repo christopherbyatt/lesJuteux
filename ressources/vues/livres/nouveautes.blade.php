@@ -1,4 +1,5 @@
-@extends('gabarit', ['title'=>'Index des nouveautés'])
+
+@extends('gabarit', ['title'=>'Index des nouveautés', 'description'=>'Explorez notre sélection de nouveaux livres. Arrivées depuis peu, faites parti des premiers à lire ces œuvres québecoises.', 'keywords'=>['nouveautés', 'livres', 'auteurs', 'librairie', 'québecois', 'La Pastèque']])
 
 @section('contenu')
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > Nouveautés</p>

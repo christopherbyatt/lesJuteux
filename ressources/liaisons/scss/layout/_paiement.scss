@@ -24,6 +24,7 @@
   text-align: center;
 }
 .sectionPaiement__section__input,
+input.sectionPaiement__section__input,
 .sectionPaiement__section__select {
   display: block;
   height: 4.5rem;
@@ -105,4 +106,33 @@
       transform: skew(20deg);
     }
   }
+}
+
+.sectionPaiement__section__btnModif {
+  background-color: $rose;
+  font-size: 2rem;
+  color: $background2;
+  width: 18rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  border: 1px solid $rose;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  margin: 1.5rem auto 4rem auto;
+  &:hover,
+  &:active {
+    background-color: $vertMelon;
+    filter: drop-shadow(0 0 0.75rem $vertMelon);
+  }
+}
+.sectionPaiement__section__sousSection {
+  max-width: 35rem;
+  //margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#total p {
+  font-weight: bold;
+  font-size: 120%;
 }

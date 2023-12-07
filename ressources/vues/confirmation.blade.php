@@ -1,4 +1,5 @@
-@extends('gabarit', ['title'=>'Confirmation de la commande'])
+
+@extends('gabarit', ['title'=>'Confirmation de la commande', 'description'=>'Votre commande est confirmée. Merci d\'avoir commandé chez La Pastèque!', 'keywords'=>['confirmation', 'paiement', 'commande', 'livres', 'librairie', 'sécurisé', 'québecois', 'La Pastèque']])
 
 @section('contenu')
     <h1>Confirmation de la commande</h1>

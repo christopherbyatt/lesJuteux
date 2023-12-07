@@ -1,4 +1,5 @@
-@extends('gabarit', ['title'=>'Accueil'])
+
+@extends('gabarit', ['title'=>'Accueil', 'description'=>'Visitez le site de La Pastèque, une maison d\'édition fondée en 1998 spécialisée en bandes dessinée, et en livre jeunesse. Magasinez, découvrez ou explorez notre vaste sélection de livres.', 'keywords'=>['bd', 'livres', 'librairie', 'accueil', 'auteurs', 'maison d\'édition', 'québecois', 'La Pastèque']])
 
 @section('contenu')
     <h1>Accueil</h1>

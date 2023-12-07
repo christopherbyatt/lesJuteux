@@ -1,4 +1,4 @@
-@extends('gabarit', ['title'=>'Mon panier'])
+@extends('gabarit', ['title'=>'Mon panier', 'description'=>'Accédez à votre panier, ajoutez-y des articles et passez au paiement rapidement et sécuriatairement.', 'keywords'=>['panier', 'livres', 'librairie', 'paiement', 'ajouter au panier', 'québecois', 'La Pastèque']])
 @section('contenu')
     <h1>Mon Panier</h1>
     <div class="panier background">
@@ -12,7 +12,7 @@
         </div>
         <div class="panier__quantitePrix">
             <label for="chiffre">Quantité : </label>
-            <input type="number" id="chiffre" name="chiffre" value="1">
+            <input type="number" id="chiffre" name="chiffre" class="quantite" value="1">
             <p>Total : 11.11$</p>
             <a href="">Retirer du panier</a>
         </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="panier__quantitePrix">
             <label for="chiffre">Quantité : </label>
-            <input type="number" id="chiffre" name="chiffre" value="1">
+            <input type="number" id="chiffre" name="chiffre" class="quantite" value="1">
             <p>Total : 11.11$</p>
             <a href="">Retirer du panier</a>
         </div>
