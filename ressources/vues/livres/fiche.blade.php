@@ -52,6 +52,7 @@
             </div>
             @endif
 
+                <form method="post" action="">
             <div class="format__livre">
                 <div class="format__papier">
                     <button class="papier format-selectionne" id="papier">Papier</button>
@@ -68,7 +69,9 @@
                 <p class="plus" id="plus"></p>
             </div>
 
-            <button class="btnAjouter" id="btnAjouter">Ajouter au panier<span id="icon_panier" class="icon"></span></button>
+            <input type="submit" class="btnAjouter" id="btnAjouter" value="Ajouter au panier">
+{{--                    <span id="icon_panier" class="icon"></span>--}}
+                </form>
 
             <!-- Modal inspiré de: https://www.w3schools.com/howto/howto_css_modals.asp -->
 
