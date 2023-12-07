@@ -1,53 +1,99 @@
 .panier {
-  width: 80%;
-  display: block;
-  margin: auto;
-  padding-top: 2rem;
-  padding-bottom: 5rem;
-  &__info {
-    display: block;
-    text-align: center;
+  padding: 0;
+  &__ligne {
+    max-width: 80%;
   }
-  &__quantitePrix {
-    display: block;
-    text-align: center;
-  }
-}
-input[type=number] {
-  width: 30px;
-  height: 30px;
-}
-
-@media (min-width: 900px) {
-  .panier {
+  &__item {
+    width: 80%;
+    min-width: 320px;
+    padding: 4rem 1rem 5rem 1rem;
     display: flex;
+    flex-direction: column;
     margin: auto;
-    width: 60%;
-    justify-content: space-around;
-    padding-bottom: 5rem;
-    padding-top: 2rem;
-
-    &__image {
-      height: 150px;
-      width: 100px;
-    }
 
     &__info {
       display: flex;
-      text-align: start;
-    }
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
 
-    &__texte {
-      padding-left: 2rem;
+      &__img {
+        flex-basis: 35%;
+      }
+      &__txt {
+          flex-basis: 60%;
+        &__h2{
+          margin: 0;
+          padding: 0;
+        }
+        &__p {
+          margin-bottom: 0;
+        }
+      }
     }
 
     &__quantitePrix {
-      margin-top: 25.5px;
-      margin-bottom: 25.5px;
+      margin-top: 4rem;
+      display: block;
+      text-align: center;
     }
   }
+
   input[type=number] {
-    width: 25px;
-    height: 15px;
+    width: 30px;
+    height: 20px;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.4rem;
+  }
+}
+  @media (min-width: 800px) {
+    .panier {
+      &__item {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        width: 90%;
+        max-width: 1000px;
+        justify-content: space-around;
+
+        &__info {
+          text-align: start;
+          flex-basis: 60%;
+
+          &__img {
+
+          }
+
+          &__txt {
+            padding-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &__h2 {
+              text-align: left;
+              font-size: 2.4rem;
+            }
+          }
+        }
+
+        &__quantitePrix {
+          margin-top: 25.5px;
+          margin-bottom: 25.5px;
+          flex-basis: 25%;
+        }
+      }
+    }
+  }
+.total {
+  width: 80%;
+  min-width: 320px;
+  max-width: 1000px;
+  margin: 5rem auto;
+  & p:last-child {
+    font-size: 1.8rem;
+    font-weight: bold;
   }
 }
