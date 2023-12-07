@@ -9,13 +9,13 @@
                     <div class="panier__info__txt">
                         <p class="panier__info__txt__p">{{$unLivre->getTitre()}}</p>
                         <p class="panier__info__txt__p">@foreach($unLivre->getAuteur() as $unAuteur)@if($loop->remaining)<br>@endif{{$unAuteur->getPrenomNom()}} @endforeach</p>
-                        <p class="panier__info__txt__p">{{$unLivre->getPrixCan()}}</p>
+                        <p class="panier__info__txt__p">{{$unLivre->getPrixCan()}}$</p>
                     </div>
                 </div>
                 <div class="panier__quantitePrix">
                     <label for="chiffre">Quantité : </label>
-                    <input type="number" id="chiffre" name="chiffre" value="1">
-                    <p>Total : 11.11$</p>
+                    <input type="number" id="chiffre" name="chiffre" value="{{\App\Modeles\Article::trouverParLivreEtPanier($unLivre->getId(), $lePanier->getId())->getQuantite()}}">
+                    <p>Total : {{ number_format((float)($unLivre->getPrixCan()*\App\Modeles\Article::trouverParLivreEtPanier($unLivre->getId(), $lePanier->getId())->getQuantite()), 2, '.', '') }}$</p>
                     <a href="">Retirer du panier</a>
                 </div>
             </li>
