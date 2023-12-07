@@ -4,12 +4,11 @@
     <p class="filAriane"><a href="index.php?controleur=site&action=accueil">La Pastèque</a> > <a href="index.php?controleur=livre&action=index">Livres</a> > {{$livre->getTitre()}}</p>
     <h1>{{$livre->getTitre()}}</h1>
     <ul class="icones_favoris">
-{{--        <a href=""><span id="icon_favoris-rose" class="icon"><img src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></span></a>--}}
         <a><li id="icon_favoris-rose"><img alt="Ajouter aux favoris" src="liaisons/images/favorisRose.png" class="icones_favoris-fiche"></li></a>
         <a><li><img alt="Voir ma liste de favoris" src="liaisons/images/loupeFavoris.png" class="icones_favoris-fiche"></li></a>
     </ul>
     <ul class="elements_fiche">
-        <div class="image_gauche">
+        <li class="image_gauche">
             @if ($livre->getDateQuebec() > date('Y-m-d', strtotime("-12 months")) && $livre->getDateQuebec() < date('Y-m-d', time()))
                 <div class="livreNouveautesEtiquette" style="margin-right: 10%; margin-bottom:-10px;"><span class="brilleEtiquette"></span>Nouveauté</div>
             @elseif($livre->getDateQuebec() > date('Y-m-d', time()))
@@ -23,10 +22,9 @@
             @else
             <img src="liaisons/images/livres/noImage_w485.jpg" alt="Aucune couverture disponible">
             @endif
-{{--            <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">--}}
-        </div>
-        <div class="elements_droite">
-            {{--    <li>Id: {{$livre->getId()}}</li>--}}
+        </li>
+        <li class="elements_droite">
+            <ul>
             <li class="categorie__livre">{{$categorie->getNom()}}</li>
             <li>Âge minimal: {{$livre->getAgeMin()}} ans</li>
             <p class="fiche__auteurs">
@@ -65,7 +63,6 @@
 
             <div class="quantite">
                 <p class="moins" id="moins"></p>
-{{--                <p class="chiffre">1</p>--}}
                 <label for="chiffre"></label>
                 <input type="number" id="chiffre" name="chiffre" value="1">
                 <p class="plus" id="plus"></p>
@@ -74,9 +71,6 @@
             <button class="btnAjouter" id="btnAjouter">Ajouter au panier<span id="icon_panier" class="icon"></span></button>
 
             <!-- Modal inspiré de: https://www.w3schools.com/howto/howto_css_modals.asp -->
-
-            <!-- Trigger/Open The Modal -->
-{{--            <button id="myBtn">Open Modal</button>--}}
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -107,7 +101,8 @@
 {{--            <li>Id Categorie: {{$livre->getCategorieId()}}</li>--}}
 {{--            <li>Id type d'impression: {{$livre->getTypeImpressionId()}}</li>--}}
 {{--            <li>Id type couverture: {{$livre->getTypeCouvertureId()}}</li>--}}
-        </div>
+            </ul>
+        </li>
     </ul>
 <div class="background sectionSuggestions">
     <div class="ligne-h2">
