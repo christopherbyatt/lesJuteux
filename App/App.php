@@ -59,6 +59,19 @@ class App {
         }
     }
 
+    public static function getPanier():Panier {
+        if(Panier::trouverParIdSession(App::$idSession) !== null) {
+            $lePanier = Panier::trouverParIdSession(App::$idSession);
+            $lePanier->setDernierAcces(time());
+            $lePanier->updateLeTemps();
+        }
+        else {
+            App::demarrerSession();
+            $lePanier = Panier::trouverParIdSession(App::$idSession);
+        }
+        return $lePanier;
+    }
+
     public static function getPDO() {
         if (App::$refPDO == null) {
             if(App::getServeur() === 'serveur-local')
