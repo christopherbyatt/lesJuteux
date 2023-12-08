@@ -6,6 +6,7 @@ use App\Controleurs\ControleurAuteur;
 use App\Controleurs\ControleurLivre;
 use App\Controleurs\ControleurPanier;
 use App\Controleurs\ControleurCompte;
+use App\Modeles\Panier;
 use \PDO;
 use eftec\bladeone\BladeOne;
 error_reporting(E_ALL);
@@ -14,10 +15,12 @@ ini_set('display_errors', '1');
 class App {
     private static ?PDO $refPDO = null;
     private static ?BladeOne $refBlade = null;
+    private static string $idSession = "";
 
     public function __construct() {
         error_reporting(E_ALL | E_STRICT);
         date_default_timezone_set('America/Montreal');
+        $this->demarrerSession();
         $this->routerRequete();
     }
     public static function getServeur(): string
@@ -33,6 +36,41 @@ class App {
         return $env;
     }
 
+    public static function demarrerSession():void {
+        if(session_id() === "") {
+            session_start();
+        }
+
+        $idSession = session_id(); //utiliser la méthode session_id pour récupérer l’id de l’utilisateur.
+
+//        echo $idSession ; // Affiche l’identifiant de la session courante
+        App::$idSession = $idSession;
+
+        if(Panier::trouverParIdSession(App::$idSession) !== null) {
+            $lePanier = Panier::trouverParIdSession(App::$idSession);
+            $lePanier->setDernierAcces(time());
+            $lePanier->updateLeTemps();
+        }
+        else {
+            $lePanier = new Panier();
+            $lePanier->setIdSession(App::$idSession);
+            $lePanier->setDernierAcces(time());
+            $lePanier->inserer();
+        }
+    }
+
+    public static function getPanier():Panier {
+        if(Panier::trouverParIdSession(App::$idSession) !== null) {
+            $lePanier = Panier::trouverParIdSession(App::$idSession);
+            $lePanier->setDernierAcces(time());
+            $lePanier->updateLeTemps();
+        }
+        else {
+            App::demarrerSession();
+            $lePanier = Panier::trouverParIdSession(App::$idSession);
+        }
+        return $lePanier;
+    }
 
     public static function getPDO() {
         if (App::$refPDO == null) {
