@@ -93,7 +93,12 @@
 
 {{--                <input type="submit" class="btnAjouter" id="btnAjouter" value="Ajouter au panier">--}}
 {{--                    <span id="icon_panier" class="icon"></span>--}}
-                <button type="submit" id="btnAjouter" class="ficheLivre__form__btnAjouter">Ajouter au panier<span class="icon" id="icon_panier_btn"></span></button>
+                @if($livre->getDateQuebec() > date('Y-m-d', time()))
+                    <p id="txtAjouter" class="ficheLivre__form__txtAjouter">Ajouter au panier<span class="icon" id="icon_panier_btn"></span></p>
+                    <p class="ficheLivre__form__txtAvertissement">Malheureusement cet article n'est pas encore disponible. La date de sortie prévue est le {{ date('d/m/Y', strtotime((string)$livre->getDateQuebec())) }}.</p>
+                @else
+                    <button type="submit" id="btnAjouter" class="ficheLivre__form__btnAjouter">Ajouter au panier<span class="icon" id="icon_panier_btn"></span></button>
+                @endif
             </form>
 
             <!-- Modal inspiré de: https://www.w3schools.com/howto/howto_css_modals.asp -->

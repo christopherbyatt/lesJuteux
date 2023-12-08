@@ -418,7 +418,8 @@ span.close {
       border-radius: 0.5rem;
     }
   }
-  &__btnAjouter {
+  &__btnAjouter,
+  &__txtAjouter {
     font-size: 2.5rem;
     background-color: $rose;
     color: $background1;
@@ -435,6 +436,14 @@ span.close {
     &:active {
       background-color: $vertMelon;
       filter: drop-shadow(0 0 0.75rem $vertMelon);
+    }
+  }
+  &__txtAjouter {
+    background-color: lightgray;
+    &:hover,
+    &:active {
+      background-color: lightgray;
+      filter: none;
     }
   }
 }
