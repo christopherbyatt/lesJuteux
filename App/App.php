@@ -43,7 +43,7 @@ class App {
 
         $idSession = session_id(); //utiliser la méthode session_id pour récupérer l’id de l’utilisateur.
 
-        echo $idSession ; // Affiche l’identifiant de la session courante
+//        echo $idSession ; // Affiche l’identifiant de la session courante
         App::$idSession = $idSession;
 
         if(Panier::trouverParIdSession(App::$idSession) !== null) {
