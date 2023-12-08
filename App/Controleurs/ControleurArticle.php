@@ -19,6 +19,10 @@ class ControleurArticle {
 //        elseif ($laQte < 0) {
 //            $laQte = 0;
 //        }
+        if($laQte <= 0) {
+            header('Location: index.php?controleur=article&action=supprimer&idLivre='.$idLivre);
+            exit();
+        }
         if($lArticle !== null) {
             //l'article existe
             $lArticle->setQuantite($laQte);
@@ -38,12 +42,15 @@ class ControleurArticle {
     }
 
     public function supprimer():void {
-        if(isset($_GET["idArticle"])) {
+        if(isset($_GET["idLivre"])) {
+            $idArticle = Article::trouverParLivreEtPanier((int)$_GET["idLivre"], App::getPanier()->getId())->getId();
+        }
+        elseif (isset($_GET["idArticle"])) {
             $idArticle = $_GET["idArticle"];
         }
         $exArticle = new Article();
         $exArticle->supprimer($idArticle);
-        header('Location: index.php?controleur=site&action=panier');
+        header('Location: index.php?controleur=panier&action=index');
         exit;
     }
 }

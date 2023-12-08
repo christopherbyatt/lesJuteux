@@ -16,14 +16,19 @@
         <ul class="panier">
             @foreach($lesLivres as $unLivre)
                 <li class="panier__item background">
-                    <div class="panier__item__info">
-                        <img class="panier__item__info__img" src="liaisons/images/livres/{{$unLivre->getISBNPapier()}}_w150.jpg">
+                    <a href="index.php?controleur=livre&action=fiche&idLivre={{$unLivre->getId()}}" class="panier__item__info">
+                        @if(is_file("liaisons/images/livres/".$unLivre->getISBNPapier()."_w300.jpg"))
+                            <img class="panier__item__info__img" src="liaisons/images/livres/{{$unLivre->getISBNPapier()}}_w150.jpg">
+                        @else
+                            <img class="panier__item__info__img" src="liaisons/images/livres/noImage_w150.jpg">
+                        @endif
+
                         <div class="panier__item__info__txt">
                             <h2 class="panier__item__info__txt__h2">{{$unLivre->getTitre()}}</h2>
                             <p class="panier__item__info__txt__p">@foreach($unLivre->getAuteur() as $unAuteur){{$unAuteur->getPrenomNom()}} @if(!$loop->last)<br>@endif @endforeach</p>
                             <p class="panier__item__info__txt__p">{{$unLivre->getPrixCan()}}$</p>
                         </div>
-                    </div>
+                    </a>
                     <div class="panier__item__quantitePrix">
                         @php
                             $qte =  \App\Modeles\Article::trouverParLivreEtPanier($unLivre->getId(), $lePanier->getId())->getQuantite();
@@ -32,7 +37,7 @@
                         <label for="chiffre">Quantité : </label>
                         <input type="number" id="chiffre" name="chiffre" value="{{$qte}}">
                         <p>Total : {{ number_format((float)($unLivre->getPrixCan()*$qte), 2, '.', '') }}$</p>
-                        <a href="">Retirer du panier</a>
+                        <a href="index.php?controleur=article&action=supprimer&idLivre={{$unLivre->getId()}}">Retirer du panier</a>
                     </div>
                 </li>
                 @if(!$loop->last)
