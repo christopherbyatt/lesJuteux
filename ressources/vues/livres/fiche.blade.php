@@ -53,26 +53,41 @@
             </div>
             @endif
 
-                <form method="post" action="">
-            <div class="format__livre">
-                <div class="format__papier">
-                    <button class="papier format-selectionne" id="papier">Papier</button>
+            <form action="index.php?controleur=article&action=inserer" method="POST" class="ficheLivre__form">
+                <div class="ficheLivre__form__section">
+                    <input type="radio" name="format" id="formatPapier" value="formatPapier" class="ficheLivre__form__section__radio visuallyhidden" checked>
+                    <label for="formatPapier" class="ficheLivre__form__section__label" id="labelPapier">Papier</label>
+                    <input type="radio" name="format" id="formatPdf" value="formatPdf" class="ficheLivre__form__section__radio visuallyhidden">
+                    <label for="formatPdf" class="ficheLivre__form__section__label" id="labelPdf">PDF</label>
                 </div>
-                <div class="format__pdf">
-                    <button class="pdf" id="pdf">PDF</button>
-                </div>
-            </div>
+{{--                <div class="format__livre">--}}
+{{--                    <div class="format__papier">--}}
+{{--                        <button class="papier format-selectionne" id="papier">Papier</button>--}}
+{{--                    </div>--}}
+{{--                    <div class="format__pdf">--}}
+{{--                        <button class="pdf" id="pdf">PDF</button>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            <div class="quantite">
-                <p class="moins" id="moins"></p>
-                <label for="chiffre"></label>
-                <input type="number" id="chiffre" name="chiffre" value="1">
-                <p class="plus" id="plus"></p>
-            </div>
+                <fieldset class="ficheLivre__form__quantite">
+                    <legend>Quantité: </legend>
+                    <button type="button" id="btnMoins" class="ficheLivre__form__quantite__btn">-</button>
+                    <label for="inputQteFicheLivre" class="visuallyhidden">Quantité</label>
+                    <input type="number" id="inputQteFicheLivre" value="1" class="ficheLivre__form__quantite__input">
+                    <button type="button" id="btnPlus" class="ficheLivre__form__quantite__btn">+</button>
+                </fieldset>
 
-            <input type="submit" class="btnAjouter" id="btnAjouter" value="Ajouter au panier">
+{{--                <div class="quantite">--}}
+{{--                    <p class="moins" id="moins"></p>--}}
+{{--                    <label for="chiffre"></label>--}}
+{{--                    <input type="number" id="chiffre" name="chiffre" value="1">--}}
+{{--                    <p class="plus" id="plus"></p>--}}
+{{--                </div>--}}
+
+{{--                <input type="submit" class="btnAjouter" id="btnAjouter" value="Ajouter au panier">--}}
 {{--                    <span id="icon_panier" class="icon"></span>--}}
-                </form>
+                <button type="submit" id="btnAjouter" class="ficheLivre__form__btnAjouter">Ajouter au panier<span class="icon" id="icon_panier_btn"></span></button>
+            </form>
 
             <!-- Modal inspiré de: https://www.w3schools.com/howto/howto_css_modals.asp -->
 
