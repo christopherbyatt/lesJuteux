@@ -7,18 +7,18 @@ use App\App;
 
 class ControleurArticle {
     public function inserer():void {
-        if(isset($_GET["idProduit"])) {
-            $idProduit = $_GET["idProduit"];
+        if(isset($_GET["idLivre"])) {
+            $idLivre = $_GET["idLivre"];
         }
         $lePanier = App::getPanier();
-        $lArticle = Article::trouverParProduitEtPanier($idProduit, $lePanier->getId());
-        $laQte = (int) $_POST["qte"];
-        if($laQte > 10) {
-            $laQte = 10;
-        }
-        elseif ($laQte < 0) {
-            $laQte = 0;
-        }
+        $lArticle = Article::trouverParLivreEtPanier($idLivre, $lePanier->getId());
+        $laQte = (int) $_POST["qteLivres"];
+//        if($laQte > 10) {
+//            $laQte = 10;
+//        }
+//        elseif ($laQte < 0) {
+//            $laQte = 0;
+//        }
         if($lArticle !== null) {
             //l'article existe
             $lArticle->setQuantite($laQte);
@@ -28,12 +28,12 @@ class ControleurArticle {
             //l'article n'existe pas
             $nouvelArticle = new Article();
             $nouvelArticle->setQuantite($laQte);
-            $nouvelArticle->setIdProduit($idProduit);
+            $nouvelArticle->setIdLivre($idLivre);
             $nouvelArticle->setIdPanier($lePanier->getId());
             $nouvelArticle->inserer();
         }
-        var_dump($lePanier);
-        header('Location: index.php?controleur=site&action=panier');
+//        var_dump($lePanier);
+        header('Location: index.php?controleur=livre&action=fiche&idLivre='.$idLivre.'&popUp=true');
         exit;
     }
 

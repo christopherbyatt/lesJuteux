@@ -53,7 +53,7 @@
             </div>
             @endif
 
-            <form action="index.php?controleur=article&action=inserer" method="POST" class="ficheLivre__form">
+            <form action="index.php?controleur=article&action=inserer&idLivre={{$_GET['idLivre']}}" method="POST" class="ficheLivre__form">
                 <div class="ficheLivre__form__section">
                     <input type="radio" name="format" id="formatPapier" value="formatPapier" class="ficheLivre__form__section__radio visuallyhidden" checked>
                     <label for="formatPapier" class="ficheLivre__form__section__label" id="labelPapier">Papier</label>
@@ -68,12 +68,19 @@
 {{--                        <button class="pdf" id="pdf">PDF</button>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-
+                @php
+                    if(\App\Modeles\Article::trouverParLivreEtPanier((int)$_GET['idLivre'],\App\App::getPanier()->getId()) !== null) {
+                        $laQuantite = \App\Modeles\Article::trouverParLivreEtPanier((int)$_GET['idLivre'],\App\App::getPanier()->getId())->getQuantite();
+                    }
+                    else {
+                        $laQuantite = 1;
+                    }
+                @endphp
                 <fieldset class="ficheLivre__form__quantite">
                     <legend>Quantité: </legend>
                     <button type="button" id="btnMoins" class="ficheLivre__form__quantite__btn">-</button>
                     <label for="inputQteFicheLivre" class="visuallyhidden">Quantité</label>
-                    <input type="number" id="inputQteFicheLivre" value="1" class="ficheLivre__form__quantite__input">
+                    <input type="number" name="qteLivres" id="inputQteFicheLivre" min="0" value="{{$laQuantite}}" class="ficheLivre__form__quantite__input">
                     <button type="button" id="btnPlus" class="ficheLivre__form__quantite__btn">+</button>
                 </fieldset>
 
@@ -92,7 +99,7 @@
             <!-- Modal inspiré de: https://www.w3schools.com/howto/howto_css_modals.asp -->
 
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div id="myModal" class="modal @if(isset($_GET['popUp']) && $_GET['popUp'] === 'true') " @else cache" hidden aria-hidden @endif>
 
                 <!-- Modal content -->
                 <div class="modal-content">
@@ -102,6 +109,8 @@
 {{--                    <div class="modal-body-top">--}}
                     <div class="modal-body" id="modal-body">
 {{--                        <p class="modal-texte"></p>--}}
+                        <script src="liaisons/js/modal.js"></script>
+                        <script>window.onload = function () {creerModal();}</script>
                     </div>
                     <a class="modal-lien" href="index.php?controleur=panier&action=index">Voir le panier</a>
 {{--                    </div>--}}

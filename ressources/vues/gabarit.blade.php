@@ -29,7 +29,7 @@
     <script src="liaisons/js/affichageListeGrille.js"></script>
     <script src="liaisons/js/choisirFormatLivre.js"></script>
     <script src="liaisons/js/confirmationPanier.js"></script>
-    <script src="liaisons/js/modal.js"></script>
+{{--    <script src="liaisons/js/modal.js"></script>--}}
 </main>
 
 <footer>

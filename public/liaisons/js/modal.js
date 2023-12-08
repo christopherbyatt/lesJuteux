@@ -1,8 +1,8 @@
 // let message = document.getElementById("pConfirmation");
-let quantite = document.getElementById("chiffre");
+let quantite = document.getElementById("inputQteFicheLivre");
 
-let papier = document.getElementById("papier");
-let pdf = document.getElementById("pdf");
+let papier = document.getElementById("formatPapier");
+let pdf = document.getElementById("formatPdf");
 
 // Code du modal (https://www.w3schools.com/howto/howto_css_modals.asp) mélangé avec mon code personnel (Rosalie)
 
@@ -28,8 +28,9 @@ modalBody.appendChild(newP);
 // modalBody.appendChild(newLink);
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
-
+btn.addEventListener('click', creerModal);
+function creerModal() {
+    console.log('allo');
     newP.innerHTML = "";
     let message = "";
 
@@ -39,9 +40,9 @@ btn.onclick = function() {
         message = "Vous venez d'ajouter " + quantite.value + " livres";
     }
 
-    if(papier.classList.contains("format-selectionne")){
+    if(papier.checked === true){
         message += " en format papier";
-    } else if(pdf.classList.contains("format-selectionne")){
+    } else if(pdf.checked === true){
         message += " en format PDF";
     }
 
@@ -51,7 +52,7 @@ btn.onclick = function() {
         message = "Veuillez entrer une quantité valide...";
     }
 
-    modal.style.display = "block";
+    // modal.style.display = "block";
 
     console.log(newP);
     newP.innerHTML = message;

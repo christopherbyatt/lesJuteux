@@ -1,5 +1,5 @@
-let btnPDF = document.getElementById("pdf");
-let btnPapier = document.getElementById("papier");
+let btnPDF = document.getElementById("formatPdf");
+let btnPapier = document.getElementById("formatPapier");
 
 btnPapier.addEventListener("click", function(){
     btnPapier.classList.add("format-selectionne");

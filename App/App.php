@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 namespace App;
+use App\Controleurs\ControleurArticle;
 use App\Controleurs\ControleurSite;
 use App\Controleurs\ControleurAuteur;
 use App\Controleurs\ControleurLivre;
@@ -195,6 +196,16 @@ class App {
                     break;
                 case 'creation':
                     $objControleur->creation();
+                    break;
+            }
+        } else if($nomControleur === 'article') {
+            $objControleur = new ControleurArticle();
+            switch ($nomAction){
+                case 'inserer':
+                    $objControleur->inserer();
+                    break;
+                case 'supprimer':
+                    $objControleur->supprimer();
                     break;
             }
         }

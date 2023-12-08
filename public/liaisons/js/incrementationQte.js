@@ -1,6 +1,6 @@
-let btnPlus = document.getElementById("plus");
-let btnMoins = document.getElementById("moins");
-let input = document.getElementById("chiffre");
+let btnPlus = document.getElementById("btnPlus");
+let btnMoins = document.getElementById("btnMoins");
+let input = document.getElementById("inputQteFicheLivre");
 
 btnPlus.addEventListener("click", function(){
     input.value++;
