@@ -204,6 +204,9 @@ class App {
                 case 'inserer':
                     $objControleur->inserer();
                     break;
+                case 'modifier':
+                    $objControleur->modifier();
+                    break;
                 case 'supprimer':
                     $objControleur->supprimer();
                     break;

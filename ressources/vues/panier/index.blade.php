@@ -34,8 +34,17 @@
                             $qte =  \App\Modeles\Article::trouverParLivreEtPanier($unLivre->getId(), $lePanier->getId())->getQuantite();
                             $leTotal = $leTotal + ($qte*$unLivre->getPrixCan());
                         @endphp
-                        <label for="chiffre">Quantité : </label>
-                        <input type="number" id="chiffre" name="chiffre" value="{{$qte}}">
+                        <form action="index.php?controleur=article&action=modifier&idLivre={{$unLivre->getId()}}" method="POST" class="panier__item__quantitePrix__form">
+                            <fieldset>
+                                <legend>Quantité: </legend>
+                                <button type="button" id="btnMoins" class="panier__item__quantitePrix__form__btnPM">-</button>
+                                <label for="qtePanier"class="panier__item__quantitePrix__form__label visuallyhidden">Quantité : </label>
+                                <input type="number" id="qtePanier" name="laQte" value="{{$qte}}"class="panier__item__quantitePrix__form__input">
+                                <button type="button" id="btnPlus" class="panier__item__quantitePrix__form__btnPM">+</button>
+                                <button type="submit" id="btnModifierQtePanier{{$unLivre->getISBNPapier()}}" class="panier__item__quantitePrix__form__button">Modifier la quantité</button>
+                            </fieldset>
+                        </form>
+
                         <p>Total : {{ number_format((float)($unLivre->getPrixCan()*$qte), 2, '.', '') }}$</p>
                         <a href="index.php?controleur=article&action=supprimer&idLivre={{$unLivre->getId()}}">Retirer du panier</a>
                     </div>

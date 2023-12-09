@@ -47,6 +47,52 @@
       margin-top: 4rem;
       display: block;
       text-align: center;
+      &__form {
+        & fieldset {
+          border: none;
+        }
+        &__btnPM {
+          display: inline-block;
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+          width: 3.3rem;
+          height: 3.3rem;
+          font-family: "Caviar Dreams";
+          font-size: 2rem;
+          background-color: $background1;
+          color: $rose;
+          border: 2px solid $rose;
+          filter: drop-shadow(0 0 0.75rem $rose);
+          text-align: center;
+          border-radius: 1rem;
+          &:hover,
+          &:active {
+            color: $vertMelon;
+            border-color: $vertMelon;
+            filter: drop-shadow(0 0 0.75rem $vertMelon);
+          }
+        }
+        &__button {
+          display: block;
+          background-color: $rose;
+          font-size: 1.8rem;
+          color: $background2;
+          width: 20rem;
+          padding: 0 1rem;
+          height: 4rem;
+          line-height: 4rem;
+          border: none;
+          border-radius: 1rem;
+          font-family: "Caviar Dreams";
+          font-weight: bold;
+          margin: 1.5rem auto 4rem auto;
+          &:hover,
+          &:active {
+            background-color: $vertMelon;
+            filter: drop-shadow(0 0 0.75rem $vertMelon);
+          }
+        }
+      }
     }
   }
 
@@ -74,10 +120,6 @@
           flex-basis: 60%;
           text-decoration: $background2 solid 1px;
 
-          &__img {
-
-          }
-
           &__txt {
             padding-left: 2rem;
             display: flex;
@@ -97,6 +139,8 @@
           margin-top: 25.5px;
           margin-bottom: 25.5px;
           flex-basis: 25%;
+          &__form {
+          }
         }
       }
     }

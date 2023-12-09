@@ -13,12 +13,9 @@ class ControleurArticle {
         $lePanier = App::getPanier();
         $lArticle = Article::trouverParLivreEtPanier($idLivre, $lePanier->getId());
         $laQte = (int) $_POST["qteLivres"];
-//        if($laQte > 10) {
-//            $laQte = 10;
-//        }
-//        elseif ($laQte < 0) {
-//            $laQte = 0;
-//        }
+        if ($laQte < 0) {
+            $laQte = 0;
+        }
         if($laQte <= 0) {
             header('Location: index.php?controleur=article&action=supprimer&idLivre='.$idLivre);
             exit();
@@ -36,8 +33,29 @@ class ControleurArticle {
             $nouvelArticle->setIdPanier($lePanier->getId());
             $nouvelArticle->inserer();
         }
-//        var_dump($lePanier);
         header('Location: index.php?controleur=livre&action=fiche&idLivre='.$idLivre.'&popUp=true');
+        exit;
+    }
+
+    public function modifier() {
+        if(isset($_GET["idLivre"])) {
+            $idLivre = $_GET["idLivre"];
+        }
+        $lePanier = App::getPanier();
+        $lArticle = Article::trouverParLivreEtPanier($idLivre, $lePanier->getId());
+        $laQte = (int) $_POST["laQte"];
+        if ($laQte < 0) {
+            $laQte = 0;
+        }
+        if($laQte <= 0) {
+            header('Location: index.php?controleur=article&action=supprimer&idLivre='.$idLivre);
+            exit();
+        }
+
+        $lArticle->setQuantite($laQte);
+        $lArticle->updateLaQuantite();
+
+        header('Location: index.php?controleur=panier&action=index');
         exit;
     }
 
