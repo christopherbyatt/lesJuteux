@@ -28,12 +28,9 @@
             <ul>
             <li class="categorie__livre">{{$categorie->getNom()}}</li>
             <li>Âge minimal: {{$livre->getAgeMin()}} ans</li>
-            <p class="fiche__auteurs">
             @foreach($livre->getAuteur() as $auteur)
-                <a class="lien-auteurs"
-                            href="index.php?controleur=auteur&action=fiche&idAuteur={{$auteur->getAuteurId()}}">{{$auteur->getPrenomNom()}}</a>
+                <a class="lien-auteurs" href="index.php?controleur=auteur&action=fiche&idAuteur={{$auteur->getAuteurId()}}"><h2 class="lien-auteurs__h2">{{$auteur->getPrenomNom()}}</h2></a>
             @endforeach
-                </p>
             <li class="prixCAN__livre">{{$livre->getPrixCan()}} $</li>
             <li class="description__livre">{!! $livre->getLeLivre() !!}</li>
 

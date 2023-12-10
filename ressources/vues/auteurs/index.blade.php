@@ -19,7 +19,7 @@
                 @endif
             </a>
                 <div class="infosAuteur" id="infosAuteur">
-                    <p class="auteurs__nom">{{$auteur->getPrenomNom()}}</p>
+                    <h2 class="auteurs__nom">{{$auteur->getPrenomNom()}}</h2>
                 </div>
             </div>
         @endforeach

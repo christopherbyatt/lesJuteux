@@ -337,6 +337,10 @@ span.close {
 /**
 * @author Clodiane Charette - 2164515@csfoy.ca
 */
+.lien-auteurs__h2 {
+  margin: 1rem auto;
+  padding: 0;
+}
 .ficheLivre__form {
   display: flex;
   flex-direction: column;

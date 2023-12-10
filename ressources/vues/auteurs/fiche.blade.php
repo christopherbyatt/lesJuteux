@@ -23,21 +23,21 @@
     </div>
         <div class="ficheArtiste">
             <div class="ligne-h2">
-        <h2 class="pale">Bibliographie</h2>
+        <h2 class="pale">Biographie</h2>
             </div>
         <div class="ficheArtiste__biblio">{!!$auteur->getNotice()!!}</div>
         </div>
     <div class="background">
     <div class="ficheArtiste">
         <div class="ligne-h2">
-        <h2 class="fonce">Site web</h2>
+            <h2 class="fonce">Site web</h2>
         </div>
         <p class="ficheArtiste__url"><a href="{{$auteur->getSiteWeb()}}">{{$auteur->getSiteWeb()}}</a></p>
-        </div>
+    </div>
     </div>
     <div class="ficheArtiste">
         <div class="ligne-h2">
-<h2 class="pale">Livres écrits par {{$auteur->getPrenomNom()}}</h2>
+            <h2 class="pale">Livres écrits par {{$auteur->getPrenomNom()}}</h2>
         </div>
     </div>
     <div class="auteursLivres">
@@ -55,7 +55,7 @@
                 </div>
                 <div class="auteursLivres__liste">
                     @if(count($livre->getReconnaissances())!=0)
-                    <p class="auteursLivres__titreReco">Prix et reconnaissances</p>
+                    <h4 class="auteursLivres__titreReco">Prix et reconnaissances</h4>
                     @endif
                 @foreach($livre->getReconnaissances() as $reconnaissance)
                     <div class="auteursLivres__recon">{!! $reconnaissance->getLaReconnaissance()!!}</div>

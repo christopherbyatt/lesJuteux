@@ -9,9 +9,8 @@
   &__info{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
     width: 80%;
     max-width: 1400px;
     margin: auto;
@@ -28,12 +27,16 @@
     max-width: 240px;
     margin: 2rem auto;
     flex-basis: 33%;
+    & h2 {
+      font-size: 2.2rem;
+    }
   }
 }
 @media (min-width: 800px) {
   .footer{
     &__info{
       flex-direction: row;
+      flex-wrap: wrap;
     }
     &__info-1,
     &__info-2,

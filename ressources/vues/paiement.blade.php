@@ -261,7 +261,7 @@
                     <p>Une ville</p>
                     <p>Une province, un pays</p>
                     <p>Un code postal</p>
-                    <h5>Mode de paiement:</h5>
+                    <h4>Mode de paiement:</h4>
                     <span id="iconCarteChoisie"></span>
                     <p>XXXX XXXX XXXX 1234</p>
                 </div>
