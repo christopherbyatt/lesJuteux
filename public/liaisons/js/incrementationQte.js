@@ -24,9 +24,4 @@ btnMoins.addEventListener("click", function(){
             inputPanier.value = 0;
         }
     }
-
-
-
-
-
 })

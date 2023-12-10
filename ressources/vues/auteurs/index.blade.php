@@ -13,9 +13,9 @@
             <div class="auteurs__fiche mode-grille" id="auteurs__fiche">
             <a href="index.php?controleur=auteur&action=fiche&idAuteur={{$auteur->getId()}}">
                 @if(is_file("liaisons/images/auteurs/".$auteur->getId()."_w325.jpg"))
-                    <img class="auteurs__img imgAuteur" src="liaisons/images/auteurs/{{$auteur->getId()}}_w325.jpg" alt="Portrait de {{$auteur->getPrenomNom()}}">
+                    <img class="auteurs__img imgAuteur" src="liaisons/images/auteurs/{{$auteur->getId()}}_w325.jpg" alt="Portrait de {{$auteur->getPrenomNom()}}" title="Portrait de {{$auteur->getPrenomNom()}}">
                 @else
-                    <img class="imgAuteur" src="liaisons/images/auteurs/noImage_w325.jpg" alt="Image générique pour {{$auteur->getPrenomNom()}}">
+                    <img class="imgAuteur" src="liaisons/images/auteurs/noImage_w325.jpg" alt="Image générique pour {{$auteur->getPrenomNom()}}" title="Image générique pour {{$auteur->getPrenomNom()}}">
                 @endif
             </a>
                 <div class="infosAuteur" id="infosAuteur">

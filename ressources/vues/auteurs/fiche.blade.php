@@ -11,13 +11,13 @@
         <picture class="ficheArtiste__photo">
             <source media="(min-width:800px" srcset="liaisons/images/auteurs/{{$auteur->getId()}}_w520.jpg">
             <source media="(max-width:799px" srcset="liaisons/images/auteurs/{{$auteur->getId()}}_w325.jpg">
-        <img src="liaisons/images/auteurs/{{$auteur->getId()}}_w520.jpg" alt="photo de {{$auteur->getPrenomNom()}}">
+        <img src="liaisons/images/auteurs/{{$auteur->getId()}}_w520.jpg" alt="Photo de {{$auteur->getPrenomNom()}}" title="Photo de {{$auteur->getPrenomNom()}}">
         </picture>
         @else
             <picture class="ficheArtiste__photo">
                 <source media="(min-width:800px" srcset="liaisons/images/auteurs/noImage_w520.jpg">
                 <source media="(max-width:799px" srcset="liaisons/images/auteurs/noImage_w325.jpg">
-                <img src="liaisons/images/auteurs/noImage_w520.jpg" alt="photo de {{$auteur->getPrenomNom()}}">
+                <img src="liaisons/images/auteurs/noImage_w520.jpg" alt="Photo de {{$auteur->getPrenomNom()}}" title="Photo de {{$auteur->getPrenomNom()}}">
         @endif
     </div>
     </div>
@@ -47,9 +47,9 @@
                 <div class="auteursLivres__image">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$livre->getId()}}">
                 @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg"))
-                    <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg">
+                    <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg" alt="Couverture de {{$livre->getTitre()}}" title="Couverture de {{$livre->getTitre()}}">
                 @else
-                    <img src="liaisons/images/livres/noImage_w300.jpg">
+                    <img src="liaisons/images/livres/noImage_w300.jpg" alt="Couverture de {{$livre->getTitre()}}" title="Couverture de {{$livre->getTitre()}}">
                 @endif
                     </a>
                 </div>

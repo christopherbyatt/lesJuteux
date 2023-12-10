@@ -18,9 +18,9 @@
                 <li class="panier__item background">
                     <a href="index.php?controleur=livre&action=fiche&idLivre={{$unLivre->getId()}}" class="panier__item__info">
                         @if(is_file("liaisons/images/livres/".$unLivre->getISBNPapier()."_w300.jpg"))
-                            <img class="panier__item__info__img" src="liaisons/images/livres/{{$unLivre->getISBNPapier()}}_w150.jpg">
+                            <img class="panier__item__info__img" src="liaisons/images/livres/{{$unLivre->getISBNPapier()}}_w150.jpg" alt="Couverture de {{$unLivre->getTitre()}}" title="Couverture de {{$unLivre->getTitre()}}">
                         @else
-                            <img class="panier__item__info__img" src="liaisons/images/livres/noImage_w150.jpg">
+                            <img class="panier__item__info__img" src="liaisons/images/livres/noImage_w150.jpg" alt="Couverture générique pour {{$unLivre->getTitre()}}" title="Couverture générique pour {{$unLivre->getTitre()}}">
                         @endif
 
                         <div class="panier__item__info__txt">

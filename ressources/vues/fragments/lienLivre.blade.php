@@ -8,9 +8,9 @@
             <div class="etiquetteVidePourReplirLEspace"></div>
         @endif
         @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w300.jpg"))
-            <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg" class="imgLivre">
+            <img src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w300.jpg" class="imgLivre" alt="Couverture de {{$livre->getTitre()}}"  title="Couverture de {{$livre->getTitre()}}">
         @else
-            <img src="liaisons/images/livres/noImage_w300.jpg" class="imgLivre">
+            <img src="liaisons/images/livres/noImage_w300.jpg" class="imgLivre" alt="Couverture générique pour {{$livre->getTitre()}}"  title="Couverture générique pour {{$livre->getTitre()}}">
         @endif
     </a>
     <div class="infosLivre" id="infosLivre">

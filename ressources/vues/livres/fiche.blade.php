@@ -19,9 +19,9 @@
             @endif
 
             @if(is_file("liaisons/images/livres/".$livre->getISBNPapier()."_w485.jpg"))
-            <img alt="Couverture de {{$livre->getTitre()}}" src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
+            <img alt="Couverture de {{$livre->getTitre()}}" title="Couverture de {{$livre->getTitre()}}" src="liaisons/images/livres/{{$livre->getISBNPapier()}}_w485.jpg">
             @else
-            <img src="liaisons/images/livres/noImage_w485.jpg" alt="Aucune couverture disponible">
+            <img src="liaisons/images/livres/noImage_w485.jpg" alt="Couverture générique pour {{$livre->getTitre()}}" title="Couverture générique pour {{$livre->getTitre()}}">
             @endif
         </li>
         <li class="elements_droite">
@@ -148,9 +148,9 @@
                         <div class="livres__fiche" id="livres__fiche">
                             <a href="index.php?controleur=livre&action=fiche&idLivre={{$book->getId()}}">
                                 @if(is_file("liaisons/images/livres/".$book->getISBNPapier()."_w300.jpg"))
-                                    <img src="liaisons/images/livres/{{$book->getISBNPapier()}}_w300.jpg" class="imgLivre">
+                                    <img src="liaisons/images/livres/{{$book->getISBNPapier()}}_w300.jpg" class="imgLivre" alt="Couverture de {{$book->getTitre()}}" title="Couverture de {{$book->getTitre()}}">
                                 @else
-                                    <img src="liaisons/images/livres/noImage_w300.jpg" class="imgLivre">
+                                    <img src="liaisons/images/livres/noImage_w300.jpg" class="imgLivre" alt="Couverture générique pour {{$book->getTitre()}}" title="Couverture générique pour {{$book->getTitre()}}">
                                 @endif
                             </a>
                             <div class="infosLivre" id="infosLivre">
