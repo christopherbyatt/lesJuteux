@@ -54,6 +54,10 @@
                 <div class="ficheLivre__form__section">
                     <input type="radio" name="format" id="formatPapier" value="formatPapier" class="ficheLivre__form__section__radio visuallyhidden" checked>
                     <label for="formatPapier" class="ficheLivre__form__section__label" id="labelPapier">Papier</label>
+                    <input type="radio" name="format" id="formatEpub" value="formatEpub" class="ficheLivre__form__section__radio visuallyhidden">
+                    <label for="formatEpub" class="ficheLivre__form__section__label" id="labelEpub">EPUB</label>
+                    <input type="radio" name="format" id="formatAudio" value="formatAudio" class="ficheLivre__form__section__radio visuallyhidden">
+                    <label for="formatAudio" class="ficheLivre__form__section__label" id="labelAudio">Audio</label>
                     <input type="radio" name="format" id="formatPdf" value="formatPdf" class="ficheLivre__form__section__radio visuallyhidden">
                     <label for="formatPdf" class="ficheLivre__form__section__label" id="labelPdf">PDF</label>
                 </div>
